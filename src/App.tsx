@@ -17,14 +17,14 @@ const App: React.FC = () => {
     <Router>
       <div className="AppContainer">
         <nav>
-          <ul>
-            <li>
+          <div className='links-container'>
+            <div className="link-container">
               <Link to="/">Explore</Link>
-            </li>
-            <li>
+            </div>
+            <div className="link-container">
               <Link to="/chat">ChatGPTApp</Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </nav>
         <Routes>
           <Route path="/chat" element={

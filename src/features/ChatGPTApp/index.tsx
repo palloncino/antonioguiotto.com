@@ -87,6 +87,12 @@ function ChatGPTApp() {
 
 				<div className="chat-section">
 
+					<div className="head-section">
+						<span>
+							Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
+						</span>
+					</div>
+
 					<div className="output-section">
 						{loading ? renderLoader() : <span className="output-current-response">{`[Assistant]: ${currentResponse}`}</span>}
 					</div>

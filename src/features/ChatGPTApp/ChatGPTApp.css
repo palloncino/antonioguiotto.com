@@ -13,6 +13,7 @@
   flex-direction: row;
   flex-grow: 1;
   height: 100%;
+  /* background: red; */
 }
 
 .chat-section {
@@ -30,6 +31,7 @@
   width: 100%;
   flex-grow: 1;
   overflow-y: auto;
+  line-height: 1.8rem;
 }
 
 .output-prompt {
@@ -100,6 +102,14 @@
   background: #e4e4e4;
   margin-left: .4rem;
   overflow-y: auto;
+}
+
+.head-section {
+  padding: 1rem 0rem;
+}
+
+.head-section span {
+  line-height: 1.5rem;
 }
 
 .history-section-conversations-container {
