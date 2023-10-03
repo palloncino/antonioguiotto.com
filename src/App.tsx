@@ -6,11 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import ChatGPTApp from './features/ChatGPTApp';
+import Explore from './features/Explore';
 import './App.css';
-
-const ExplorePage: React.FC = () => {
-  return <div>Explore Page</div>;
-}
 
 const App: React.FC = () => {
   return (
@@ -34,7 +31,7 @@ const App: React.FC = () => {
           } />
           <Route path="/" element={
             <div className="frame">
-              <ExplorePage />
+              <Explore />
             </div>
           } />
         </Routes>
