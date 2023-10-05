@@ -81,13 +81,17 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 
 	return (
 
-		<div id={'ChatUp'} className="ChatUp ChatUp-container">
-
-			<div className="head-section">
-				<h3>
+		<>
+		<div className="head-section">
+				<span>
 					Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
-				</h3>
+				</span>
+				<div className="clear-history-button-container">
+					<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+				</div>
 			</div>
+
+			<div id={'ChatUp'} className="ChatUp ChatUp-container">
 
 			<div className="output-section">
 				{history.map(({ role, content }, index) => {
@@ -129,12 +133,11 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 				</div>
 			</div>
 
-			<div className="clear-history-button-container">
-				<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
-			</div>
-
 
 		</div>
+
+		</>
+
 	);
 };
 

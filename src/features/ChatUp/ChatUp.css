@@ -38,3 +38,8 @@
 .send-button {
   width: 100%;
 }
+.head-section {
+  position: sticky;
+  top: 0;
+  background: rgb(174, 111, 111);
+}
