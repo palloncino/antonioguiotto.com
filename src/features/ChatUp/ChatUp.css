@@ -1,0 +1,40 @@
+.ChatUp {
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: #b8b8b8;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.output-message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-section {
+  height: 4rem;
+  display: flex;
+  flex: 1;
+}
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex: 7;
+}
+.textarea {
+  width: 100%;
+}
+
+.send-button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+.send-button {
+  width: 100%;
+}
