@@ -82,35 +82,29 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 	return (
 
 		<>
-		<div className="head-section">
-				<span>
+			<div className="head-section">
+				<div className="chat-introduction-container">
 					Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
-				</span>
-				<div className="clear-history-button-container">
-					<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+				</div>
+				<div className="head-actions-container">
+					<div className="clear-history-button-container">
+						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+					</div>
 				</div>
 			</div>
 
 			<div id={'ChatUp'} className="ChatUp ChatUp-container">
 
-			<div className="output-section">
-				{history.map(({ role, content }, index) => {
-					return <div key={content.slice(0, 10).trim() + `_1.${index}`} className='output-message'>{role === 'human' ? `[Human]: ${content}` : `[AI]: ${content}`}</div>
-				})}
+				<div className="output-section">
+					{history.map(({ role, content }, index) => {
+						return <div key={content.slice(0, 10).trim() + `_1.${index}`} className='output-message'>{role === 'human' ? `[Human]: ${content}` : `[AI]: ${content}`}</div>
+					})}
+				</div>
+
+				<div className="output-loading-container">
+					{loading && renderLoader()}
+				</div>
 			</div>
-
-			<div className="output-section">
-
-			</div>
-
-			<div className="output-prompt">
-				{loading && (<>
-					{renderLoader()}
-					{/* <span className="output-prompt-message">{`[User]: ${prevPrompt}`}</span> */}
-				</>)}
-			</div>
-
-
 
 			<div className="input-section">
 				<div className="input-container">
@@ -132,10 +126,6 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 					<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send away</button>
 				</div>
 			</div>
-
-
-		</div>
-
 		</>
 
 	);
