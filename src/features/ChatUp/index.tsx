@@ -105,7 +105,7 @@ const ChatUp = () => {
 			"Start your conversation"
 		) : (
 			history.map(({ role, content }, index) => {
-				return <div key={content.slice(0, 10).trim() + `_1.${index}`} className='output-message'>{role === 'human' ? `[Human]: ${content}` : `[AI]: ${content}`}</div>
+				return <div key={content.slice(0, 10).trim() + `_1.${index}`} className={role === 'human' ? 'output-message human' : 'output-message ai'}>{role === 'human' ? `🙋🏻‍♂️: ${content}` : `🤖: ${content}`}</div>
 			})
 		)
 	}
@@ -113,41 +113,64 @@ const ChatUp = () => {
 	return (
 		<>
 			<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
+
 				<div className="head-logo-container" onClick={() => navigate('/')}>
-					Back to Explore page
+					Back to Explore
 				</div>
 
 				<div className="chat-introduction-container">
 					Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
 				</div>
-				<div className="head-actions-container">
-					some info
-				</div>
+
 			</div>
 
 			<div className="central-container">
-				<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp ChatUp-container">
 
-					<div className="output-section">
-						{renderHistory(history)}
+				<div className='ChatUp-container'>
+
+					<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp">
+
+						<div className="output-section">
+							{renderHistory(history)}
+						</div>
+
+						<div className="output-loading-container">
+							{loading && renderLoader()}
+						</div>
 					</div>
 
-					<div className="output-loading-container">
-						{loading && renderLoader()}
+					<div id="ChatUpInputSection" ref={chatupInputRef} className="input-section">
+						<div className="input-container">
+							<input
+								placeholder="Type your query"
+								className="textarea"
+								value={prompt}
+								onChange={e => setPrompt(e.target.value)}
+								onKeyDown={e => {
+									if (e.key === 'Enter' && !e.shiftKey) {
+										e.preventDefault();
+										sendQuery();
+									}
+								}}
+							/>
+						</div>
+
+						<div className="send-button-container">
+							<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send</button>
+						</div>
 					</div>
 				</div>
 
 				<div className="side-panel">
-					Options
+					
+					<h3>⚙️ Options</h3>
 
 					<div className="clear-history-button-container">
 						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
 					</div>
 
 					<div>
-						<h3>
-							TODOs
-						</h3>
+						<h3>👨🏻‍🔧 Todos</h3>
 						<ul>
 							<li>
 								Prompt History, with tags to jump back on previous question
@@ -155,29 +178,14 @@ const ChatUp = () => {
 							<li>
 								React spring for animations
 							</li>
+							<li>
+								Silent error on lambda timeout
+							</li>
+							<li>
+								Chat should be able to answer about Antonio with confidence
+							</li>
 						</ul>
 					</div>
-				</div>
-			</div>
-
-			<div id="ChatUpInputSection" ref={chatupInputRef} className="input-section">
-				<div className="input-container">
-					<input
-						placeholder="Type your query"
-						className="textarea"
-						value={prompt}
-						onChange={e => setPrompt(e.target.value)}
-						onKeyDown={e => {
-							if (e.key === 'Enter' && !e.shiftKey) {
-								e.preventDefault();
-								sendQuery();
-							}
-						}}
-					/>
-				</div>
-
-				<div className="send-button-container">
-					<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send</button>
 				</div>
 			</div>
 		</>
