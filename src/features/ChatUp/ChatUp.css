@@ -73,6 +73,7 @@
 }
 
 .head-logo-container {
+  cursor: pointer;
   flex: 1;
   display: flex;
   justify-content: center;

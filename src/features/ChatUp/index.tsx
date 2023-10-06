@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 import './ChatUp.css';
 
 type Message = { role: 'human' | 'ai', content: string };
@@ -18,6 +19,7 @@ const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 	const chatupChatRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputRef = useRef<HTMLDivElement | null>(null);
 	const [chatHeight, setChatHeight] = useState(0);
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
@@ -106,8 +108,8 @@ const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 	return (
 		<>
 			<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
-				<div className="head-logo-container">
-					SOME LOGO
+				<div className="head-logo-container" onClick={() => navigate('/')}>
+					Back to Explore page
 				</div>
 
 				<div className="chat-introduction-container">
@@ -142,8 +144,11 @@ const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 							TODOs
 						</h3>
 						<ul>
-							<li>
+						<li>
 								Prompt History, with tags to jump back on previous question
+							</li>
+							<li>
+								React spring for animations
 							</li>
 						</ul>
 					</div>

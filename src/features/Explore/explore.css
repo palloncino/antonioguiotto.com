@@ -1,6 +1,17 @@
-.explore-container {
-  height: 100%;
+.explore-page-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+}
+.expore-page-img-container {
+  max-width: 200px;
+}
+.expore-page-img-container img {
+  width: 100%;
+}
+.expore-page__container-flex {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
 }

@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import {
-  Link,
   Route,
   BrowserRouter as Router,
   Routes
@@ -17,20 +16,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="AppContainer">
-
-        <div 
-          className="Header" 
-          id="Header" 
-          ref={HeaderRef}>
-          <div className='links-container'>
-            <div className="link-container">
-              <Link to="/">Explore</Link>
-            </div>
-            <div className="link-container">
-              <Link to="/chat-up">Chat up</Link>
-            </div>
-          </div>
-        </div>
 
         <div
           className="Feature"
