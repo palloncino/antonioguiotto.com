@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import './ChatUp.css';
 
 type Message = { role: 'human' | 'ai', content: string };
-type ChatUpProps = { parentRef: React.RefObject<HTMLElement> };
+type ChatUpProps = { parentRef: React.RefObject<HTMLElement>, headerRef: React.RefObject<HTMLElement> };
 
-const ChatUp = ({ parentRef }: ChatUpProps) => {
+const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 	const [history, setHistory] = useState<Message[]>(() => {
 		const savedHistory = localStorage.getItem('history');
 		return savedHistory ? JSON.parse(savedHistory) : [];
@@ -14,17 +14,31 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 	const [loading, setLoading] = useState(false);
 	const [prompt, setPrompt] = useState('');
 	const [prevPrompt, setPrevPrompt] = useState('');
+	const chatupHeadRef = useRef<HTMLDivElement | null>(null);
+	const chatupChatRef = useRef<HTMLDivElement | null>(null);
+	const chatupInputRef = useRef<HTMLDivElement | null>(null);
+	const [chatHeight, setChatHeight] = useState(0);
+
+	useEffect(() => {
+		const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
+		const chatupHeadHeight = chatupHeadRef.current ? chatupHeadRef.current.offsetHeight : 0;
+		const chatupInputHeight = chatupInputRef.current ? chatupInputRef.current.offsetHeight : 0;
+		const viewportHeight = window.innerHeight;
+		const calculatedChatHeight = viewportHeight - chatupHeadHeight - chatupInputHeight - headerHeight;
+
+		setChatHeight(calculatedChatHeight);
+	}, []);
 
 	useEffect(() => {
 		setTimeout(() => {
-			if (parentRef && parentRef.current) {
-				parentRef.current.scrollTo({
-					top: parentRef.current.scrollHeight,
+			if (chatupChatRef && chatupChatRef.current) {
+				chatupChatRef.current.scrollTo({
+					top: chatupChatRef.current.scrollHeight,
 					behavior: 'smooth'
 				});
 			}
 		}, 0);
-	}, [parentRef, currentResponse, history]);
+	}, [chatupChatRef, currentResponse, history]);
 
 	useEffect(() => {
 		localStorage.setItem('history', JSON.stringify(history));
@@ -79,34 +93,64 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 		</div>
 	);
 
-	return (
+	const renderHistory = (history: Message[]) => {
+		return history.length === 0 ? (
+			"Start your conversation"
+		) : (
+			history.map(({ role, content }, index) => {
+				return <div key={content.slice(0, 10).trim() + `_1.${index}`} className='output-message'>{role === 'human' ? `[Human]: ${content}` : `[AI]: ${content}`}</div>
+			})
+		)
+	}
 
+	return (
 		<>
-			<div className="head-section">
+			<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
+				<div className="head-logo-container">
+					SOME LOGO
+				</div>
+
 				<div className="chat-introduction-container">
 					Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
 				</div>
 				<div className="head-actions-container">
+					some info
+				</div>
+			</div>
+
+			<div className="central-container">
+				<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp ChatUp-container">
+
+					<div className="output-section">
+						{renderHistory(history)}
+					</div>
+
+					<div className="output-loading-container">
+						{loading && renderLoader()}
+					</div>
+				</div>
+
+				<div className="side-panel">
+					Options
+
 					<div className="clear-history-button-container">
 						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+					</div>
+
+					<div>
+						<h3>
+							TODOs
+						</h3>
+						<ul>
+							<li>
+								Prompt History, with tags to jump back on previous question
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 
-			<div id={'ChatUp'} className="ChatUp ChatUp-container">
-
-				<div className="output-section">
-					{history.map(({ role, content }, index) => {
-						return <div key={content.slice(0, 10).trim() + `_1.${index}`} className='output-message'>{role === 'human' ? `[Human]: ${content}` : `[AI]: ${content}`}</div>
-					})}
-				</div>
-
-				<div className="output-loading-container">
-					{loading && renderLoader()}
-				</div>
-			</div>
-
-			<div className="input-section">
+			<div id="ChatUpInputSection" ref={chatupInputRef} className="input-section">
 				<div className="input-container">
 					<input
 						placeholder="Type your query"
@@ -123,7 +167,7 @@ const ChatUp = ({ parentRef }: ChatUpProps) => {
 				</div>
 
 				<div className="send-button-container">
-					<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send away</button>
+					<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send</button>
 				</div>
 			</div>
 		</>

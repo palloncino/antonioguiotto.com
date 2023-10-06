@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   Link,
   Route,
@@ -13,15 +13,6 @@ const App: React.FC = () => {
 
   const HeaderRef = useRef<HTMLDivElement | null>(null);
   const FeatureRef = useRef<HTMLDivElement | null>(null);
-  const [featureHeight, setFeatureHeight] = useState(0);
-
-  useEffect(() => {
-    const headerHeight = HeaderRef.current ? HeaderRef.current.offsetHeight : 0;
-    const viewportHeight = window.innerHeight;
-    const calculatedFeatureHeight = viewportHeight - headerHeight;
-
-    setFeatureHeight(calculatedFeatureHeight);
-  }, []);
 
   return (
     <Router>
@@ -44,10 +35,9 @@ const App: React.FC = () => {
         <div
           className="Feature"
           id="Feature"
-          style={{ height: `${featureHeight}px`, overflowY: 'auto' }}
           ref={FeatureRef}>
           <Routes>
-            <Route path="/chat-up" element={<ChatUp parentRef={FeatureRef} />} />
+            <Route path="/chat-up" element={<ChatUp headerRef={HeaderRef} parentRef={FeatureRef} />} />
             <Route path="/" element={<Explore />} />
           </Routes>
         </div>
