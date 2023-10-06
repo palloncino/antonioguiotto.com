@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-
+import { useContext } from 'react';
+import { MainContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 import './ChatUp.css';
 
 type Message = { role: 'human' | 'ai', content: string };
-type ChatUpProps = { parentRef: React.RefObject<HTMLElement>, headerRef: React.RefObject<HTMLElement> };
 
-const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
+const ChatUp = () => {
+	const refs = useContext(MainContext);
 	const [history, setHistory] = useState<Message[]>(() => {
 		const savedHistory = localStorage.getItem('history');
 		return savedHistory ? JSON.parse(savedHistory) : [];
@@ -22,14 +23,18 @@ const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 	const navigate = useNavigate()
 
 	useEffect(() => {
-		const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
+		let headerHeight = 0;
+		if (refs) {
+			const { HeaderRef, FeatureRef } = refs;
+			headerHeight = HeaderRef.current ? HeaderRef.current.offsetHeight : 0;
+		}
 		const chatupHeadHeight = chatupHeadRef.current ? chatupHeadRef.current.offsetHeight : 0;
 		const chatupInputHeight = chatupInputRef.current ? chatupInputRef.current.offsetHeight : 0;
 		const viewportHeight = window.innerHeight;
 		const calculatedChatHeight = viewportHeight - chatupHeadHeight - chatupInputHeight - headerHeight;
 
 		setChatHeight(calculatedChatHeight);
-	}, []);
+	}, [refs]);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -144,7 +149,7 @@ const ChatUp = ({ headerRef, parentRef }: ChatUpProps) => {
 							TODOs
 						</h3>
 						<ul>
-						<li>
+							<li>
 								Prompt History, with tags to jump back on previous question
 							</li>
 							<li>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { createContext, useRef } from 'react';
 import {
   Route,
   BrowserRouter as Router,
@@ -8,6 +8,11 @@ import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
 
+export const MainContext = createContext<{
+  HeaderRef: React.RefObject<HTMLDivElement>,
+  FeatureRef: React.RefObject<HTMLDivElement>
+} | null>(null);
+
 const App: React.FC = () => {
 
   const HeaderRef = useRef<HTMLDivElement | null>(null);
@@ -15,19 +20,20 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="AppContainer">
+      <MainContext.Provider value={{ HeaderRef, FeatureRef }}>
+        <div className="AppContainer">
+          <div
+            className="Feature"
+            id="Feature"
+            ref={FeatureRef}>
+            <Routes>
+              <Route path="/chat-up" element={<ChatUp />} />
+              <Route path="/" element={<Explore />} />
+            </Routes>
+          </div>
 
-        <div
-          className="Feature"
-          id="Feature"
-          ref={FeatureRef}>
-          <Routes>
-            <Route path="/chat-up" element={<ChatUp headerRef={HeaderRef} parentRef={FeatureRef} />} />
-            <Route path="/" element={<Explore />} />
-          </Routes>
         </div>
-
-      </div>
+      </MainContext.Provider>
     </Router>
   );
 }
