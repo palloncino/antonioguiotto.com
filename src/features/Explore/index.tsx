@@ -21,7 +21,7 @@ const Explore: React.FC = () => {
               Hello and thank you for stopping by! If you're interested in discovering innovative digital experiences, you've come to the right place. Here on the Explore Page, you'll find a curated list of all the different apps that I, Antonio, have created over the years.
             </p>
           </div>
-          <div onClick={() => navigate('/chat-up')}>
+          <div className="expore-page-feature expore-page-feature__chatup" onClick={() => navigate('/chat-up')}>
             <h3>
               Introducing ChatUp! 🎉
             </h3>

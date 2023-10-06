@@ -15,3 +15,10 @@
   /* align-items: center;
   justify-content: center; */
 }
+.expore-page-feature {
+  cursor: pointer;
+}
+
+.expore-page-feature:hover {
+  background: yellow;
+}
