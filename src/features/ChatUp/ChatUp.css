@@ -10,19 +10,19 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background: #bdbdbd;
 }
 
 .ChatUp-container {
   flex: 5;
   box-sizing: border-box;
-  background: #fff;
   display: flex;
   flex-direction: column;
 }
 
-.output-section {
-  /* padding: 1rem; */
+.ChatUp {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: .2rem;
 }
 
 .output-message {
@@ -31,13 +31,11 @@
 }
 
 .output-message.human {
-  background: #e7e7e7;
-}
-.output-message.ai {
-  background: #bdbdbd;
+  background-color: #0000001a;
 }
 
 .input-container {
+  position: relative; /* Add this line */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -53,38 +51,54 @@
   height: 56px;
   overflow-y: hidden;
   padding: 1rem;
+  padding-right: 3rem; /* Add padding to make space for button */
   outline: none;
 }
 
 .send-button-container {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  flex: 1;
 }
+
 .send-button {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
   height: 100%;
+  background: none; /* Remove default background */
+  border: none; /* Remove default border */
+  padding: 0; /* Remove default padding */
+  cursor: pointer;
+}
+
+.send-arrow {
+  fill: black; /* Default color */
+}
+
+.send-button:disabled .send-arrow {
+  fill: #9c9c9c; /* Disabled color */
 }
 
 .input-section {
   box-sizing: border-box;
-  /* height: 56px; */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  background: linear-gradient(to top, #fff, #fff, rgba(255, 255, 255, 0.5));
   padding: 1rem 1rem 1rem 1rem;
 }
+
 
 .head-section {
   height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: linear-gradient(to bottom, #fff, #fff, rgba(255, 255, 255, 0.5));
 }
 
 .head-logo-container {
@@ -108,6 +122,5 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: #0000001a;
   height: 100%;
 }

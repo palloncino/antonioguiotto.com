@@ -7,6 +7,7 @@ import {
 import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
+import Documents from './features/Documents';
 
 export const MainContext = createContext<{
   HeaderRef: React.RefObject<HTMLDivElement>,
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             ref={FeatureRef}>
             <Routes>
               <Route path="/chat-up" element={<ChatUp />} />
+              <Route path="/documents" element={<Documents />} />
               <Route path="/" element={<Explore />} />
             </Routes>
           </div>

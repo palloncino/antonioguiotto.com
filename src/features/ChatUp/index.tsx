@@ -102,7 +102,9 @@ const ChatUp = () => {
 
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
-			"Start your conversation"
+			<div style={{padding: '1rem'}}>
+				Start your conversation
+			</div>
 		) : (
 			history.map(({ role, content }, index) => {
 				return <div key={content.slice(0, 10).trim() + `_1.${index}`} className={role === 'human' ? 'output-message human' : 'output-message ai'}>{role === 'human' ? `🙋🏻‍♂️: ${content}` : `🤖: ${content}`}</div>
@@ -112,21 +114,25 @@ const ChatUp = () => {
 
 	return (
 		<>
-			<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
-
-				<div className="head-logo-container" onClick={() => navigate('/')}>
-					Back to Explore
-				</div>
-
-				<div className="chat-introduction-container">
-					Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
-				</div>
-
-			</div>
 
 			<div className="central-container">
 
 				<div className='ChatUp-container'>
+
+					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
+
+						<div className="head-logo-container" onClick={() => navigate('/')}>
+							<svg style={{ marginRight: '8px' }} className="send-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+								<path d="M0 12l12 9v-5h12v-8h-12v-5l-12 9z" />
+							</svg>
+							Back to Explore
+						</div>
+
+						<div className="chat-introduction-container">
+							Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
+						</div>
+
+					</div>
 
 					<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp">
 
@@ -139,7 +145,7 @@ const ChatUp = () => {
 						</div>
 					</div>
 
-					<div id="ChatUpInputSection" ref={chatupInputRef} className="input-section">
+					<div className="input-section" id="ChatUpInputSection" ref={chatupInputRef}>
 						<div className="input-container">
 							<input
 								placeholder="Type your query"
@@ -153,16 +159,19 @@ const ChatUp = () => {
 									}
 								}}
 							/>
-						</div>
-
-						<div className="send-button-container">
-							<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>Send</button>
+							<div className="send-button-container">
+								<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>
+									<svg className="send-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+										<path d="M24 12l-12-9v5h-12v8h12v5l12-9z" />
+									</svg>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
 
 				<div className="side-panel">
-					
+
 					<h3>⚙️ Options</h3>
 
 					<div className="clear-history-button-container">
