@@ -7,9 +7,12 @@ const Documents = () => {
 
   return (
     <div className='documents-page-container'>
-      <div onClick={() => navigate('/')}>
-        go back 
-      </div>
+      <button onClick={() => navigate('/')}>
+        Go Back to Explore page
+      </button>
+      <h3>
+        Request documents at powerhydratoni@gmail.com
+      </h3>
     </div>
   );
 };

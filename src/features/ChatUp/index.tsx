@@ -102,12 +102,24 @@ const ChatUp = () => {
 
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
-			<div style={{padding: '1rem'}}>
+			<div style={{ padding: '1rem' }}>
 				Start your conversation
 			</div>
 		) : (
 			history.map(({ role, content }, index) => {
-				return <div key={content.slice(0, 10).trim() + `_1.${index}`} className={role === 'human' ? 'output-message human' : 'output-message ai'}>{role === 'human' ? `🙋🏻‍♂️: ${content}` : `🤖: ${content}`}</div>
+				return (
+					<div key={content.slice(0, 10).trim() + `_1.${index}`} className={role === 'human' ? 'output-message human' : 'output-message ai'}>
+						<div className="output-message__icon">
+							{role === 'human' ? `🙋🏻‍♂️` : `🤖`}
+						</div>
+						<div className='output-message__content'>
+							{content}
+						</div>
+						<div className='output-message__actions'>
+							<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+						</div>
+					</div>
+				)
 			})
 		)
 	}
@@ -129,7 +141,7 @@ const ChatUp = () => {
 						</div>
 
 						<div className="chat-introduction-container">
-							Meet Your Personal Assistant: An Interactive Chatbot Designed to Address Queries About Antonio Guiotto's Professional Journey, Life Experiences, and Personal Preferences.
+						Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.
 						</div>
 
 					</div>
@@ -192,6 +204,9 @@ const ChatUp = () => {
 							</li>
 							<li>
 								Chat should be able to answer about Antonio with confidence
+							</li>
+							<li>
+								Copy paste message (icon)
 							</li>
 						</ul>
 					</div>
