@@ -25,7 +25,7 @@ const ChatUp = () => {
 	useEffect(() => {
 		let headerHeight = 0;
 		if (refs) {
-			const { HeaderRef, FeatureRef } = refs;
+			const { HeaderRef } = refs;
 			headerHeight = HeaderRef.current ? HeaderRef.current.offsetHeight : 0;
 		}
 		const chatupHeadHeight = chatupHeadRef.current ? chatupHeadRef.current.offsetHeight : 0;
@@ -50,7 +50,7 @@ const ChatUp = () => {
 	useEffect(() => {
 		localStorage.setItem('history', JSON.stringify(history));
 	}, [history]);
-
+	
 	const clearHistory = () => {
 		setHistory([]);
 		localStorage.removeItem('history');
@@ -126,7 +126,6 @@ const ChatUp = () => {
 
 	return (
 		<>
-
 			<div className="central-container">
 
 				<div className='ChatUp-container'>
@@ -192,7 +191,7 @@ const ChatUp = () => {
 
 					<div>
 						<h3>👨🏻‍🔧 Todos</h3>
-						<ul>
+						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
 							<li>
 								Prompt History, with tags to jump back on previous question
 							</li>
@@ -207,6 +206,12 @@ const ChatUp = () => {
 							</li>
 							<li>
 								Copy paste message (icon)
+							</li>
+							<li>
+								Messages should be position at the bottom from beginning
+							</li>
+							<li>
+								Mobile View
 							</li>
 						</ul>
 					</div>
