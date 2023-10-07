@@ -156,3 +156,28 @@
   align-items: flex-start;
   height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  .central-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .head-section {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    height: auto;
+    border-bottom: 2px solid #d0d0d1;
+  }
+  .head-logo-container {
+    padding: .4rem;
+    flex: 1;
+  }
+  .chat-introduction-container {
+    padding: .4rem;
+    flex: 1;
+  }
+  .output-message {
+    padding: 1rem 2rem;
+  }
+}

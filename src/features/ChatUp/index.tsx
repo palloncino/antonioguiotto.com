@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { MainContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 import './ChatUp.css';
+import { useDevice } from '../../hooks/useDevice';
 
 type Message = { role: 'human' | 'ai', content: string };
 
@@ -20,6 +21,7 @@ const ChatUp = () => {
 	const chatupChatRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputRef = useRef<HTMLDivElement | null>(null);
 	const [chatHeight, setChatHeight] = useState(0);
+	const { isMobile } = useDevice();
 	const navigate = useNavigate()
 
 	useEffect(() => {
@@ -50,7 +52,7 @@ const ChatUp = () => {
 	useEffect(() => {
 		localStorage.setItem('history', JSON.stringify(history));
 	}, [history]);
-	
+
 	const clearHistory = () => {
 		setHistory([]);
 		localStorage.removeItem('history');
@@ -95,7 +97,7 @@ const ChatUp = () => {
 	};
 
 	const renderLoader = () => (
-		<div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+		<div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
 			Loading ...
 		</div>
 	);
@@ -140,7 +142,9 @@ const ChatUp = () => {
 						</div>
 
 						<div className="chat-introduction-container">
-						Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.
+							{
+								isMobile ? `Personal Assistant` : `Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.`
+							}
 						</div>
 
 					</div>
@@ -181,41 +185,44 @@ const ChatUp = () => {
 					</div>
 				</div>
 
-				<div className="side-panel">
+				{isMobile ? ("") : (
+					<div className="side-panel">
 
-					<h3>⚙️ Options</h3>
+						<h3>⚙️ Options</h3>
 
-					<div className="clear-history-button-container">
-						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+						<div className="clear-history-button-container">
+							<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+						</div>
+
+						<div>
+							<h3>👨🏻‍🔧 Todos</h3>
+							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
+								<li>
+									Prompt History, with tags to jump back on previous question
+								</li>
+								<li>
+									React spring for animations
+								</li>
+								<li>
+									Silent error on lambda timeout
+								</li>
+								<li>
+									Chat should be able to answer about Antonio with confidence
+								</li>
+								<li>
+									Copy paste message (icon)
+								</li>
+								<li>
+									Messages should be position at the bottom from beginning
+								</li>
+								<li>
+									Mobile View
+								</li>
+							</ul>
+						</div>
 					</div>
+				)}
 
-					<div>
-						<h3>👨🏻‍🔧 Todos</h3>
-						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-							<li>
-								Prompt History, with tags to jump back on previous question
-							</li>
-							<li>
-								React spring for animations
-							</li>
-							<li>
-								Silent error on lambda timeout
-							</li>
-							<li>
-								Chat should be able to answer about Antonio with confidence
-							</li>
-							<li>
-								Copy paste message (icon)
-							</li>
-							<li>
-								Messages should be position at the bottom from beginning
-							</li>
-							<li>
-								Mobile View
-							</li>
-						</ul>
-					</div>
-				</div>
 			</div>
 		</>
 
