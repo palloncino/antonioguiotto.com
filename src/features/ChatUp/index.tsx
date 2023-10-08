@@ -23,7 +23,7 @@ const ChatUp = () => {
 	const outputSectionRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputContainerRef = useRef<HTMLDivElement | null>(null);
 	const startToChatRef = useRef<HTMLDivElement | null>(null);
-	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto'|'100%'|'unset'>('unset');
+	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto' | '100%' | 'unset'>('unset');
 	const [chatHeight, setChatHeight] = useState(0);
 	const { isMobile } = useDevice();
 	const navigate = useNavigate()
@@ -64,7 +64,7 @@ const ChatUp = () => {
 	const getDynamicOutputHeight = () => {
 		let inputContainerHeight = 0;
 		let outputSectionHeight = startToChatRef.current?.offsetHeight || 0;
-		
+
 		if (chatupInputContainerRef.current) {
 			inputContainerHeight = chatupInputContainerRef.current.offsetHeight;
 		}
@@ -127,14 +127,20 @@ const ChatUp = () => {
 
 	const renderLoader = () => (
 		<div style={{ height: '2rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-			Loading ...
+			<div className="dots">
+				<div className="dot dot1"></div>
+				<div className="dot dot2"></div>
+				<div className="dot"></div>
+			</div>
 		</div>
 	);
 
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
-			<div style={{ padding: '1rem' }} ref={startToChatRef}>
-				Start your conversation
+			<div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2rem' }} ref={startToChatRef}>
+				<div>
+					Start a conversation
+				</div>
 			</div>
 		) : (
 			history.map(({ role, content }, index) => {
@@ -180,7 +186,7 @@ const ChatUp = () => {
 
 					<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp">
 
-						<div className="output-section" ref={outputSectionRef} style={{height: outputDynamicHeight}}>
+						<div className="output-section" ref={outputSectionRef} style={{ height: outputDynamicHeight }}>
 							{renderHistory(history)}
 						</div>
 

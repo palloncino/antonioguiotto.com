@@ -43,7 +43,7 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 1rem;
-  padding: 1rem 4rem;
+  padding: 1rem;
   max-width: 800px;
 }
 .output-message__icon {
@@ -193,3 +193,26 @@
     margin: 0rem;
   }
 }
+
+@keyframes fade {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.dots {
+  display: flex;
+  justify-content: space-around;
+  width: 60px;
+  margin: auto;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: grey;
+  border-radius: 50%;
+  animation: fade 1.4s infinite;
+}
+
+.dot1 { animation-delay: -0.32s; }
+.dot2 { animation-delay: -0.16s; }
