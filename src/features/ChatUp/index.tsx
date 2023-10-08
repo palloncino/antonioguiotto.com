@@ -126,7 +126,7 @@ const ChatUp = () => {
 	};
 
 	const renderLoader = () => (
-		<div style={{ height: '2rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+		<div style={{ marginTop: '2rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 			<div className="dots">
 				<div className="dot dot1"></div>
 				<div className="dot dot2"></div>
@@ -235,9 +235,6 @@ const ChatUp = () => {
 							<h3>👨🏻‍🔧 Todos</h3>
 							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
 								<li>
-									Prompt History, with tags to jump back on previous question
-								</li>
-								<li>
 									Silent error on lambda timeout
 								</li>
 								<li>
@@ -247,13 +244,10 @@ const ChatUp = () => {
 									Copy paste message (icon)
 								</li>
 								<li>
-									Messages should be position at the bottom from beginning
+									Mobile View (side panel)
 								</li>
 								<li>
-									Loading Icon
-								</li>
-								<li>
-									Mobile View
+									Voice input
 								</li>
 							</ul>
 						</div>
