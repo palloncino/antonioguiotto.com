@@ -16,7 +16,7 @@ const ChatUp = () => {
 	const [currentResponse, setCurrentResponse] = useState('');
 	const [loading, setLoading] = useState(false);
 	const [prompt, setPrompt] = useState('');
-	const [prevPrompt, setPrevPrompt] = useState('');
+	const [, setPrevPrompt] = useState('');
 	const chatupHeadRef = useRef<HTMLDivElement | null>(null);
 	const chatupChatRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputRef = useRef<HTMLDivElement | null>(null);
@@ -31,9 +31,10 @@ const ChatUp = () => {
 			headerHeight = HeaderRef.current ? HeaderRef.current.offsetHeight : 0;
 		}
 		const chatupHeadHeight = chatupHeadRef.current ? chatupHeadRef.current.offsetHeight : 0;
-		const chatupInputHeight = chatupInputRef.current ? chatupInputRef.current.offsetHeight : 0;
+		// const chatupInputHeight = chatupInputRef.current ? chatupInputRef.current.offsetHeight : 0;
 		const viewportHeight = window.innerHeight;
-		const calculatedChatHeight = viewportHeight - chatupHeadHeight - chatupInputHeight - headerHeight;
+		// const calculatedChatHeight = viewportHeight - chatupHeadHeight - chatupInputHeight - headerHeight;
+		const calculatedChatHeight = viewportHeight - chatupHeadHeight - headerHeight;
 
 		setChatHeight(calculatedChatHeight);
 	}, [refs]);
@@ -97,7 +98,7 @@ const ChatUp = () => {
 	};
 
 	const renderLoader = () => (
-		<div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+		<div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 			Loading ...
 		</div>
 	);
@@ -143,7 +144,7 @@ const ChatUp = () => {
 
 						<div className="chat-introduction-container">
 							{
-								isMobile ? `Personal Assistant` : `Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.`
+								isMobile ? `ChatUp` : `Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.`
 							}
 						</div>
 
@@ -162,24 +163,27 @@ const ChatUp = () => {
 
 					<div className="input-section" id="ChatUpInputSection" ref={chatupInputRef}>
 						<div className="input-container">
-							<input
-								placeholder="Type your query"
-								className="textarea"
-								value={prompt}
-								onChange={e => setPrompt(e.target.value)}
-								onKeyDown={e => {
-									if (e.key === 'Enter' && !e.shiftKey) {
-										e.preventDefault();
-										sendQuery();
-									}
-								}}
-							/>
-							<div className="send-button-container">
-								<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>
-									<svg className="send-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-										<path d="M24 12l-12-9v5h-12v8h12v5l12-9z" />
-									</svg>
-								</button>
+							<div style={{ position: 'relative', width: '100%', maxWidth: '800px' }}>
+
+								<input
+									placeholder="Type your query"
+									className="textarea"
+									value={prompt}
+									onChange={e => setPrompt(e.target.value)}
+									onKeyDown={e => {
+										if (e.key === 'Enter' && !e.shiftKey) {
+											e.preventDefault();
+											sendQuery();
+										}
+									}}
+								/>
+								<div className="send-button-container">
+									<button disabled={!prompt || loading} className="send-button" onClick={sendQuery}>
+										<svg className="send-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+											<path d="M24 12l-12-9v5h-12v8h12v5l12-9z" />
+										</svg>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -201,9 +205,6 @@ const ChatUp = () => {
 									Prompt History, with tags to jump back on previous question
 								</li>
 								<li>
-									React spring for animations
-								</li>
-								<li>
 									Silent error on lambda timeout
 								</li>
 								<li>
@@ -214,6 +215,9 @@ const ChatUp = () => {
 								</li>
 								<li>
 									Messages should be position at the bottom from beginning
+								</li>
+								<li>
+									Loading Icon
 								</li>
 								<li>
 									Mobile View
