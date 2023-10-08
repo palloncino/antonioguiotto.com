@@ -20,6 +20,10 @@ const ChatUp = () => {
 	const chatupHeadRef = useRef<HTMLDivElement | null>(null);
 	const chatupChatRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputRef = useRef<HTMLDivElement | null>(null);
+	const outputSectionRef = useRef<HTMLDivElement | null>(null);
+	const chatupInputContainerRef = useRef<HTMLDivElement | null>(null);
+	const startToChatRef = useRef<HTMLDivElement | null>(null);
+	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto'|'100%'|'unset'>('unset');
 	const [chatHeight, setChatHeight] = useState(0);
 	const { isMobile } = useDevice();
 	const navigate = useNavigate()
@@ -31,15 +35,13 @@ const ChatUp = () => {
 			headerHeight = HeaderRef.current ? HeaderRef.current.offsetHeight : 0;
 		}
 		const chatupHeadHeight = chatupHeadRef.current ? chatupHeadRef.current.offsetHeight : 0;
-		// const chatupInputHeight = chatupInputRef.current ? chatupInputRef.current.offsetHeight : 0;
 		const viewportHeight = window.innerHeight;
-		// const calculatedChatHeight = viewportHeight - chatupHeadHeight - chatupInputHeight - headerHeight;
 		const calculatedChatHeight = viewportHeight - chatupHeadHeight - headerHeight;
-
 		setChatHeight(calculatedChatHeight);
 	}, [refs]);
 
 	useEffect(() => {
+		getDynamicOutputHeight()
 		setTimeout(() => {
 			if (chatupChatRef && chatupChatRef.current) {
 				chatupChatRef.current.scrollTo({
@@ -58,6 +60,32 @@ const ChatUp = () => {
 		setHistory([]);
 		localStorage.removeItem('history');
 	};
+
+	const getDynamicOutputHeight = () => {
+		let inputContainerHeight = 0;
+		let outputSectionHeight = startToChatRef.current?.offsetHeight || 0;
+		
+		if (chatupInputContainerRef.current) {
+			inputContainerHeight = chatupInputContainerRef.current.offsetHeight;
+		}
+
+		if (outputSectionRef.current) {
+			const messages = outputSectionRef.current.querySelectorAll('.output-message');
+			messages.forEach((message, index) => {
+				outputSectionHeight += (message as HTMLElement).offsetHeight;
+			});
+		}
+
+		if (inputContainerHeight && outputSectionHeight) {
+			if (outputSectionRef.current) {
+				outputSectionHeight > (chatHeight - inputContainerHeight) ? setOutputDynamicHeight('auto') : setOutputDynamicHeight('100%');
+			}
+		}
+	}
+
+	useEffect(() => {
+		getDynamicOutputHeight()
+	}, [chatHeight, history])
 
 	const sendQuery = async () => {
 		setLoading(true);
@@ -98,14 +126,14 @@ const ChatUp = () => {
 	};
 
 	const renderLoader = () => (
-		<div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+		<div style={{ height: '2rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 			Loading ...
 		</div>
 	);
 
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
-			<div style={{ padding: '1rem' }}>
+			<div style={{ padding: '1rem' }} ref={startToChatRef}>
 				Start your conversation
 			</div>
 		) : (
@@ -119,7 +147,7 @@ const ChatUp = () => {
 							{content}
 						</div>
 						<div className='output-message__actions'>
-							<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+							<svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="icon-sm" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
 						</div>
 					</div>
 				)
@@ -152,7 +180,7 @@ const ChatUp = () => {
 
 					<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp">
 
-						<div className="output-section">
+						<div className="output-section" ref={outputSectionRef} style={{height: outputDynamicHeight}}>
 							{renderHistory(history)}
 						</div>
 
@@ -162,9 +190,8 @@ const ChatUp = () => {
 					</div>
 
 					<div className="input-section" id="ChatUpInputSection" ref={chatupInputRef}>
-						<div className="input-container">
+						<div className="input-container" ref={chatupInputContainerRef}>
 							<div style={{ position: 'relative', width: '100%', maxWidth: '800px' }}>
-
 								<input
 									placeholder="Type your query"
 									className="textarea"
