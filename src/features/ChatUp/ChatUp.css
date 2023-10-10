@@ -3,6 +3,7 @@
 }
 
 .side-panel {
+  transition: flex 0.3s ease-in-out;
   box-sizing: border-box;
   padding: 1rem;
   flex: 1;
@@ -13,6 +14,7 @@
 }
 
 .ChatUp-container {
+  transition: flex 0.3s ease-in-out;
   margin: 0rem 1rem 0rem 0rem;
   flex: 3;
   box-sizing: border-box;
@@ -136,7 +138,8 @@
 }
 
 .head-section {
-  height: auto;
+  height: 56px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -157,6 +160,7 @@
   text-decoration: underline;
 }
 .chat-introduction-container {
+  width: 100%;
   box-sizing: border-box;
   padding: 1rem;
   flex: 4;
@@ -199,14 +203,12 @@
 @media only screen and (max-width: 600px) {
   .central-container {
     display: flex;
-    flex-direction: column;
   }
   .head-section {
     position: sticky;
     top: 0;
     background: #fff;
-    height: auto;
-    border-bottom: 2px solid #d0d0d1;
+    box-shadow: 0 16px 16px 0px rgba(0,0,0,0.1);
   }
   .head-logo-container {
     padding: .4rem;

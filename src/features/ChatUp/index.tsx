@@ -4,6 +4,7 @@ import { MainContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 import './ChatUp.css';
 import { useDevice } from '../../hooks/useDevice';
+import { useSwipeable } from 'react-swipeable';
 
 type Message = { role: 'human' | 'ai', content: string };
 
@@ -24,9 +25,20 @@ const ChatUp = () => {
 	const chatupInputContainerRef = useRef<HTMLDivElement | null>(null);
 	const startToChatRef = useRef<HTMLDivElement | null>(null);
 	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto' | '100%' | 'unset'>('unset');
+	const [mainView, setMainView] = useState(true);
 	const [chatHeight, setChatHeight] = useState(0);
 	const { isMobile } = useDevice();
 	const navigate = useNavigate()
+
+	const handlers = useSwipeable({
+		onSwipedLeft: () => {
+			setMainView(false);
+		},
+		onSwipedRight: () => {
+			setMainView(true);
+		},
+		trackMouse: true
+	});
 
 	useEffect(() => {
 		let headerHeight = 0;
@@ -98,7 +110,7 @@ const ChatUp = () => {
 
 		try {
 			const serverEndpoint = process.env.NODE_ENV === 'development'
-				? 'http://localhost:4000/api/chat'
+				? 'http://localhost:4000/chat-local'
 				: `${process.env.REACT_APP_API_ENDPOINT}/chat-local`;
 
 			const _res = await fetch(serverEndpoint, {
@@ -163,23 +175,16 @@ const ChatUp = () => {
 
 	return (
 		<>
-			<div className="central-container">
+			<div {...handlers} className="central-container">
 
-				<div className='ChatUp-container'>
+				<div className='ChatUp-container' style={mainView ? { width: '100%', flex: '3' } : { width: '0px', flex: 'unset', overflow: 'hidden' }}>
 
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container" onClick={() => navigate('/')}>
-							LOGO
+							Explore
 						</div>
 
-						<div className="chat-introduction-container">
-							{isMobile && (
-								<div className="" onClick={console.log}>
-									MENU
-								</div>
-							)}
-						</div>
 
 					</div>
 
@@ -221,36 +226,33 @@ const ChatUp = () => {
 					</div>
 				</div>
 
-				{!isMobile && (
-					<div className="side-panel">
+				<div className="side-panel" style={mainView ? (isMobile ? ({flex: 'unset', width: 0, padding: 0}) : ({})) : {flex: 1, width: '100%'}}>
 
-						<h3>⚙️ Options</h3>
+					{/* <h3>⚙️ Options</h3>
 
-						<div className="clear-history-button-container">
-							<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
-						</div>
-
-						<div>
-							<h3>👨🏻‍🔧 Todos</h3>
-							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-								<li>
-									Copy paste message (icon)
-								</li>
-								<li>
-									Mobile View (side panel)
-								</li>
-								<li>
-									Voice input
-								</li>
-							</ul>
-						</div>
-						
+					<div className="clear-history-button-container">
+						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
 					</div>
-				)}
+
+					<div>
+						<h3>👨🏻‍🔧 Todos</h3>
+						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
+							<li>
+								Copy paste message (icon)
+							</li>
+							<li>
+								Mobile View (side panel)
+							</li>
+							<li>
+								Voice input
+							</li>
+						</ul>
+					</div> */}
+
+				</div>
 
 			</div>
 		</>
-
 	);
 };
 
