@@ -170,16 +170,15 @@ const ChatUp = () => {
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container" onClick={() => navigate('/')}>
-							<svg style={{ marginRight: '8px' }} className="send-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-								<path d="M0 12l12 9v-5h12v-8h-12v-5l-12 9z" />
-							</svg>
-							Back to Explore
+							LOGO
 						</div>
 
 						<div className="chat-introduction-container">
-							{
-								isMobile ? `ChatUp` : `Meet Your Assistant: A Chatbot for Insights on Antonio Guiotto's Professional and Personal Journey.`
-							}
+							{isMobile && (
+								<div className="" onClick={console.log}>
+									MENU
+								</div>
+							)}
 						</div>
 
 					</div>
@@ -222,7 +221,7 @@ const ChatUp = () => {
 					</div>
 				</div>
 
-				{isMobile ? ("") : (
+				{!isMobile && (
 					<div className="side-panel">
 
 						<h3>⚙️ Options</h3>
@@ -245,6 +244,7 @@ const ChatUp = () => {
 								</li>
 							</ul>
 						</div>
+						
 					</div>
 				)}
 

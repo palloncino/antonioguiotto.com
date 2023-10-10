@@ -11,12 +11,6 @@ const Explore = () => {
       description: "We're thrilled to announce the latest addition...",
       route: "/chat-up"
     },
-    {
-      id: 2,
-      title: "Documents! 🎉",
-      description: "Download CV and more",
-      route: "/documents"
-    },
   ];
 
   return (

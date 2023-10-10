@@ -7,7 +7,6 @@ import {
 import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
-import Documents from './features/Documents';
 import Fade from './features/Fade';
 
 export const MainContext = createContext<{
@@ -30,7 +29,6 @@ const App: React.FC = () => {
             ref={FeatureRef}>
             <Routes>
               <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
-              <Route path="/documents" element={<Fade><Documents /></Fade>} />
               <Route path="/" element={<Fade><Explore /></Fade>} />
             </Routes>
           </div>
