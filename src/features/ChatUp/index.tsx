@@ -182,7 +182,7 @@ const ChatUp = () => {
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container" onClick={() => navigate('/')}>
-							Explore
+							Explore page
 						</div>
 
 
@@ -226,9 +226,9 @@ const ChatUp = () => {
 					</div>
 				</div>
 
-				<div className="side-panel" style={mainView ? (isMobile ? ({flex: 'unset', width: 0, padding: 0}) : ({})) : {flex: 1, width: '100%'}}>
+				<div className="side-panel" style={mainView ? (isMobile ? ({ flex: 'unset', width: 0, padding: 0, overflow: 'hidden' }) : ({})) : { flex: 1, width: '100%' }}>
 
-					{/* <h3>⚙️ Options</h3>
+					<h3>⚙️ Options</h3>
 
 					<div className="clear-history-button-container">
 						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
@@ -247,7 +247,8 @@ const ChatUp = () => {
 								Voice input
 							</li>
 						</ul>
-					</div> */}
+					</div>
+
 
 				</div>
 
