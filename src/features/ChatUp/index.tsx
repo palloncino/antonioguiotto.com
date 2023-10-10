@@ -98,8 +98,8 @@ const ChatUp = () => {
 
 		try {
 			const serverEndpoint = process.env.NODE_ENV === 'development'
-				? 'http://localhost:4000/dev/api/chat'
-				: `${process.env.REACT_APP_API_ENDPOINT}/api/chat`;
+				? 'http://localhost:4000/api/chat'
+				: `${process.env.REACT_APP_API_ENDPOINT}/chat-local`;
 
 			const _res = await fetch(serverEndpoint, {
 				method: 'POST',
@@ -234,12 +234,6 @@ const ChatUp = () => {
 						<div>
 							<h3>👨🏻‍🔧 Todos</h3>
 							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-								<li>
-									Silent error on lambda timeout
-								</li>
-								<li>
-									Chat should be able to answer about Antonio with confidence
-								</li>
 								<li>
 									Copy paste message (icon)
 								</li>
