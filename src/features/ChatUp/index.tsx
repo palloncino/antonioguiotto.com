@@ -25,17 +25,17 @@ const ChatUp = () => {
 	const chatupInputContainerRef = useRef<HTMLDivElement | null>(null);
 	const startToChatRef = useRef<HTMLDivElement | null>(null);
 	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto' | '100%' | 'unset'>('unset');
-	const [mainView, setMainView] = useState(true);
+	const [view, setView] = useState<'main' | 'side'>('main');
 	const [chatHeight, setChatHeight] = useState(0);
 	const { isMobile } = useDevice();
 	const navigate = useNavigate()
 
 	const handlers = useSwipeable({
 		onSwipedLeft: () => {
-			setMainView(false);
+			setView('side');
 		},
 		onSwipedRight: () => {
-			setMainView(true);
+			setView('main');
 		},
 		trackMouse: true
 	});
@@ -177,7 +177,7 @@ const ChatUp = () => {
 		<>
 			<div {...handlers} className="central-container">
 
-				<div className='ChatUp-container' style={mainView ? { width: '100%', flex: '3' } : { width: '0px', flex: 'unset', overflow: 'hidden' }}>
+				<div className={`ChatUp-container${view === 'main' ? ' open' : ''}`}>
 
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
@@ -224,9 +224,10 @@ const ChatUp = () => {
 							</div>
 						</div>
 					</div>
+
 				</div>
 
-				<div className="side-panel" style={mainView ? (isMobile ? ({ flex: 'unset', width: 0, padding: 0, overflow: 'hidden' }) : ({})) : { flex: 1, width: '100%' }}>
+				<div className={`side-panel${view === 'side' ? ' open' : ''}`}>
 
 					<h3>⚙️ Options</h3>
 
@@ -245,6 +246,18 @@ const ChatUp = () => {
 							</li>
 							<li>
 								Voice input
+							</li>
+							<li>
+								Rebuild Web App with swipe behaviours on mobile
+							</li>
+							<li>
+								when I land into page in Mobile view, the chat scroll to bottom is bugged
+							</li>
+						</ul>
+						<h3>Personal todos</h3>
+						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
+							<li>
+								React Native
 							</li>
 						</ul>
 					</div>
