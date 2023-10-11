@@ -212,6 +212,10 @@ const ChatUp = () => {
 
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
+						<div className="head-logo-container">
+							antonioguiotto.com
+						</div>
+
 						<div className="head-button-container">
 							<Button onClick={() => navigate('/')} label="Explore" />
 						</div>
@@ -285,9 +289,7 @@ const ChatUp = () => {
 
 						<h3>⚙️ Chat Options</h3>
 
-						<div className="clear-history-button-container">
 							<Button onClick={clearHistory} label="Clear History" />
-						</div>
 
 					</div>
 
