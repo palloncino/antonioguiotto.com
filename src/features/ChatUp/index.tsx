@@ -213,12 +213,12 @@ const ChatUp = () => {
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container">
-							antonioguiotto.com
+							<Button onClick={() => navigate('/')} label="antonioguiotto.com" />
 						</div>
 
-						<div className="head-button-container">
-							<Button onClick={() => navigate('/')} label="Explore" />
-						</div>
+						{/* <div className="head-button-container">
+							
+						</div> */}
 
 					</div>
 
@@ -265,11 +265,10 @@ const ChatUp = () => {
 
 					<div className='SidePanelContentContainer'>
 
-						<div className='SidePanelMediaContainer'>
-						</div>
+						<div className='SidePanelMediaContainer' />
 
 						<div className='SidePanelMediaDescription'>
-							Antonio Guiotto born in 1995, Italy.
+							Antonio Guiotto, a front-end developer born in 1995, has extensive experience in React, JavaScript, and TypeScript, with a track record of delivering efficient, scalable solutions in various software engineering roles. He has contributed to web application development, project management, and collaborated with cross-functional teams to ensure high-quality deliverables. Antonio has also shared his knowledge as a Web Development Teacher, illustrating his passion for the field. His technical skills are complemented by his engagement in hobbies like calisthenics, cycling, design, and music, showcasing a well-rounded individual eager to contribute to innovative software projects.
 						</div>
 
 
@@ -289,7 +288,7 @@ const ChatUp = () => {
 
 						<h3>⚙️ Chat Options</h3>
 
-							<Button onClick={clearHistory} label="Clear History" />
+						<Button onClick={clearHistory} label="Clear History" />
 
 					</div>
 
