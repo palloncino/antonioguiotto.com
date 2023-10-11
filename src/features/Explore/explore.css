@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.explore-page-title {
+  line-height: 2.8rem;
+}
+
 .explore-page-cards {
   display: flex;
   flex-wrap: wrap;
@@ -13,9 +17,10 @@
 }
 
 .explore-page-card {
+  background: #F7F7F8;
   width: 300px;
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 8px;
   text-align: center;
   transition: all 0.3s;

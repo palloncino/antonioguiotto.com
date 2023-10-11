@@ -15,9 +15,9 @@ const Explore = () => {
 
   return (
     <div className='explore-page-container'>
-      <h1>Welcome to Antonio's Explore Page! 🌟</h1>
+      <h1 className='explore-page-title'>Welcome to Antonio's Explore Page! 🌟</h1>
       <div className="explore-page-cards">
-        {features.map(({route, id, title, description}, index) => (
+        {features.map(({ route, id, title, description }, index) => (
           <div onClick={() => navigate(`${route}`)} key={`${id}__${index}`} className="explore-page-card">
             <h3>{title}</h3>
             <p>{description}</p>

@@ -149,9 +149,39 @@ const ChatUp = () => {
 
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
-			<div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2rem' }} ref={startToChatRef}>
+			<div style={{
+				padding: '1rem',
+				width: '80%',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: 'flex-start',
+				justifyContent: 'center',
+				gap: '1rem'
+			}} ref={startToChatRef}>
 				<div>
-					Start a conversation
+					<h3>
+						Current App: chat-up
+					</h3>
+				</div>
+				<div>
+					🗣️ Start a conversation about Antonio, ⚙️ To view Options, swipe left.
+					Note: the bot might answer incorrectly or come up with funny stuff 🤡
+				</div>
+				<div>
+					<span style={{ fontSize: '.8rem', display: 'block' }}>
+						Examples:
+					</span>
+					<span style={{ fontSize: '.8rem', display: 'block' }}>
+						"What's your email?"
+					</span>
+					<span style={{ fontSize: '.8rem', display: 'block' }}>
+						"What's your current phone number?"
+					</span>
+					<span style={{ fontSize: '.8rem', display: 'block' }}>
+						"What's your experience with React?"
+					</span>
+				</div>
+				<div>
 				</div>
 			</div>
 		) : (
@@ -257,27 +287,6 @@ const ChatUp = () => {
 
 						<div className="clear-history-button-container">
 							<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
-						</div>
-
-						<div>
-							<h3>👨🏻‍🔧 Todos</h3>
-							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-								<li>
-									Copy paste message (icon)
-								</li>
-								<li>
-									Mobile View (side panel)
-								</li>
-								<li>
-									Voice input
-								</li>
-								<li>
-									Rebuild Web App with swipe behaviours on mobile
-								</li>
-								<li>
-									when I land into page in Mobile view, the chat scroll to bottom is bugged
-								</li>
-							</ul>
 						</div>
 
 					</div>
