@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './ChatUp.css';
 import { useDevice } from '../../hooks/useDevice';
 import { useSwipeable } from 'react-swipeable';
+import Button from '../../components/Button';
 
 type Message = { role: 'human' | 'ai', content: string };
 
@@ -211,10 +212,9 @@ const ChatUp = () => {
 
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
-						<div className="head-logo-container" onClick={() => navigate('/')}>
-							Explore page
+						<div className="head-button-container">
+							<Button onClick={() => navigate('/')} label="Explore" />
 						</div>
-
 
 					</div>
 
@@ -286,7 +286,7 @@ const ChatUp = () => {
 						<h3>⚙️ Chat Options</h3>
 
 						<div className="clear-history-button-container">
-							<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+							<Button onClick={clearHistory} label="Clear History" />
 						</div>
 
 					</div>
