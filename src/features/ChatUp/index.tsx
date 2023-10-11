@@ -229,37 +229,57 @@ const ChatUp = () => {
 
 				<div className={`side-panel${view === 'side' ? ' open' : ''}`}>
 
-					<h3>⚙️ Options</h3>
+					<div className='SidePanelContentContainer'>
 
-					<div className="clear-history-button-container">
-						<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
-					</div>
+						<div className='SidePanelMediaContainer'>
+						</div>
 
-					<div>
-						<h3>👨🏻‍🔧 Todos</h3>
-						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-							<li>
-								Copy paste message (icon)
-							</li>
-							<li>
-								Mobile View (side panel)
-							</li>
-							<li>
-								Voice input
-							</li>
-							<li>
-								Rebuild Web App with swipe behaviours on mobile
-							</li>
-							<li>
-								when I land into page in Mobile view, the chat scroll to bottom is bugged
-							</li>
-						</ul>
-						<h3>Personal todos</h3>
-						<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
-							<li>
-								React Native
-							</li>
-						</ul>
+						<div className='SidePanelMediaDescription'>
+							Antonio Guiotto born in 1995, Italy.
+						</div>
+
+
+						<div className='SidePanelSocialContainer'>
+							<div className='SidePanelSocialLink'>
+								<a href="https://github.com/palloncino">Github</a>
+							</div>
+							<div className='SidePanelSocialLink'>
+								<a href="https://www.linkedin.com/in/antonioguiotto/">Linkedin</a>
+							</div>
+							<div className='SidePanelSocialLink'>
+								<a href="https://www.instagram.com/antonio_guiotto/">Instagram</a>
+							</div>
+						</div>
+
+
+
+						<h3>⚙️ Chat Options</h3>
+
+						<div className="clear-history-button-container">
+							<button className="clear-history-button" onClick={clearHistory}>Clear History</button>
+						</div>
+
+						<div>
+							<h3>👨🏻‍🔧 Todos</h3>
+							<ul style={{ fontSize: '.8rem', lineHeight: '1.2rem' }}>
+								<li>
+									Copy paste message (icon)
+								</li>
+								<li>
+									Mobile View (side panel)
+								</li>
+								<li>
+									Voice input
+								</li>
+								<li>
+									Rebuild Web App with swipe behaviours on mobile
+								</li>
+								<li>
+									when I land into page in Mobile view, the chat scroll to bottom is bugged
+								</li>
+							</ul>
+						</div>
+
 					</div>
 
 
