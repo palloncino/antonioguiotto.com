@@ -41,7 +41,7 @@ const ChatUp = () => {
 		trackMouse: true
 	});
 
-	useEffect(() => {
+	const getChatHeight = () => {
 		let headerHeight = 0;
 		if (refs) {
 			const { HeaderRef } = refs;
@@ -51,7 +51,11 @@ const ChatUp = () => {
 		const viewportHeight = window.innerHeight;
 		const calculatedChatHeight = viewportHeight - chatupHeadHeight - headerHeight;
 		setChatHeight(calculatedChatHeight);
-	}, [refs]);
+	}
+
+	useEffect(() => {
+		getChatHeight();
+	}, [refs, isMobile]);
 
 	useEffect(() => {
 		getDynamicOutputHeight()
@@ -265,30 +269,33 @@ const ChatUp = () => {
 
 					<div className='SidePanelContentContainer'>
 
-						<div className='SidePanelMediaContainer' />
+						<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+							<div className='SidePanelMediaContainer' />
 
-						<div className='SidePanelMediaDescription'>
+							<div className='SidePanelMediaDescription'>
 							Antonio Guiotto, a front-end developer born in 1995, has extensive experience in React, JavaScript, and TypeScript, with a track record of delivering efficient, scalable solutions in various software engineering roles. He has contributed to web application development, project management, and collaborated with cross-functional teams to ensure high-quality deliverables. Antonio has also shared his knowledge as a Web Development Teacher, illustrating his passion for the field. His technical skills are complemented by his engagement in hobbies like calisthenics, cycling, design, and music, showcasing a well-rounded individual eager to contribute to innovative software projects.
+							</div>
+
+
+							<div className='SidePanelSocialContainer'>
+								<div className='SidePanelSocialLink'>
+									<a href="https://github.com/palloncino">Github</a>
+								</div>
+								<div className='SidePanelSocialLink'>
+									<a href="https://www.linkedin.com/in/antonioguiotto/">Linkedin</a>
+								</div>
+								<div className='SidePanelSocialLink'>
+									<a href="https://www.instagram.com/antonio_guiotto/">Instagram</a>
+								</div>
+							</div>
+
+
+
+							<h3>⚙️ Chat Options</h3>
+
+							<Button onClick={clearHistory} label="Clear History" />
+
 						</div>
-
-
-						<div className='SidePanelSocialContainer'>
-							<div className='SidePanelSocialLink'>
-								<a href="https://github.com/palloncino">Github</a>
-							</div>
-							<div className='SidePanelSocialLink'>
-								<a href="https://www.linkedin.com/in/antonioguiotto/">Linkedin</a>
-							</div>
-							<div className='SidePanelSocialLink'>
-								<a href="https://www.instagram.com/antonio_guiotto/">Instagram</a>
-							</div>
-						</div>
-
-
-
-						<h3>⚙️ Chat Options</h3>
-
-						<Button onClick={clearHistory} label="Clear History" />
 
 					</div>
 
