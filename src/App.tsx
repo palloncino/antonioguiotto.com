@@ -8,6 +8,7 @@ import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
 import Fade from './features/Fade';
+import VagabondDiary from './features/VagabondDiary';
 
 export const MainContext = createContext<{
   HeaderRef: React.RefObject<HTMLDivElement>,
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             ref={FeatureRef}>
             <Routes>
               <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
+              <Route path="/vagabond-diary" element={<Fade><VagabondDiary /></Fade>} />
               <Route path="/" element={<Fade><Explore /></Fade>} />
             </Routes>
           </div>

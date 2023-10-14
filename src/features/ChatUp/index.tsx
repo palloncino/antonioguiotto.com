@@ -169,7 +169,8 @@ const ChatUp = () => {
 					</h3>
 				</div>
 				<div>
-					🗣️ Start a conversation about Antonio, ⚙️ To view Options, swipe left.
+					🗣️ Start a conversation about Antonio, 
+					{`${isMobile ? '⚙️ To view Options, swipe left. ' : ' '}`}
 					Note: the bot might answer incorrectly or come up with funny stuff 🤡
 				</div>
 				<div>
@@ -217,7 +218,7 @@ const ChatUp = () => {
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container">
-							<Button onClick={() => navigate('/')} label="antonioguiotto.com" />
+							<Button onClick={() => navigate('/')} label="Back" />
 						</div>
 
 						{/* <div className="head-button-container">
