@@ -1,8 +1,19 @@
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../../media/images/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 .ChatUp {
   box-sizing: border-box;
   border-radius: .2rem;
   padding-bottom: 8rem;
   background: #F7F7F8;
+  box-shadow: 0 .4rem .4rem rgba(0,0,0,0.1);
+  background: url('../../media/images/graph-paper.svg');
+  background-position: center top;
+  color: #5a5471;
 }
 
 .output-section {
@@ -23,6 +34,7 @@
   font-size: 1rem;
   padding: 1rem;
   max-width: 800px;
+  border-radius: 1rem;
 }
 .output-message__icon {
   display: flex;
@@ -31,7 +43,6 @@
   font-size: 2.2rem;
   height: 50px;
   width: 50px;
-  background: #d0d0d1;
   border-radius: .2rem;
 }
 .output-message__content {
@@ -39,7 +50,8 @@
 }
 
 .output-message.human {
-  background-color: #e5e5e8;
+  background: #fff;
+  border: 1px solid #00000010;
 }
 
 
@@ -104,21 +116,24 @@
   width: 100%;
   box-sizing: border-box;
   padding: 0 1rem;
-  height: 120px;
-  background: linear-gradient(to top, #e5e5e8, #e5e5e8,#e5e5e8, #e5e5e800);
+  height: 100px;
+  background: linear-gradient(to top, #00000020, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .head-section {
+  box-sizing: border-box;
+  z-index: 999;
   height: 56px;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
+  box-shadow: 0px 4px 8px #00000010;
 }
 
 .head-button-container {
@@ -202,7 +217,9 @@
 }
 
 .side-panel {
-  background-color: #F7F7F8;
+  /* background-color: #F7F7F8; */
+  /* background: url('../../media/images/graph-paper.svg'); */
+  /* background-position: center top; */
   box-sizing: border-box;
   flex: 1;
   padding: 1rem;
@@ -220,11 +237,12 @@
 
 .SidePanelMediaContainer {
   height: 200px;
-  width: 200px;
+  width: 100%;
   background: url('../../media/images/me.jpeg');
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat;
+  border-radius: 0.4rem;
+  /* background-repeat: no-repeat; */
 }
 
 .SidePanelSocialContainer {
@@ -233,10 +251,11 @@
 }
 
 .SidePanelMediaDescription {
-  font-size: .8rem;
-  line-height: 1.2rem;
-  color: #565656;
+  font-size: 0.6rem;
+  line-height: 0.8rem;
+  color: #727272;
   text-align: justify;
+  border-radius: 0.4rem;
 }
 
 .SidePanelSocialLink {
@@ -244,6 +263,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .SidePanelMediaDescription {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
   .central-container {
     display: flex;
     overflow-x: hidden;
@@ -275,13 +298,12 @@
   .head-section {
     position: sticky;
     top: 0;
-    background: #fff;
-    box-shadow: 0 16px 16px 0px rgba(0,0,0,0.1);
-    
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
+    padding: 0 0.6rem;
   }
+
   .SidePanelMediaContainer {
     height: 300px;
     width: 100%;
@@ -296,4 +318,28 @@
   .output-message {
     padding: 1rem;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+}
+
+.modal-buttons-group {
+  display: flex;
+  gap: 1rem;
 }

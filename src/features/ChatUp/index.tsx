@@ -6,6 +6,7 @@ import './ChatUp.css';
 import { useDevice } from '../../hooks/useDevice';
 import { useSwipeable } from 'react-swipeable';
 import Button from '../../components/Button';
+import Fade from '../Fade'
 
 type Message = { role: 'human' | 'ai', content: string };
 
@@ -25,6 +26,7 @@ const ChatUp = () => {
 	const outputSectionRef = useRef<HTMLDivElement | null>(null);
 	const chatupInputContainerRef = useRef<HTMLDivElement | null>(null);
 	const startToChatRef = useRef<HTMLDivElement | null>(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [outputDynamicHeight, setOutputDynamicHeight] = useState<'auto' | '100%' | 'unset'>('unset');
 	const [view, setView] = useState<'main' | 'side'>('main');
 	const [chatHeight, setChatHeight] = useState(0);
@@ -73,9 +75,22 @@ const ChatUp = () => {
 		localStorage.setItem('history', JSON.stringify(history));
 	}, [history]);
 
-	const clearHistory = () => {
+	const handleClearHistory = () => {
+		// Open the modal
+		setIsModalOpen(true);
+	};
+
+	const handleConfirmClearHistory = () => {
+		// Clear the history if confirmed
 		setHistory([]);
 		localStorage.removeItem('history');
+		// Close the modal
+		setIsModalOpen(false);
+	};
+
+	const handleCancelClearHistory = () => {
+		// Close the modal
+		setIsModalOpen(false);
 	};
 
 	const getDynamicOutputHeight = () => {
@@ -155,21 +170,26 @@ const ChatUp = () => {
 	const renderHistory = (history: Message[]) => {
 		return history.length === 0 ? (
 			<div style={{
+				boxSizing: 'border-box',
 				padding: '1rem',
 				width: '80%',
+				maxWidth: '800px',
+				background: '#fff',
+				borderRadius: '1rem',
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'flex-start',
 				justifyContent: 'center',
-				gap: '1rem'
+				gap: '1rem',
+				border: '2px solid #00000010'
 			}} ref={startToChatRef}>
 				<div>
 					<h3>
-						Current App: chat-up
+						Chatting with my trained bot
 					</h3>
 				</div>
 				<div>
-					🗣️ Start a conversation about Antonio, 
+					Start a conversation.
 					{`${isMobile ? '⚙️ To view Options, swipe left. ' : ' '}`}
 					Note: the bot might answer incorrectly or come up with funny stuff 🤡
 				</div>
@@ -211,6 +231,19 @@ const ChatUp = () => {
 
 	return (
 		<>
+
+			{isModalOpen && (
+				<div className="modal">
+					<Fade>
+						<p>Do you confirm that you want to delete the chat history?</p>
+						<div className="modal-buttons-group">
+							<Button onClick={handleConfirmClearHistory} label="Delete" style={{ background: '#ff997d' }} />
+							<Button onClick={handleCancelClearHistory} label="Cancel" style={{ background: '#cccccc' }} />
+						</div>
+
+					</Fade>
+				</div>
+			)}
 			<div {...handlers} className="central-container">
 
 				<div className={`ChatUp-container${view === 'main' ? ' open' : ''}`}>
@@ -221,9 +254,9 @@ const ChatUp = () => {
 							<Button onClick={() => navigate('/')} label="Back" />
 						</div>
 
-						{/* <div className="head-button-container">
-							
-						</div> */}
+						<div className="head-logo-container">
+							<Button onClick={handleClearHistory} label="Clear History" style={{ background: '#cccccc' }} />
+						</div>
 
 					</div>
 
@@ -274,7 +307,7 @@ const ChatUp = () => {
 							<div className='SidePanelMediaContainer' />
 
 							<div className='SidePanelMediaDescription'>
-							Antonio Guiotto, a front-end developer born in 1995, has extensive experience in React, JavaScript, and TypeScript, with a track record of delivering efficient, scalable solutions in various software engineering roles. He has contributed to web application development, project management, and collaborated with cross-functional teams to ensure high-quality deliverables. Antonio has also shared his knowledge as a Web Development Teacher, illustrating his passion for the field. His technical skills are complemented by his engagement in hobbies like calisthenics, cycling, design, and music, showcasing a well-rounded individual eager to contribute to innovative software projects.
+								Antonio Guiotto, a front-end developer born in 1995, has extensive experience in React, JavaScript, and TypeScript, with a track record of delivering efficient, scalable solutions in various software engineering roles. He has contributed to web application development, project management, and collaborated with cross-functional teams to ensure high-quality deliverables. Antonio has also shared his knowledge as a Web Development Teacher, illustrating his passion for the field. His technical skills are complemented by his engagement in hobbies like calisthenics, cycling, design, and music, showcasing a well-rounded individual eager to contribute to innovative software projects.
 							</div>
 
 
@@ -288,14 +321,8 @@ const ChatUp = () => {
 								<div className='SidePanelSocialLink'>
 									<a href="https://www.instagram.com/antonio_guiotto/">Instagram</a>
 								</div>
+
 							</div>
-
-
-
-							<h3>⚙️ Chat Options</h3>
-
-							<Button onClick={clearHistory} label="Clear History" />
-
 						</div>
 
 					</div>

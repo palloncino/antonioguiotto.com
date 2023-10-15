@@ -9,7 +9,9 @@
   outline: none;
   transition: background 0.3s;
   width: 100%;
+  min-width: 180px;
 }
+
 
 .button:hover {
   background: #0c66c1b3;

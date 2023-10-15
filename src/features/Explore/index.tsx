@@ -8,7 +8,7 @@ const Explore = () => {
     {
       id: 1,
       title: "Introducing ChatUp",
-      description: "Chat about my working history",
+      description: "Chat about data related to my working history and life experience",
       route: "/chat-up"
     },
     {
@@ -20,13 +20,18 @@ const Explore = () => {
   ];
 
   return (
-    <div className='explore-page-container'>
-      <h1 className='explore-page-title'>🗺️ Explore page</h1>
+    <div className='explore-page-container' style={{ height: `${window.innerHeight}px` }}>
+      <h1 className='explore-page-title'>Explore page</h1>
       <div className="explore-page-cards">
         {features.map(({ route, id, title, description }, index) => (
-          <div onClick={() => navigate(`${route}`)} key={`${id}__${index}`} className="explore-page-card">
-            <h3>{title}</h3>
-            <p>{description}</p>
+          <div
+            onClick={() => navigate(`${route}`)} key={`${id}__${index}`} className="explore-page-card">
+            <div className="explore-card-title">
+              {title}
+            </div>
+            <div className="explore-card-description">
+              {description}
+            </div>
           </div>
         ))}
       </div>

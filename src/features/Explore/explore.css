@@ -1,12 +1,25 @@
+/* File: public/fonts/fonts.css */
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../../media/images/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 .explore-page-container {
-  max-width: 1200px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  background: url('../../media/images/graph-paper.svg');
+  background-position: center top;
   margin: auto;
   padding: 2rem;
   text-align: center;
 }
 
 .explore-page-title {
-  line-height: 2.8rem;
+  font-family: 'BebasNeue';
+  color: #3f87a6;
+  font-size: 5rem;
 }
 
 .explore-page-cards {
@@ -17,18 +30,39 @@
 }
 
 .explore-page-card {
-  background: #F7F7F8;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #00000010;
   width: 300px;
   padding: 1rem;
-  border: 2px solid #ccc;
   border-radius: 8px;
-  text-align: center;
   transition: all 0.3s;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .explore-page-card:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 4px #00000010;
+}
+
+.explore-card-title {
+  font-family: 'BebasNeue';
+  font-size: 2rem;
+  margin-bottom: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.explore-card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
+
 }
