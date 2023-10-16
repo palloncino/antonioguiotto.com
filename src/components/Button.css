@@ -1,5 +1,5 @@
 .button {
-  background: #1e8fffb3;
+  background: linear-gradient(45deg, #0c66c1b3, #9e92c0);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -12,7 +12,15 @@
   min-width: 180px;
 }
 
+.button.link {
+  background: transparent;
+  color: unset;
+}
+
+.button.link:hover {
+  text-decoration: underline;
+}
 
 .button:hover {
-  background: #0c66c1b3;
+
 }

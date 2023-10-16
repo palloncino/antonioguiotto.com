@@ -57,7 +57,7 @@ const ChatUp = () => {
 
 	useEffect(() => {
 		getChatHeight();
-	}, [refs, isMobile]);
+	}, [refs, isMobile, window.innerHeight]);
 
 	useEffect(() => {
 		getDynamicOutputHeight()
@@ -75,21 +75,9 @@ const ChatUp = () => {
 		localStorage.setItem('history', JSON.stringify(history));
 	}, [history]);
 
-	const handleClearHistory = () => {
-		// Open the modal
-		setIsModalOpen(true);
-	};
-
 	const handleConfirmClearHistory = () => {
-		// Clear the history if confirmed
 		setHistory([]);
 		localStorage.removeItem('history');
-		// Close the modal
-		setIsModalOpen(false);
-	};
-
-	const handleCancelClearHistory = () => {
-		// Close the modal
 		setIsModalOpen(false);
 	};
 
@@ -238,7 +226,7 @@ const ChatUp = () => {
 						<p>Do you confirm that you want to delete the chat history?</p>
 						<div className="modal-buttons-group">
 							<Button onClick={handleConfirmClearHistory} label="Delete" style={{ background: '#ff997d' }} />
-							<Button onClick={handleCancelClearHistory} label="Cancel" style={{ background: '#cccccc' }} />
+							<Button onClick={() => setIsModalOpen(false)} label="Cancel" style={{ background: '#cccccc' }} />
 						</div>
 
 					</Fade>
@@ -251,16 +239,20 @@ const ChatUp = () => {
 					<div id="ChatUpHeadSection" ref={chatupHeadRef} className="head-section">
 
 						<div className="head-logo-container">
-							<Button onClick={() => navigate('/')} label="Back" />
+							<Button link onClick={() => navigate('/')} label="← Back" />
 						</div>
 
 						<div className="head-logo-container">
-							<Button onClick={handleClearHistory} label="Clear History" style={{ background: '#cccccc' }} />
+							<Button link onClick={() => setIsModalOpen(true)} label="🗑️ Clear History" />
 						</div>
 
 					</div>
 
-					<div id={'ChatUp'} ref={chatupChatRef} style={{ height: `${chatHeight}px`, overflowY: 'auto' }} className="ChatUp">
+					<div
+						id={'ChatUp'}
+						ref={chatupChatRef}
+						style={{ height: `${chatHeight}px`, overflowY: 'auto' }} 
+						className="ChatUp">
 
 						<div className="output-section" ref={outputSectionRef} style={{ height: outputDynamicHeight }}>
 							{renderHistory(history)}

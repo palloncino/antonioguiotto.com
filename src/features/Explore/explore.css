@@ -1,10 +1,8 @@
-/* File: public/fonts/fonts.css */
 @font-face {
   font-family: 'BebasNeue';
-  src: url('../../media/images/BebasNeue-Regular.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+  src: url('../../media/fonts/BebasNeue-Regular.ttf') format('truetype');
 }
+
 
 .explore-page-container {
   font-size: 1.2rem;
@@ -13,7 +11,10 @@
   background-position: center top;
   margin: auto;
   padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .explore-page-title {
@@ -26,13 +27,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+  max-width: 800px;
 }
 
 .explore-page-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #00000010;
-  width: 300px;
+  width: 100%;
   padding: 1rem;
   border-radius: 8px;
   transition: all 0.3s;
@@ -46,7 +47,7 @@
 }
 
 .explore-page-card:hover {
-  box-shadow: 0 4px 4px #00000010;
+  color: #3f87a6;
 }
 
 .explore-card-title {
@@ -59,6 +60,7 @@
   align-items: flex-start;
 }
 .explore-card-description {
+  font-family: 'Outfit';
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
