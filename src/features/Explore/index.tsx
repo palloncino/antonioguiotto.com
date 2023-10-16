@@ -21,6 +21,15 @@ const Explore = () => {
 
   return (
     <div className='explore-page-container' style={{ height: `${window.innerHeight}px` }}>
+      <h1 className='explore-page-title'>
+      <span>E</span>
+      <span>x</span>
+      <span>p</span>
+      <span>l</span>
+      <span>o</span>
+      <span>r</span>
+      <span>e</span>
+      </h1>
       <div className="explore-page-cards">
         {features.map(({ route, id, title, description }, index) => (
           <div

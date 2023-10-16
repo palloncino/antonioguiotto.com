@@ -3,7 +3,6 @@
   src: url('../../media/fonts/BebasNeue-Regular.ttf') format('truetype');
 }
 
-
 .explore-page-container {
   font-size: 1.2rem;
   box-sizing: border-box;
@@ -13,15 +12,64 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.explore-page-title {
-  font-family: 'BebasNeue';
-  color: #3f87a6;
-  font-size: 5rem;
+@keyframes float {
+  0%,
+  100% {
+    transform: none;
+  }
+  33% {
+    transform: translateY(-1px) rotate(-2deg);
+  }
+  66% {
+    transform: translateY(1px) rotate(2deg);
+  }
 }
+
+@keyframes borderLeft {
+  0%,
+  100% {
+    border-left: 4rem solid;
+  }
+}
+
+.explore-page-title {
+  font-size: 5em;
+  /* font: bold 7.5vw/1.6 "Signika", sans-serif; */
+  user-select: none;
+}
+
+.explore-page-title span {
+  display: inline-block;
+  animation: float 3.6s ease-in-out infinite;
+  font-family: 'Outfit';
+  color: #3f87a6;
+  text-shadow: 1px 1px #4f4962, 2px 2px #4f4962, 3px 3px #4f4962,
+    4px 4px #4f4962;
+}
+
+h1 span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+h1 span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+h1 span:nth-child(4) {
+  animation-delay: 0.6s;
+}
+h1 span:nth-child(5) {
+  animation-delay: 0.8s;
+}
+h1 span:nth-child(6) {
+  animation-delay: 1s;
+}
+h1 span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
 
 .explore-page-cards {
   display: flex;
@@ -35,8 +83,6 @@
 .explore-page-card {
   width: 100%;
   padding: 1rem;
-  border-radius: 8px;
-  transition: all 0.3s;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
@@ -44,14 +90,16 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  transition: border-left .3s ease-in-out;
+  border-left: 0rem solid;
+  background: #fff;
 }
 
 .explore-page-card:hover {
-  color: #3f87a6;
+  border-left: 4rem solid;
 }
 
 .explore-card-title {
-  font-family: 'BebasNeue';
   font-size: 2rem;
   margin-bottom: .4rem;
   display: flex;
