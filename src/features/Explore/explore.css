@@ -95,13 +95,13 @@ h1 span:nth-child(7) {
   color: #7f7b8d;
   background: #fff;
   border: .2rem solid #00000010;
-  transition: all .3s;
   border-radius: 1rem;
   overflow: hidden;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .explore-page-card:hover {
-  
   color: #4f4962;
   border: .2rem solid #00000010;
   border-radius: 1rem;
