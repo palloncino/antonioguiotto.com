@@ -46,10 +46,11 @@
   display: inline-block;
   animation: float 3.6s ease-in-out infinite;
   font-family: 'Outfit';
-  color: #3f87a6;
+  color: #f6ae43;
   text-shadow: 1px 1px #4f4962, 2px 2px #4f4962, 3px 3px #4f4962,
     4px 4px #4f4962;
 }
+
 
 h1 span:nth-child(2) {
   animation-delay: 0.2s;
@@ -77,10 +78,11 @@ h1 span:nth-child(7) {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .explore-page-card {
+  box-sizing: border-box;
   width: 100%;
   padding: 1rem;
   cursor: pointer;
@@ -90,13 +92,24 @@ h1 span:nth-child(7) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  transition: border-left .3s ease-in-out;
-  border-left: 0rem solid;
+  color: #7f7b8d;
   background: #fff;
+  border: .2rem solid #00000010;
+  transition: all .3s;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .explore-page-card:hover {
-  border-left: 4rem solid;
+  
+  color: #4f4962;
+  border: .2rem solid #00000010;
+  border-radius: 1rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
 }
 
 .explore-card-title {
@@ -107,12 +120,40 @@ h1 span:nth-child(7) {
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 .explore-card-description {
-  font-family: 'Outfit';
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: start;
+  width: 100%;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+  animation-play-state: paused;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.explore-card-description:hover {
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .explore-page-title {
+    font-size: 3.8em;
+  }
+
+  .explore-page-card {
+    border: 2px solid #00000010;
+    border-radius: 1rem;
+  }
+  .explore-page-card:hover {
+    border-left: .2rem solid;
+  }
+
+  .explore-card-description {
+    font-size: 1rem;   
+    line-height: 1.2rem;
+  }
+
+  .explore-page-cards {
+    gap: 1rem;
+  }
 
 }

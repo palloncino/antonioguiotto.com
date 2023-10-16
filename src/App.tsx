@@ -9,6 +9,7 @@ import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
 import Fade from './features/Fade';
 import VagabondDiary from './features/VagabondDiary';
+import Sandbox01 from './features/Sandbox01';
 
 export const MainContext = createContext<{
   HeaderRef: React.RefObject<HTMLDivElement>,
@@ -31,6 +32,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
               <Route path="/vagabond-diary" element={<Fade><VagabondDiary /></Fade>} />
+              <Route path="/sandbox01" element={<Fade><Sandbox01 /></Fade>} />
               <Route path="/" element={<Fade><Explore /></Fade>} />
             </Routes>
           </div>
