@@ -103,8 +103,9 @@ h1 span:nth-child(7) {
 
 .explore-page-card:hover {
   color: #4f4962;
-  border: .2rem solid #00000010;
+  border: .2rem solid #00000050;
   border-radius: 1rem;
+  transform: scale(1.1);
 }
 
 @keyframes marquee {
