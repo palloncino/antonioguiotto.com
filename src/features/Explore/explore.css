@@ -88,14 +88,13 @@ h1 span:nth-child(7) {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   color: #7f7b8d;
   background: #fff;
   border: .2rem solid #00000010;
   border-radius: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   overflow: hidden;
   transition: all 0.3s ease;
   transform-style: preserve-3d;
@@ -107,6 +106,26 @@ h1 span:nth-child(7) {
   border-radius: 1rem;
   transform: scale(1.1);
 }
+
+
+.explore-page-card:hover .explore-card-media-container {
+  min-width: 100px;
+  height: 62px;
+  margin-right: 1rem;
+}
+
+.explore-card-media-container {
+  border-radius: .4rem;
+  transition: all .3s;
+  transition-delay: 0.3s;
+  min-width: 0px;
+  height: 62px;
+}
+
+.explore-card-text-container {
+  width: 100%;
+}
+
 
 @keyframes marquee {
   0% { transform: translateX(0%); }
