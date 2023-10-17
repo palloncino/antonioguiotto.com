@@ -79,6 +79,7 @@ h1 span:nth-child(7) {
   align-items: center;
   gap: 2rem;
   max-width: 600px;
+  width: 100%;
 }
 
 .explore-page-card {
