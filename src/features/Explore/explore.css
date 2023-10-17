@@ -115,6 +115,7 @@ h1 span:nth-child(7) {
 }
 
 .explore-card-media-container {
+  background-position: center;
   border-radius: .4rem;
   transition: all .3s;
   transition-delay: 0.3s;

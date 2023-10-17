@@ -14,9 +14,9 @@ const Card = ({ route, title, description, media }: any) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div 
-        className="explore-card-media-container" 
-        style={{ background: `url(${media}`, backgroundSize: 'cover' }} />
+      <div
+        className="explore-card-media-container"
+        style={{ backgroundImage: `url(${media}`, backgroundSize: 'cover' }} />
       <div className="explore-card-text-container">
         <div className="explore-card-title">
           {title}

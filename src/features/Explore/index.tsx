@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../../components/Card';
-import funnyDog01 from '../../media/images/dog-01.jpg'
-import funnyDog02 from '../../media/images/dog02.jpg';
-import funnyDog03 from '../../media/images/dog-03.jpg';
+import funnyDog01 from '../../media/images/dog-02.jpg'
+import vagabondGif from '../../media/images/vag.gif';
+import openAIIcon from '../../media/images/openai.jpg';
 import './explore.css';
 
 const Explore = () => {
@@ -24,14 +24,14 @@ const Explore = () => {
       title: "Vagabond diary",
       description: "Personal notes. Brainstorming ideas for sustaining one's flesh and soul in today's age.",
       route: "/vagabond-diary",
-      media: funnyDog02
+      media: vagabondGif,
     },
     {
       id: 3,
-      title: "GPT4 powered page",
+      title: "Land pages sandbox",
       description: "This space is for experimenting with chatgpt4 capabilities, creating landing pages with features powered by chatgpt4. Using prompt like: create an interesting page with nice content has to be a tsx component and a css file, the compoenent is named x and so on ...",
       route: "/sandbox01",
-      media: funnyDog03
+      media: openAIIcon
     },
   ];
 
