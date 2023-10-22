@@ -13,26 +13,26 @@ const Explore = () => {
   const navigate = useNavigate()
   const features = [
     {
-      id: 1,
-      title: "App ChatUp",
-      description: "Chat about my working history and life experience. Powered by openai and langchain.",
-      route: "/chat-up",
-      media: funnyDog01
-    },
-    {
       id: 2,
-      title: "Vagabond diary",
-      description: "Personal notes. Brainstorming ideas for sustaining one's flesh and soul in today's age.",
-      route: "/vagabond-diary",
+      title: "Notes",
+      description: "Page in construction ⚠️ Brainstorming ideas for sustaining one's flesh and soul in today's age.",
+      route: "/notes",
       media: vagabondGif,
     },
     {
-      id: 3,
-      title: "Land pages sandbox",
-      description: "This space is for experimenting with chatgpt4 capabilities, creating landing pages with features powered by chatgpt4. Using prompt like: create an interesting page with nice content has to be a tsx component and a css file, the compoenent is named x and so on ...",
-      route: "/sandbox01",
-      media: openAIIcon
+      id: 1,
+      title: "App ChatUp",
+      description: "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
+      route: "/chat-up",
+      media: funnyDog01
     },
+    // {
+    //   id: 3,
+    //   title: "News",
+    //   description: "In progress",
+    //   route: "/sandbox01",
+    //   media: openAIIcon
+    // },
   ];
 
   return (

@@ -8,7 +8,7 @@ import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
 import Fade from './features/Fade';
-import VagabondDiary from './features/VagabondDiary';
+import Notes from './features/Notes';
 import Sandbox01 from './features/Sandbox01';
 
 export const MainContext = createContext<{
@@ -31,7 +31,7 @@ const App: React.FC = () => {
             ref={FeatureRef}>
             <Routes>
               <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
-              <Route path="/vagabond-diary" element={<Fade><VagabondDiary /></Fade>} />
+              <Route path="/notes" element={<Fade><Notes /></Fade>} />
               <Route path="/sandbox01" element={<Fade><Sandbox01 /></Fade>} />
               <Route path="/" element={<Fade><Explore /></Fade>} />
             </Routes>

@@ -135,6 +135,7 @@ h1 span:nth-child(7) {
 }
 
 .explore-card-title {
+  color: #5b47a2;
   font-size: 2rem;
   margin-bottom: .4rem;
   display: flex;

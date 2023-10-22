@@ -6,7 +6,6 @@
 .VagabondDiaryContainer {
   font-size: 1.2rem;
   box-sizing: border-box;
-  background: url('../../media/images/graph-paper.svg');
   background-position: center top;
   margin: auto;
   padding: 2rem;
@@ -15,7 +14,6 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: .4rem;
-  box-shadow: 0 .2rem .4rem rgba(0,0,0,0.1);
 }
 
 .VagabondDiaryHeaderContainer {
