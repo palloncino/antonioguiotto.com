@@ -12,13 +12,13 @@ const Explore = () => {
 
   const navigate = useNavigate()
   const features = [
-    {
-      id: 2,
-      title: "Notes",
-      description: "Page in construction ⚠️ Brainstorming ideas for sustaining one's flesh and soul in today's age.",
-      route: "/notes",
-      media: vagabondGif,
-    },
+    // {
+    //   id: 2,
+    //   title: "Notes",
+    //   description: "Page in construction ⚠️ Brainstorming ideas for sustaining one's flesh and soul in today's age.",
+    //   route: "/notes",
+    //   media: vagabondGif,
+    // },
     {
       id: 1,
       title: "App ChatUp",

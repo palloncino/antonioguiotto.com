@@ -300,6 +300,9 @@
     background-size: auto;
     background-repeat: repeat;
   }
+  .SidePanelMediaContainer {
+    background-size: cover;
+  }
   .chat-introduction-container {
     padding: .4rem;
     flex: 1;
