@@ -1,16 +1,13 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Card from '../../components/Card';
-import funnyDog01 from '../../media/images/dog-02.jpg'
-import vagabondGif from '../../media/images/vag.gif';
-import openAIIcon from '../../media/images/openai.jpg';
-import './explore.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Card from "../../components/Card";
+import funnyDog01 from "../../media/images/dog-02.jpg";
+import "./explore.css";
 
 const Explore = () => {
+  const [isHover, setIsHover] = useState(false);
 
-  const [isHover, setIsHover] = useState(false)
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const features = [
     // {
     //   id: 2,
@@ -22,9 +19,10 @@ const Explore = () => {
     {
       id: 1,
       title: "App ChatUp",
-      description: "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
+      description:
+        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       route: "/chat-up",
-      media: funnyDog01
+      media: funnyDog01,
     },
     // {
     //   id: 3,
@@ -36,8 +34,11 @@ const Explore = () => {
   ];
 
   return (
-    <div className='explore-page-container' style={{ height: `${window.innerHeight}px` }}>
-      <h1 className='explore-page-title'>
+    <div
+      className="explore-page-container"
+      style={{ height: `${window.innerHeight}px` }}
+    >
+      <h1 className="explore-page-title">
         <span>E</span>
         <span>x</span>
         <span>p</span>
@@ -49,10 +50,7 @@ const Explore = () => {
 
       <div className="explore-page-cards">
         {features.map(({ id, ...rest }, index) => (
-          <Card
-            key={`${id}__${index}`}
-            {...rest}
-          />
+          <Card key={`${id}__${index}`} {...rest} />
         ))}
       </div>
     </div>
