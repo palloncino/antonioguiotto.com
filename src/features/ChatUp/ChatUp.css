@@ -213,7 +213,7 @@
 
 .ChatUp-container {
   box-sizing: border-box;
-  flex: 3;
+  flex: 4;
   display: flex;
   flex-direction: column;
   margin: 0rem 1rem 0rem 0rem;
@@ -225,7 +225,7 @@
   border-radius: .4rem;
   background: #fff;
   box-sizing: border-box;
-  flex: 1;
+  flex: 2;
   padding: 1rem;
   /* height: 100vh; */
 }
