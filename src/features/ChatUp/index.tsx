@@ -148,6 +148,13 @@ const ChatUp = () => {
 
       setCurrentResponse(response);
     } catch (error) {
+      console.log(2);
+      await new Promise((res) => setTimeout(() => res({}), 1000));
+      console.log(2);
+      setHistory((prevHistory) => [
+        ...prevHistory,
+        { role: "ai", content: `The service has been deactivated the 30th of October, ${String(error)}` },
+      ]);
       console.error("There was an error making the request:", error);
     } finally {
       setLoading(false);
@@ -239,7 +246,7 @@ const ChatUp = () => {
               <Button
                 onClick={handleConfirmClearHistory}
                 label="Delete"
-                style={{ background: "#ff997d" }}
+                style={{ background: "rgb(244 117 82)" }}
               />
               <Button
                 onClick={() => setIsModalOpen(false)}
