@@ -150,9 +150,7 @@ const ChatUp = () => {
 
       setCurrentResponse(response);
     } catch (error) {
-      console.log(2);
       await new Promise((res) => setTimeout(() => res({}), 1000));
-      console.log(2);
       setHistory((prevHistory) => [
         ...prevHistory,
         {

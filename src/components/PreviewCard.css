@@ -21,6 +21,14 @@
   top: 2.5rem;
   font-family: "Custom";
 }
+
+.explore-page-card-preview-loading {
+  display: flex;
+  width: 100%;
+  background: #000000;
+  height: 100px;
+}
+
 .preview-text-description-container {
   display: flex;
   flex-direction: column;
@@ -75,6 +83,10 @@ h3 span:nth-child(7) {
 
 .preview-media img,
 video {
+  box-sizing: border-box;
+  object-fit: cover;
+  object-position: center;
+  height: 400px;
   width: 100%;
   border-radius: 1rem;
   border: 0.2rem solid #000;

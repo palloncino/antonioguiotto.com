@@ -71,7 +71,6 @@ const Explore = () => {
   );
 
   const handleSetSelectedItem = (index: number) => {
-    console.log(index);
     setSelectedIndex(index);
   };
 
