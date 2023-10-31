@@ -8,7 +8,7 @@ import './App.css';
 import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
 import Fade from './features/Fade';
-import Sandbox01 from './features/Sandbox01';
+import SquareUp from './features/SquareUp';
 
 export const MainContext = createContext<{
   HeaderRef: React.RefObject<HTMLDivElement>,
@@ -30,7 +30,7 @@ const App: React.FC = () => {
             ref={FeatureRef}>
             <Routes>
               <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
-              <Route path="/sandbox01" element={<Fade><Sandbox01 /></Fade>} />
+              <Route path="/square-up" element={<Fade><SquareUp /></Fade>} />
               <Route path="/" element={<Fade><Explore /></Fade>} />
             </Routes>
           </div>

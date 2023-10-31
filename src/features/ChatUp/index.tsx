@@ -4,6 +4,8 @@ import { MainContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import "./ChatUp.css";
 import { useDevice } from "../../hooks/useDevice";
+import funDogPng from "../../media/images/dog-03.png";
+import chatLogo from "../../media/images/robot.webp";
 import { useSwipeable } from "react-swipeable";
 import Button from "../../components/Button";
 import Fade from "../Fade";
@@ -153,7 +155,7 @@ const ChatUp = () => {
       console.log(2);
       setHistory((prevHistory) => [
         ...prevHistory,
-        { role: "ai", content: `The service has been deactivated the 30th of October, ${String(error)}` },
+        { role: "ai", content: `The service has been deactivated the 30th of October.` },
       ]);
       console.error("There was an error making the request:", error);
     } finally {
@@ -210,7 +212,7 @@ const ChatUp = () => {
             }
           >
             <div className="output-message__icon">
-              {role === "human" ? `🙋🏻‍♂️` : `🤖`}
+              {role === "human" ? <img src={funDogPng} width="50" height="50" alt="client" /> : <img src={chatLogo} width="50" height="50" alt="client" />}
             </div>
             <div className="output-message__content">{content}</div>
             <div className="output-message__actions">

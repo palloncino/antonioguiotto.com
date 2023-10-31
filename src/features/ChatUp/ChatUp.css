@@ -1,4 +1,6 @@
 .ChatUp {
+  background: url('../../media/images/maze-2.png');
+  background-size: cover;
   box-sizing: border-box;
   border-radius: .2rem;
   padding-bottom: 8rem;
@@ -39,12 +41,15 @@
 
 .output-message.human {
   margin-left: auto;
-  background: linear-gradient(65deg, #776ba29e, #4f4962a1);
+  margin-right: 1rem;
+  background: #90dcd5;
   color: #fff;
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
 }
 
 .output-message.ai {
   margin-right: auto;
+  margin-left: 1rem;
   justify-content: flex-start;
   background: #fff;
 }
@@ -259,8 +264,8 @@
 }
 
 .SidePanelMediaDescription {
-  font-size: 0.6rem;
-  line-height: 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
   color: #727272;
   text-align: justify;
   border-radius: 0.4rem;

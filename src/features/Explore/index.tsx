@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../../components/Card";
-import funnyDog01 from "../../media/images/dog-02.jpg";
+import ChatUpPng from "../../media/images/chatup-logo.png";
+import applePng from "../../media/images/apple.png";
 import "./explore.css";
 
 const Explore = () => {
@@ -22,15 +23,15 @@ const Explore = () => {
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       route: "/chat-up",
-      media: funnyDog01,
+      media: ChatUpPng,
     },
-    // {
-    //   id: 3,
-    //   title: "News",
-    //   description: "In progress",
-    //   route: "/sandbox01",
-    //   media: openAIIcon
-    // },
+    {
+      id: 2,
+      title: "Mobile App SquareUp",
+      description: "IOS App created with react-native. This application allow to easily edit your videos and images to match a 1:1 ratio while maintain the original aspect of the video",
+      route: "/square-up",
+      media: applePng
+    },
   ];
 
   return (
