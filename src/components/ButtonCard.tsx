@@ -1,9 +1,8 @@
-// Card.jsx
 import React, { useState } from 'react';
 import Marquee from 'react-double-marquee';
 import { useNavigate } from 'react-router-dom';
 
-const Card = ({ route, title, description, media }: any) => {
+const ButtonCard = ({ id, route, title, description, media, handleSetSelectedItem }: any) => {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
 
@@ -11,7 +10,10 @@ const Card = ({ route, title, description, media }: any) => {
     <div
       onClick={() => navigate(route)}
       className="explore-page-card"
-      onMouseEnter={() => setIsHover(true)}
+      onMouseEnter={() => {
+        setIsHover(true);
+        handleSetSelectedItem(id);
+      }}
       onMouseLeave={() => setIsHover(false)}
     >
       <div
@@ -35,4 +37,4 @@ const Card = ({ route, title, description, media }: any) => {
   );
 };
 
-export default Card;
+export default ButtonCard;
