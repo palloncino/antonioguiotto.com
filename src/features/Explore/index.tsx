@@ -19,18 +19,19 @@ const Explore = () => {
     // },
     {
       id: 1,
-      title: "App ChatUp",
+      title: "ChatUp - Web",
       description:
-        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
+        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
       route: "/chat-up",
       media: ChatUpPng,
     },
     {
       id: 2,
-      title: "Mobile App SquareUp",
-      description: "IOS App created with react-native. This application allow to easily edit your videos and images to match a 1:1 ratio while maintain the original aspect of the video",
+      title: "SquareUp - Mobile",
+      description:
+        "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       route: "/square-up",
-      media: applePng
+      media: applePng,
     },
   ];
 
