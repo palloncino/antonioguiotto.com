@@ -371,15 +371,10 @@ const ChatUp = () => {
                   ChatUp was born as a personal chat that would answer questions
                   related to my working history and skills, it's developed with
                   OpenAI APIs and Langchain to create a conversation thread.
-                  [UPDATE]: the 31th of October I deactivated temporarily the
-                  service duw to high costs in AWS. Since I am budy with other
-                  works I will not work on this app in the near future, this
-                  will remain as nice chat template for future implementation. I
-                  hope you like the design.
                 </div>
 
                 <div className="SidePanelTitle">
-                  Antonio Guiotto | Web Developer & Designer
+                  Web Developer & Designer
                 </div>
 
                 <div className="SidePanelMediaDescription">
@@ -391,10 +386,6 @@ const ChatUp = () => {
                   with cross-functional teams to ensure high-quality
                   deliverables. Antonio has also shared his knowledge as a Web
                   Development Teacher, illustrating his passion for the field.
-                  His technical skills are complemented by his engagement in
-                  hobbies like calisthenics, cycling, design, and music,
-                  showcasing a well-rounded individual eager to contribute to
-                  innovative software projects.
                 </div>
 
                 <div className="SidePanelTitle">
