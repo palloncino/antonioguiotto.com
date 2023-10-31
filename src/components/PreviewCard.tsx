@@ -7,6 +7,7 @@ const PreviewCard = ({
   description,
   status,
   images,
+  route,
   videos,
 }: any) => {
   const [muted, setMuted] = useState(true);
@@ -14,11 +15,11 @@ const PreviewCard = ({
   const renderLoading = () => {
     return (
       <div className="explore-page-card-preview-loading">
-          <h3 className="explore-page-card-preview-title">
-            {"LOADING...".split("").map((char) => (
-              <span>{char}</span>
-            ))}
-          </h3>
+        <h3 className="explore-page-card-preview-title">
+          {"LOADING...".split("").map((char) => (
+            <span>{char}</span>
+          ))}
+        </h3>
       </div>
     );
   };
@@ -31,6 +32,11 @@ const PreviewCard = ({
               <span>{char}</span>
             ))}
           </h3>
+          {description && (
+            <div className="preview-text-description-description">
+              {description}
+            </div>
+          )}
           <div className="preview-media">
             {images.map((image: any, index: number) => (
               <img
@@ -51,22 +57,18 @@ const PreviewCard = ({
               />
             ))}
           </div>
-          <div className="preview-text-description-container">
-            <div className="preview-text-description-description">
-              <div className="preview-text-description-key">Description</div>
-              <div className="preview-text-description-value">
-                {description}
+          {route !== "/" && (
+            <div className="preview-text-description-container">
+              <div className="preview-text-description-devices">
+                <div className="preview-text-description-key">Devices</div>
+                <div className="preview-text-description-value">{devices}</div>
+              </div>
+              <div className="preview-text-description-status">
+                <div className="preview-text-description-key">Status</div>
+                <div className="preview-text-description-value">{status}</div>
               </div>
             </div>
-            <div className="preview-text-description-devices">
-              <div className="preview-text-description-key">Devices</div>
-              <div className="preview-text-description-value">{devices}</div>
-            </div>
-            <div className="preview-text-description-status">
-              <div className="preview-text-description-key">Status</div>
-              <div className="preview-text-description-value">{status}</div>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     );

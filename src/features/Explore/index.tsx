@@ -12,7 +12,7 @@ import "./explore.css";
 const defaultPreviewCard = {
   title: "Welcome",
   devices: "All devices",
-  description: "Welcome to my page, browse hrough likns and enjoy your time.",
+  description: "",
   status: "Under constant development.",
   route: "/",
   images: [],

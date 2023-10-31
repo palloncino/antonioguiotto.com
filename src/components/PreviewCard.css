@@ -14,12 +14,23 @@
 }
 .explore-page-card-preview-title {
   position: absolute;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3.5rem;
   padding: 0 2rem;
   margin: 0;
   top: 2.5rem;
   font-family: "Custom";
+}
+
+.preview-text-description-description {
+  position: absolute;
+  color: #dbdbdb;
+  bottom: 6rem;
+  right: 4rem;
+  left: 4rem;
+  background-color: #00000090;
+  padding: .4rem 1rem;
+  border-radius: .4rem;
 }
 
 .explore-page-card-preview-loading {
@@ -32,22 +43,28 @@
 .preview-text-description-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .4rem;
 }
 
 .preview-text-description-link,
 .preview-text-description-status,
-.preview-text-description-devices,
-.preview-text-description-description {
+.preview-text-description-devices {
+  align-self: flex-start;
   display: flex;
 }
+
+
 .preview-text-description-key {
+  align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  background: #4f4962;
+  background: #000000;
   color: #fff;
+  text-align: end;
   border-radius: 0.2rem;
   padding: 0rem 1rem;
+  width: 8rem;
+  min-width: 8rem;
 }
 .explore-page-card-preview-title span {
   display: inline-block;
