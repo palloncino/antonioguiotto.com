@@ -1,8 +1,38 @@
+.central-container {
+  background: #f4f2ee;
+  display: flex;
+  justify-content: center;
+}
+
+.central-container-content {
+  max-width: 1300px;
+  display: flex;
+}
+
+.ChatUp-container {
+  box-sizing: border-box;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem 0rem 0rem;
+}
+
+.side-panel {
+  margin: 1rem 0rem;
+  border: 1px solid #00000040;
+  border-radius: 0.4rem;
+  background: #fff;
+  box-sizing: border-box;
+  flex: 2;
+  padding: 1rem;
+  /* height: 100vh; */
+}
+
 .ChatUp {
-  background: url('../../media/images/maze-2.png');
+  background: url("../../media/images/maze-2.png");
   background-size: cover;
   box-sizing: border-box;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   padding-bottom: 8rem;
   background-position: center top;
 }
@@ -23,7 +53,7 @@
   max-width: 80%;
   font-size: 1rem;
   padding: 1rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   border: 1px solid #00000040;
 }
 .output-message__icon {
@@ -33,7 +63,7 @@
   font-size: 2.2rem;
   height: 28px;
   width: 50px;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 .output-message__content {
   width: 100%;
@@ -42,9 +72,9 @@
 .output-message.human {
   margin-left: auto;
   margin-right: 1rem;
-  background: #90dcd5;
+  background: #43e1d2a8;
   color: #fff;
-  text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
 .output-message.ai {
@@ -53,7 +83,6 @@
   justify-content: flex-start;
   background: #fff;
 }
-
 
 .textarea {
   font-size: 1rem;
@@ -134,7 +163,7 @@
   gap: 1rem;
   padding: 0 0 0 1rem;
   border: 1px solid #00000040;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 
 .head-button-container {
@@ -161,7 +190,6 @@
 .clear-history-button-container {
 }
 .clear-history-button-container button {
-
 }
 
 .chat-introduction-container {
@@ -176,8 +204,13 @@
 }
 
 @keyframes fade {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .dots {
@@ -195,8 +228,12 @@
   animation: fade 1.4s infinite;
 }
 
-.dot1 { animation-delay: -0.32s; }
-.dot2 { animation-delay: -0.16s; }
+.dot1 {
+  animation-delay: -0.32s;
+}
+.dot2 {
+  animation-delay: -0.16s;
+}
 
 .output-loading-container {
   display: flex;
@@ -205,38 +242,15 @@
   align-items: flex-start;
 }
 
-.central-container {
-  background: #F4F2EE;
-  display: flex;
-  justify-content: center;
-}
-
-.central-container-content {
-  max-width: 1300px;
-  display: flex;
-}
-
-.ChatUp-container {
-  box-sizing: border-box;
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-  margin: 0rem 1rem 0rem 0rem;
-}
-
-.side-panel {
-  margin: 1rem 0rem;
-  border: 1px solid #00000040;
-  border-radius: .4rem;
-  background: #fff;
-  box-sizing: border-box;
-  flex: 2;
-  padding: 1rem;
-  /* height: 100vh; */
-}
-
 .SidePanelTitle {
   font-size: 1rem;
+  display: flex;
+  align-self: flex-start;
+  width: 100%;
+  background: #d9d9d9;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  border-radius: 0.2rem;
 }
 
 .SidePanelContentContainer {
@@ -251,7 +265,7 @@
 .SidePanelMediaContainer {
   height: 200px;
   width: 100%;
-  background: url('../../media/images/me2.jpg');
+  background: url("../../media/images/me2.jpg");
   background-position: center;
   background-size: contain;
   border-radius: 0.4rem;
@@ -261,6 +275,8 @@
 .SidePanelSocialContainer {
   display: flex;
   gap: 1rem;
+  display: flex;
+  align-self: flex-start;
 }
 
 .SidePanelMediaDescription {
@@ -272,7 +288,6 @@
 }
 
 .SidePanelSocialLink {
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -328,7 +343,7 @@
     background-size: cover;
   }
   .chat-introduction-container {
-    padding: .4rem;
+    padding: 0.4rem;
     flex: 1;
   }
   .output-message {

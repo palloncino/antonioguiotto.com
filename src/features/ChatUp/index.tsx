@@ -155,7 +155,10 @@ const ChatUp = () => {
       console.log(2);
       setHistory((prevHistory) => [
         ...prevHistory,
-        { role: "ai", content: `The service has been deactivated the 30th of October.` },
+        {
+          role: "ai",
+          content: `The service has been deactivated the 30th of October.`,
+        },
       ]);
       console.error("There was an error making the request:", error);
     } finally {
@@ -212,7 +215,11 @@ const ChatUp = () => {
             }
           >
             <div className="output-message__icon">
-              {role === "human" ? <img src={funDogPng} width="50" height="50" alt="client" /> : <img src={chatLogo} width="50" height="50" alt="client" />}
+              {role === "human" ? (
+                <img src={funDogPng} width="50" height="50" alt="client" />
+              ) : (
+                <img src={chatLogo} width="50" height="50" alt="client" />
+              )}
             </div>
             <div className="output-message__content">{content}</div>
             <div className="output-message__actions">
@@ -358,23 +365,40 @@ const ChatUp = () => {
               >
                 <div className="SidePanelMediaContainer" />
 
+                <div className="SidePanelTitle">ChatUp App Idea 💡</div>
+
+                <div className="SidePanelMediaDescription">
+                  ChatUp was born as a personal chat that would answer questions
+                  related to my working history and skills, it's developed with
+                  OpenAI APIs and Langchain to create a conversation thread.
+                  [UPDATE]: the 31th of October I deactivated temporarily the
+                  service duw to high costs in AWS. Since I am budy with other
+                  works I will not work on this app in the near future, this
+                  will remain as nice chat template for future implementation. I
+                  hope you like the design.
+                </div>
+
                 <div className="SidePanelTitle">
-                  Software Developer | React Typescript, AWS
+                  Antonio Guiotto | Web Developer & Designer
                 </div>
 
                 <div className="SidePanelMediaDescription">
-                  Antonio Guiotto, a front-end developer born in 1995, has
-                  extensive experience in React, JavaScript, and TypeScript,
-                  with a track record of delivering efficient, scalable
-                  solutions in various software engineering roles. He has
-                  contributed to web application development, project
-                  management, and collaborated with cross-functional teams to
-                  ensure high-quality deliverables. Antonio has also shared his
-                  knowledge as a Web Development Teacher, illustrating his
-                  passion for the field. His technical skills are complemented
-                  by his engagement in hobbies like calisthenics, cycling,
-                  design, and music, showcasing a well-rounded individual eager
-                  to contribute to innovative software projects.
+                  Italian Front-end developer born in 1995, has extensive
+                  experience in React, JavaScript, and TypeScript, with a track
+                  record of delivering efficient, scalable solutions in various
+                  software engineering roles. He has contributed to web
+                  application development, project management, and collaborated
+                  with cross-functional teams to ensure high-quality
+                  deliverables. Antonio has also shared his knowledge as a Web
+                  Development Teacher, illustrating his passion for the field.
+                  His technical skills are complemented by his engagement in
+                  hobbies like calisthenics, cycling, design, and music,
+                  showcasing a well-rounded individual eager to contribute to
+                  innovative software projects.
+                </div>
+
+                <div className="SidePanelTitle">
+                  Link Up
                 </div>
 
                 <div className="SidePanelSocialContainer">
