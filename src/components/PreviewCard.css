@@ -31,6 +31,7 @@
   background-color: #00000090;
   padding: .4rem 1rem;
   border-radius: .4rem;
+  width: auto;
 }
 
 .explore-page-card-preview-loading {
@@ -105,8 +106,7 @@ video {
   object-position: center;
   height: 400px;
   width: 100%;
-  border-radius: 1rem;
-  border: 0.2rem solid #000;
+  border-radius: 0.4rem;
 }
 
 @media only screen and (max-width: 600px) {

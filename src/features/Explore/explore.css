@@ -1,3 +1,10 @@
+/* :root {
+  --hfs: 16;
+  --clr-main: #1fbfac;
+  --clr-gray: #3a3a3a;
+  --clr-yellow: #FDC162;
+} */
+
 .explore-page-container {
   box-sizing: border-box;
   background: url("../../media/images/graph-paper.svg");
@@ -10,33 +17,26 @@
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .left-side {
-  /* background: rgb(255, 249, 207); */
+  width: 50%;
 }
 
 .right-side {
-  display: flex;
-  width: 100%;
-  height: 100%;
+  width: 50%;
 }
 
 .right-side-content-container {
-  width: 100%;
-  height: 200px;
-  /* background: rgb(255, 174, 174); */
 }
 
 .explore-page-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  max-width: 600px;
-  width: 100%;
 }
 
 .explore-page-card {
@@ -54,16 +54,16 @@
   justify-content: flex-start;
   align-items: flex-start;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   transform-style: preserve-3d;
   z-index: 999;
+  position: relative;
 }
 
 .explore-page-card:hover {
   color: #4f4962;
-  border: 0.2rem solid #000000;
   border-radius: 1rem;
-  transform: translateX(5%);
+  border: 0.2rem solid #000;
 }
 
 .explore-page-card:hover .explore-card-media-container {
@@ -79,8 +79,8 @@
 .explore-card-media-container {
   background-position: center;
   border-radius: 0.4rem;
-  transition: all 0.3s;
-  transition-delay: 0.3s;
+  transition: all 0.2s;
+  transition-delay: 0.2s;
   min-width: 0px;
   height: 62px;
 }
@@ -199,4 +199,41 @@ h1 span:nth-child(7) {
   100% {
     transform: translateX(-100%);
   }
+}
+
+.connect-links-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+}
+.connect-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.connect-links-container-description-title {
+  align-self: center;
+  font-family: "Custom";
+  background: #000000;
+  color: #fff;
+  border-radius: 0.2rem;
+  padding: 0rem 1rem;
+}
+
+.connect-links img {
+  cursor: pointer;
+  transition: .2s;
+  width: 50px;
+}
+
+.connect-links img:hover {
+  transform: scale(1.1);
 }

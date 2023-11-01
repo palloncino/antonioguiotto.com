@@ -57,18 +57,20 @@ const PreviewCard = ({
               />
             ))}
           </div>
-          {route !== "/" && (
-            <div className="preview-text-description-container">
+          <div className="preview-text-description-container">
+            {devices && (
               <div className="preview-text-description-devices">
                 <div className="preview-text-description-key">Devices</div>
                 <div className="preview-text-description-value">{devices}</div>
               </div>
+            )}
+            {status && (
               <div className="preview-text-description-status">
                 <div className="preview-text-description-key">Status</div>
                 <div className="preview-text-description-value">{status}</div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     );

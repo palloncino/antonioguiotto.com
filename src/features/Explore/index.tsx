@@ -8,10 +8,12 @@ import Vid3 from "../../media/videos/vid3.mov";
 import Vid4 from "../../media/videos/vid4.mov";
 import Fade from "../Fade";
 import "./explore.css";
+import WhatsAppButton from "../../components/Whatsapp";
+import PaypalButton from "../../components/Paypal";
 
 const defaultPreviewCard = {
   title: "Welcome",
-  devices: "All devices",
+  devices: "",
   description: "",
   status: "Under constant development.",
   route: "/",
@@ -120,13 +122,23 @@ const Explore = () => {
             ))}
           </div>
         </div>
-              
+
         <div className="right-side">
           <div className="right-side-content-container">
             <>{displaySelectedItem(selectedIndex)}</>
           </div>
         </div>
       </div>
+
+      <div className="connect-links-container">
+      <div className="connect-links-container-description-title">Quick contact</div>
+      <div className="connect-links-container-description">I you feel generous</div>
+        <div className="connect-links">
+          <WhatsAppButton />
+          <PaypalButton />
+        </div>
+      </div>
+
     </div>
   );
 };
