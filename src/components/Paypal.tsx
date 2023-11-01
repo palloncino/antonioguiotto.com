@@ -7,7 +7,7 @@ const PaypalButton = () => {
   }
 
   return (
-    <div id="paypal-button" onClick={openLink}>
+    <div className="paypal-button" onClick={openLink}>
       <img src={PaypalPng} alt="Paypal Icon"/>
     </div>
   );

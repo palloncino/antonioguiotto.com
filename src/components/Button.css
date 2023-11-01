@@ -1,6 +1,6 @@
 .button {
   background: linear-gradient(45deg, #0c66c1b3, #9e92c0);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 10px 20px;
   font-size: 16px;

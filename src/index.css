@@ -6,7 +6,7 @@
 * {font-family: 'Outfit';}
 
 body, ul {
-  color: #4f4962;
+  color: var(--black-text);
   margin: 0;
   padding: 0;
   line-height: 1.75rem;

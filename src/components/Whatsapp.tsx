@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
   }
 
   return (
-    <div id="whatsapp-button" onClick={openWhatsAppChat}>
+    <div className="whatsapp-button" onClick={openWhatsAppChat}>
       <img src={WhatsappPng} alt="WhatsApp Icon"/>
     </div>
   );

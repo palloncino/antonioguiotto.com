@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BottomLinks from "../../components/BottomLinks";
 import ButtonCard from "../../components/ButtonCard";
 import PreviewCard from "../../components/PreviewCard";
 import applePng from "../../media/images/apple.png";
@@ -8,8 +9,6 @@ import Vid3 from "../../media/videos/vid3.mov";
 import Vid4 from "../../media/videos/vid4.mov";
 import Fade from "../Fade";
 import "./explore.css";
-import WhatsAppButton from "../../components/Whatsapp";
-import PaypalButton from "../../components/Paypal";
 
 const defaultPreviewCard = {
   title: "Welcome",
@@ -94,52 +93,47 @@ const Explore = () => {
   };
 
   return (
-    <div
-      className="explore-page-container"
-      style={{ height: `${window.innerHeight}px` }}
-    >
-      <div className="explore-page-container-content">
-        <div className="left-side">
-          <h1 className="explore-page-title">
-            <span>E</span>
-            <span>x</span>
-            <span>p</span>
-            <span>l</span>
-            <span>o</span>
-            <span>r</span>
-            <span>e</span>
-          </h1>
+    <>
+      <div
+        className="explore-page-container"
+        style={{ height: `${window.innerHeight}px`, overflow: 'hidden' }}
+      >
+        <div className="explore-page-container-width-setter">
+          <div className="explore-page-container-content">
+            <div className="left-side">
+              <h1 className="explore-page-title">
+                <span>E</span>
+                <span>x</span>
+                <span>p</span>
+                <span>l</span>
+                <span>o</span>
+                <span>r</span>
+                <span>e</span>
+              </h1>
 
-          <div className="explore-page-cards">
-            {features.map(({ id, buttonCard }, index) => (
-              <ButtonCard
-                selectedIndex={selectedIndex}
-                handleSetSelectedItem={handleSetSelectedItem}
-                key={`${id}__${index}`}
-                id={id}
-                {...buttonCard}
-              />
-            ))}
-          </div>
-        </div>
+              <div className="explore-page-cards">
+                {features.map(({ id, buttonCard }, index) => (
+                  <ButtonCard
+                    selectedIndex={selectedIndex}
+                    handleSetSelectedItem={handleSetSelectedItem}
+                    key={`${id}__${index}`}
+                    id={id}
+                    {...buttonCard}
+                  />
+                ))}
+              </div>
+            </div>
 
-        <div className="right-side">
-          <div className="right-side-content-container">
-            <>{displaySelectedItem(selectedIndex)}</>
+            <div className="right-side">
+              <div className="right-side-content-container">
+                <>{displaySelectedItem(selectedIndex)}</>
+              </div>
+            </div>
           </div>
+          <BottomLinks />
         </div>
       </div>
-
-      <div className="connect-links-container">
-      <div className="connect-links-container-description-title">Quick contact</div>
-      <div className="connect-links-container-description">I you feel generous</div>
-        <div className="connect-links">
-          <WhatsAppButton />
-          <PaypalButton />
-        </div>
-      </div>
-
-    </div>
+    </>
   );
 };
 

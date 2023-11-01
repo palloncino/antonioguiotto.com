@@ -28,7 +28,7 @@
   bottom: 6rem;
   right: 4rem;
   left: 4rem;
-  background-color: #00000090;
+  background-color: var(--black-transparent-dark);
   padding: .4rem 1rem;
   border-radius: .4rem;
   width: auto;
@@ -37,7 +37,7 @@
 .explore-page-card-preview-loading {
   display: flex;
   width: 100%;
-  background: #000000;
+  background: var(--black-deep);
   height: 100px;
 }
 
@@ -52,6 +52,7 @@
 .preview-text-description-devices {
   align-self: flex-start;
   display: flex;
+  color: var(--light-text);
 }
 
 
@@ -59,8 +60,8 @@
   align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  background: #000000;
-  color: #fff;
+  background: var(--black-text);
+  color: var(--white);
   text-align: end;
   border-radius: 0.2rem;
   padding: 0rem 1rem;
@@ -71,8 +72,8 @@
   display: inline-block;
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
-  color: #fff;
-  text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000;
+  color: var(--white);
+  text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep), 3px 3px var(--black-deep), 4px 4px var(--black-deep);
 }
 
 h3 span:nth-child(2) {

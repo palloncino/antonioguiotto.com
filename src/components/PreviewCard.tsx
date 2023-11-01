@@ -7,6 +7,7 @@ const PreviewCard = ({
   description,
   status,
   images,
+  about,
   route,
   videos,
 }: any) => {

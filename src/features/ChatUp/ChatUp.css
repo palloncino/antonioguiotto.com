@@ -19,9 +19,9 @@
 
 .side-panel {
   margin: 1rem 0rem;
-  border: 1px solid #00000040;
+  border: 1px solid var(--black-light-border);
   border-radius: 0.4rem;
-  background: #fff;
+  background: var(--white);
   box-sizing: border-box;
   flex: 2;
   padding: 1rem;
@@ -54,7 +54,7 @@
   font-size: 1rem;
   padding: 1rem;
   border-radius: 0.4rem;
-  border: 1px solid #00000040;
+  border: 1px solid var(--black-transparent-medium);
 }
 .output-message__icon {
   display: flex;
@@ -73,7 +73,7 @@
   margin-left: auto;
   margin-right: 1rem;
   background: #43e1d2a8;
-  color: #fff;
+  color: var(--white);
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -81,7 +81,7 @@
   margin-right: auto;
   margin-left: 1rem;
   justify-content: flex-start;
-  background: #fff;
+  background: var(--white);
 }
 
 .textarea {
@@ -96,11 +96,11 @@
   outline: none;
   border: none;
   border-radius: 2rem;
-  background: #fff;
-  border: 1px solid #00000040;
+  background: var(--white);
+  border: 1px solid var(--black-transparent-medium);
 }
 .textarea:focus {
-  outline: 1px solid #00000080;
+  outline: 1px solid var(--black-deep)00080;
 }
 
 .send-button-container {
@@ -152,7 +152,7 @@
 
 .head-section {
   transform: translateY(30%);
-  background: #fff;
+  background: var(--white);
   box-sizing: border-box;
   z-index: 999;
   height: 56px;
@@ -162,7 +162,7 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 0 0 0 1rem;
-  border: 1px solid #00000040;
+  border: 1px solid var(--black-transparent-medium);
   border-radius: 0.4rem;
 }
 
@@ -366,7 +366,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: var(--white);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -374,7 +374,7 @@
   width: 80%;
   max-width: 500px;
   text-align: center;
-  border: 1px solid #00000040;
+  border: 1px solid var(--black-transparent-medium);
 }
 
 .modal p {
