@@ -2,7 +2,7 @@ import WhatsappPng from '../media/images/Whatsapp.png';
 
 const WhatsAppButton = () => {
   const openWhatsAppChat = () => {
-    const win = window.open('https://wa.me/1234567890', '_blank');
+    const win = window.open('https://wa.me/00393474943221', '_blank');
     win?.focus();
   }
 
