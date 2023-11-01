@@ -52,7 +52,7 @@
 .preview-text-description-devices {
   align-self: flex-start;
   display: flex;
-  color: var(--light-text);
+  color: var(--black-text);
 }
 
 
