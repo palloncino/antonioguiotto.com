@@ -15,7 +15,7 @@ const defaultPreviewCard = {
   devices: "",
   description: "",
   status: "Under constant development.",
-  route: "/",
+  mutedVideo: true,
   images: [],
   gifs: [],
   videos: [Vid2],
@@ -23,7 +23,7 @@ const defaultPreviewCard = {
 
 const features = [
   {
-    id: 1,
+    id: 12345234,
     buttonCard: {
       title: "ChatUp - Web",
       description:
@@ -33,23 +33,22 @@ const features = [
     },
     previewCard: {
       title: "ChatUp",
-      devices: "Web browser",
+      devices: "Desktop",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
-      route: "/chat-up",
       images: [],
       gifs: [],
       videos: [Vid4],
     },
   },
   {
-    id: 2,
+    id: 2141234,
     buttonCard: {
       title: "SquareUp - Mobile",
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
-      route: "/square-up",
+      route: "/",
       media: applePng,
     },
     previewCard: {
@@ -58,7 +57,6 @@ const features = [
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       status: "DEMO, not released.",
-      route: "/square-up",
       images: [],
       gifs: [],
       videos: [Vid3],
@@ -84,10 +82,11 @@ const Explore = () => {
       );
     }
     const selectedItem = features.find(({ id }) => id === index);
+    const id = selectedItem?.id;
     const previewContent = selectedItem?.previewCard;
     return (
       <Fade>
-        <PreviewCard {...previewContent} />
+        <PreviewCard id={id} {...previewContent} />
       </Fade>
     );
   };
@@ -96,7 +95,7 @@ const Explore = () => {
     <>
       <div
         className="explore-page-container"
-        style={{ height: `${window.innerHeight}px`, overflow: 'hidden' }}
+        style={{ height: `${window.innerHeight}px`, overflow: "hidden" }}
       >
         <div className="explore-page-container-width-setter">
           <div className="explore-page-container-content">

@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./PreviewCard.css";
 
 const PreviewCard = ({
+  id,
   title,
   devices,
   description,
   status,
   images,
-  about,
-  route,
   videos,
 }: any) => {
   const [muted, setMuted] = useState(true);
   const [loading, setLoading] = useState(false);
+
   const renderLoading = () => {
     return (
       <div className="explore-page-card-preview-loading">
@@ -33,11 +33,6 @@ const PreviewCard = ({
               <span>{char}</span>
             ))}
           </h3>
-          {description && (
-            <div className="preview-text-description-description">
-              {description}
-            </div>
-          )}
           <div className="preview-media">
             {images.map((image: any, index: number) => (
               <img
@@ -52,12 +47,20 @@ const PreviewCard = ({
                 key={index}
                 src={video}
                 autoPlay
-                muted={muted}
+                muted={id === 2141234 ? false : muted}
                 controls={false}
                 loop
               />
             ))}
           </div>
+          {description && (
+            <div className="preview-text-description-devices">
+              <div className="preview-text-description-key">About</div>
+              <div className="preview-text-description-value">
+                {description}
+              </div>
+            </div>
+          )}
           <div className="preview-text-description-container">
             {devices && (
               <div className="preview-text-description-devices">

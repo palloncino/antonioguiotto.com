@@ -22,18 +22,6 @@
   font-family: "Custom";
 }
 
-.preview-text-description-description {
-  position: absolute;
-  color: #dbdbdb;
-  bottom: 6rem;
-  right: 4rem;
-  left: 4rem;
-  background-color: var(--black-transparent-dark);
-  padding: .4rem 1rem;
-  border-radius: .4rem;
-  width: auto;
-}
-
 .explore-page-card-preview-loading {
   display: flex;
   width: 100%;
@@ -49,7 +37,8 @@
 
 .preview-text-description-link,
 .preview-text-description-status,
-.preview-text-description-devices {
+.preview-text-description-devices,
+.preview-text-description-description {
   align-self: flex-start;
   display: flex;
   color: var(--black-text);

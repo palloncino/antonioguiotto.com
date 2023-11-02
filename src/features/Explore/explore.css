@@ -132,8 +132,8 @@
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
   color: var(--black-deep);
-  text-shadow: 1px 1px var(--white)fff, 2px 2px var(--white)fff, 3px 3px var(--white)fff,
-    4px 4px var(--white)fff;
+  text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
+    4px 4px var(--white);
 }
 
 h1 span:nth-child(2) {
