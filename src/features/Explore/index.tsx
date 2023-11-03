@@ -3,6 +3,7 @@ import BottomLinks from "../../components/BottomLinks";
 import ButtonCard from "../../components/ButtonCard";
 import PreviewCard from "../../components/PreviewCard";
 import applePng from "../../media/images/apple.png";
+import Thumbnail from "../../media/images/thumbnail.jpg";
 import ChatUpPng from "../../media/images/chatup-logo.png";
 import Vid2 from "../../media/videos/vid2.mov";
 import Vid3 from "../../media/videos/vid3.mov";
@@ -59,6 +60,7 @@ const features = [
       status: "DEMO, not released.",
       images: [],
       gifs: [],
+      thumbnail: Thumbnail,
       videos: [Vid3],
     },
   },

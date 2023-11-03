@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./PreviewCard.css";
 
 const PreviewCard = ({
@@ -8,6 +8,7 @@ const PreviewCard = ({
   description,
   status,
   images,
+  thumbnail,
   videos,
 }: any) => {
   const [muted, setMuted] = useState(true);
@@ -43,10 +44,11 @@ const PreviewCard = ({
             ))}
             {videos.map((video: any, index: number) => (
               <video
+                poster={thumbnail}
                 onDoubleClick={() => setMuted(!muted)}
                 key={index}
                 src={video}
-                autoPlay
+                autoPlay={true}
                 muted={id === 2141234 ? false : muted}
                 controls={false}
                 loop
