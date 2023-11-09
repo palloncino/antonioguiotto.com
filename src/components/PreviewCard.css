@@ -107,3 +107,9 @@ video {
     top: 1rem;
   }
 }
+
+.youtube-frame iframe {
+  box-sizing: border-box;
+  border: .2rem solid;
+  border-radius: 1rem;
+}

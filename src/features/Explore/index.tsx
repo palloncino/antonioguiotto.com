@@ -19,14 +19,14 @@ const defaultPreviewCard = {
   mutedVideo: true,
   images: [],
   gifs: [],
-  videos: [Vid2],
+  videos: [{ videoId: "JY6SPRNjvZE" }],
 };
 
 const features = [
   {
     id: 12345234,
     buttonCard: {
-      title: "ChatUp - Web",
+      title: "ChatUp - Web App",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
       route: "/chat-up",
@@ -38,9 +38,9 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
-      images: [],
+      images: [ChatUpPng],
       gifs: [],
-      videos: [Vid4],
+      videos: [],
     },
   },
   {
@@ -61,7 +61,7 @@ const features = [
       images: [],
       gifs: [],
       thumbnail: Thumbnail,
-      videos: [Vid3],
+      videos: [{ videoId: "3JtrRG6w0oU" }],
     },
   },
 ];
@@ -102,7 +102,7 @@ const Explore = () => {
         <div className="explore-page-container-width-setter">
           <div className="explore-page-container-content">
             <div className="left-side">
-              <h1 className="explore-page-title">
+              <h1 className="explore-page-title" onClick={() => setSelectedIndex(undefined)}>
                 <span>E</span>
                 <span>x</span>
                 <span>p</span>
@@ -113,15 +113,17 @@ const Explore = () => {
               </h1>
 
               <div className="explore-page-cards">
-                {features.map(({ id, buttonCard }, index) => (
-                  <ButtonCard
-                    selectedIndex={selectedIndex}
-                    handleSetSelectedItem={handleSetSelectedItem}
-                    key={`${id}__${index}`}
-                    id={id}
-                    {...buttonCard}
-                  />
-                ))}
+                {features.map(({ id, buttonCard }, index) => {
+                  return (
+                    <ButtonCard
+                      selectedIndex={selectedIndex}
+                      handleSetSelectedItem={handleSetSelectedItem}
+                      key={`${id}__${index}`}
+                      id={id}
+                      {...buttonCard}
+                    />
+                  );
+                })}
               </div>
             </div>
 

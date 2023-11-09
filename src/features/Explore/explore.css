@@ -74,8 +74,32 @@
 .explore-page-card:hover {
   color: var(--black-text);
   border-radius: 1rem;
-  border: 0.2rem solid var(--black-deep);
+  border: 0.2rem solid var(--black-text);
 }
+
+.explore-page-card.selected {
+  color: var(--black-text);
+  border-radius: 1rem;
+  border: 0.2rem solid var(--black-text);
+  background: var(--black-transparent-light);
+}
+.explore-page-card.not-hovered {
+  color: #7f7b8d;
+  border-radius: 1rem;
+  border: 0.2rem solid var(--black-transparent-light);
+}
+.explore-page-card.selected.not-hovered {
+  color: var(--black-text);
+  border-radius: 1rem;
+  border: 0.2rem solid var(--black-text);
+}
+
+.explore-page-card.selected .explore-card-media-container {
+  min-width: 100px;
+  height: 62px;
+  margin-right: 1rem;
+}
+
 
 .explore-page-card:hover .explore-card-media-container {
   min-width: 100px;
@@ -125,7 +149,15 @@
   font-size: 6em;
   margin: 2rem 0 3.5rem 0;
   user-select: none;
+  transition: .2s all;
 }
+
+.explore-page-title:hover {
+  transform: scale(1.1);
+  margin: 2rem 0 3.5rem 1rem;
+  cursor: pointer;
+}
+
 
 .explore-page-title span {
   display: inline-block;

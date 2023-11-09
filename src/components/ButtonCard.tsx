@@ -9,21 +9,36 @@ const ButtonCard = ({
   description,
   media,
   handleSetSelectedItem,
+  selectedIndex
 }: any) => {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
 
+  const getClasses = (selected: boolean, hover: boolean) => {
+    let classesStr = ''
+    if (selected) {
+      classesStr += " selected";
+    }
+    if (!hover) {
+      classesStr += " not-hovered";
+    }
+    return classesStr;
+  }
+
   return (
     <div
-      onClick={() => navigate(route)}
-      className="explore-page-card"
+      onClick={() => {
+        handleSetSelectedItem(id);
+        navigate(route)
+      }}
+      className={`explore-page-card ${getClasses(selectedIndex === id, isHover)}`}
       onMouseEnter={() => {
         setIsHover(true);
-        handleSetSelectedItem(id);
+        // handleSetSelectedItem(id);
       }}
       onMouseLeave={() => {
         setIsHover(false);
-        handleSetSelectedItem(undefined);
+        // handleSetSelectedItem(undefined);
       }}
     >
       <div
@@ -33,7 +48,7 @@ const ButtonCard = ({
       <div className="explore-card-text-container">
         <div className="explore-card-title">{title}</div>
         <div className="explore-card-description">
-          {isHover ? (
+          {isHover || (selectedIndex === id) ? (
             <Marquee
               delay={300}
               direction={"left"}
