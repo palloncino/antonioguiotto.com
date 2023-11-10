@@ -26,7 +26,7 @@ const features = [
   {
     id: 12345234,
     buttonCard: {
-      title: "ChatUp - Web App",
+      title: "ChatUp - Web App (go to App)",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
       route: "/chat-up",
@@ -46,7 +46,7 @@ const features = [
   {
     id: 2141234,
     buttonCard: {
-      title: "SquareUp - Mobile",
+      title: "SquareUp - Mobile (Preview)",
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       route: "/",
@@ -57,6 +57,48 @@ const features = [
       devices: "Mobile, iOS",
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
+      status: "DEMO, not released.",
+      images: [],
+      gifs: [],
+      thumbnail: Thumbnail,
+      videos: [{ videoId: "3JtrRG6w0oU" }],
+    },
+  },
+  {
+    id: 2141235,
+    buttonCard: {
+      title: "Dummy ID: 2141235",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
+      route: "/",
+      media: applePng,
+    },
+    previewCard: {
+      title: "Dummy ID: 2141235",
+      devices: "Mobile, iOS",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
+      status: "DEMO, not released.",
+      images: [],
+      gifs: [],
+      thumbnail: Thumbnail,
+      videos: [{ videoId: "3JtrRG6w0oU" }],
+    },
+  },
+  {
+    id: 2141236,
+    buttonCard: {
+      title: "Dummy ID: 2141236",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
+      route: "/",
+      media: applePng,
+    },
+    previewCard: {
+      title: "Dummy ID: 2141236",
+      devices: "Mobile, iOS",
+      description:
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
       status: "DEMO, not released.",
       images: [],
       gifs: [],
@@ -95,45 +137,54 @@ const Explore = () => {
 
   return (
     <>
-      <div
-        className="explore-page-container"
-        style={{ height: `${window.innerHeight}px`, overflow: "hidden" }}
-      >
+      <div className="explore-page-container">
         <div className="explore-page-container-width-setter">
           <div className="explore-page-container-content">
             <div className="left-side">
-              <h1 className="explore-page-title" onClick={() => setSelectedIndex(undefined)}>
-                <span>E</span>
-                <span>x</span>
-                <span>p</span>
-                <span>l</span>
-                <span>o</span>
-                <span>r</span>
-                <span>e</span>
-              </h1>
+              <div className="left-side-top">
+                <div className="explore-page-title-container">
+                  <h1
+                    className="explore-page-title"
+                    onClick={() => setSelectedIndex(undefined)}
+                  >
+                    <span>E</span>
+                    <span>x</span>
+                    <span>p</span>
+                    <span>l</span>
+                    <span>o</span>
+                    <span>r</span>
+                    <span>e</span>
+                  </h1>
+                </div>
+                <div className="explore-page-cards-container">
+                  {features.map(({ id, buttonCard }, index) => {
+                    return (
+                      <div key={id+index} className="explore-page-card-container">
+                        <ButtonCard
+                          selectedIndex={selectedIndex}
+                          handleSetSelectedItem={handleSetSelectedItem}
+                          key={`${id}__${index}`}
+                          id={id}
+                          {...buttonCard}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
 
-              <div className="explore-page-cards">
-                {features.map(({ id, buttonCard }, index) => {
-                  return (
-                    <ButtonCard
-                      selectedIndex={selectedIndex}
-                      handleSetSelectedItem={handleSetSelectedItem}
-                      key={`${id}__${index}`}
-                      id={id}
-                      {...buttonCard}
-                    />
-                  );
-                })}
+              <div className="left-side-bottom">
+                <BottomLinks />
               </div>
             </div>
 
             <div className="right-side">
-              <div className="right-side-content-container">
-                <>{displaySelectedItem(selectedIndex)}</>
+              <div className="right-side-top">
+                {displaySelectedItem(selectedIndex)}
               </div>
+              <div className="right-side-bottom">{/* free spot */}</div>
             </div>
           </div>
-          <BottomLinks />
         </div>
       </div>
     </>

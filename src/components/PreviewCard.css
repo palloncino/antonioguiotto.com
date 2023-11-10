@@ -32,7 +32,7 @@
 .preview-text-description-container {
   display: flex;
   flex-direction: column;
-  gap: .4rem;
+  gap: 0.4rem;
 }
 
 .preview-text-description-link,
@@ -44,15 +44,12 @@
   color: var(--black-text);
 }
 
-
 .preview-text-description-key {
   align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  background: var(--black-text);
-  color: var(--white);
+  border-right: 2px solid var(--black-text);
   text-align: end;
-  border-radius: 0.2rem;
   padding: 0rem 1rem;
   width: 8rem;
   min-width: 8rem;
@@ -62,7 +59,8 @@
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
   color: var(--white);
-  text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep), 3px 3px var(--black-deep), 4px 4px var(--black-deep);
+  text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep),
+    3px 3px var(--black-deep), 4px 4px var(--black-deep);
 }
 
 h3 span:nth-child(2) {
@@ -100,16 +98,14 @@ video {
 }
 
 @media only screen and (max-width: 600px) {
-  .explore-page-card-preview-title {
-    font-size: 2.5rem;
-    padding: 0 1rem;
-    margin: 0;
-    top: 1rem;
-  }
 }
 
+.youtube-frame {
+  width: 100%;
+}
 .youtube-frame iframe {
+  width: 100%;
   box-sizing: border-box;
-  border: .2rem solid;
+  border: 0.2rem solid;
   border-radius: 1rem;
 }

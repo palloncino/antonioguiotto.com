@@ -10,7 +10,7 @@
 
 .explore-page-container {
   box-sizing: border-box;
-  background: url("../../media/images/graph-paper.svg");
+  /* background: url("../../media/images/graph-paper.svg"); */
   background-position: center top;
 }
 
@@ -19,92 +19,96 @@
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .explore-page-container-content {
-  box-sizing: border-box;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
   gap: 1rem;
 }
 
 .left-side {
-  width: 50%;
+  padding: 1rem 0 0 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.left-side-container {
+  
+}
+
+.left-side-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.left-side-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0 0 1rem 0;
 }
 
 .right-side {
-  width: 50%;
-  height: 90vh;
-  padding: .4rem;
-  border-radius: 1rem;
+  padding: 1rem 0 0 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.right-side-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.right-side-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .right-side-content-container {
 }
 
-.explore-page-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+.explore-page-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-.explore-page-card {
-  box-sizing: border-box;
+.explore-page-card-container {
   width: 100%;
-  padding: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  color: #7f7b8d;
-  background: var(--white);
-  border: 0.2rem solid var(--black-transparent-light);
-  border-radius: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow: hidden;
-  transition: all 0.2s ease;
-  transform-style: preserve-3d;
-  z-index: 999;
-  position: relative;
 }
 
-.explore-page-card:hover {
-  color: var(--black-text);
+.explore-page-card {
+  background: rgb(243, 237, 227);
+  border: 0.2rem solid var(--black-text);
   border-radius: 1rem;
-  border: 0.2rem solid var(--black-transparent-light);
+  cursor: pointer;
 }
 
 .explore-page-card.selected {
   color: var(--black-text);
-  border-radius: 1rem;
   border: 0.2rem solid var(--black-text);
   background: var(--black-transparent-light);
 }
 .explore-page-card.not-hovered {
   color: #7f7b8d;
-  border-radius: 1rem;
   border: 0.2rem solid var(--black-transparent-light);
 }
 .explore-page-card.selected.not-hovered {
   color: var(--black-text);
-  border-radius: 1rem;
   border: 0.2rem solid var(--black-text);
 }
 
 .explore-page-card.selected .explore-card-media-container {
-  min-width: 100px;
-  height: 62px;
-  margin-right: 1rem;
 }
 
-
 .explore-page-card:hover .explore-card-media-container {
-  min-width: 100px;
-  height: 62px;
-  margin-right: 1rem;
 }
 
 .explore-page-card:hover .explore-card-title {
@@ -113,11 +117,12 @@
 
 .explore-card-media-container {
   background-position: center;
-  border-radius: 0.4rem;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
   transition: all 0.2s;
   transition-delay: 0.2s;
   min-width: 0px;
-  height: 62px;
+  height: 100px;
 }
 
 .explore-card-text-container {
@@ -125,7 +130,7 @@
 }
 
 .explore-card-title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin-bottom: 0.4rem;
   display: flex;
   flex-direction: column;
@@ -135,29 +140,31 @@
 }
 
 .explore-card-description {
-  width: 100%;
-  white-space: nowrap;
-  animation: marquee 15s linear infinite;
-  animation-play-state: paused;
+  max-width: 100%;
+  line-height: 1.4rem;
   box-sizing: border-box;
   overflow: hidden;
 }
 .explore-card-description:hover {
 }
 
+.explore-page-title-container {
+  background: #dd2525;
+  height: 100px;
+}
+
 .explore-page-title {
   font-size: 6em;
   margin: 2rem 0 3.5rem 0;
   user-select: none;
-  transition: .2s all;
+  transition: 0.2s all;
 }
 
 .explore-page-title:hover {
-  transform: scale(1.1);
-  margin: 2rem 0 3.5rem 1rem;
   cursor: pointer;
+  text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
+    4px 4px var(--white);
 }
-
 
 .explore-page-title span {
   display: inline-block;
@@ -232,14 +239,5 @@ h1 span:nth-child(7) {
   0%,
   100% {
     border-left: 4rem solid;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
