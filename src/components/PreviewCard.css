@@ -39,7 +39,6 @@
 .preview-text-description-status,
 .preview-text-description-devices,
 .preview-text-description-description {
-  align-self: flex-start;
   display: flex;
   color: var(--black-text);
 }
@@ -61,6 +60,16 @@
   color: var(--white);
   text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep),
     3px 3px var(--black-deep), 4px 4px var(--black-deep);
+}
+
+.preview-card-title {
+  font-size: 2.6rem;
+  margin: .8rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Custom";
 }
 
 h3 span:nth-child(2) {
@@ -107,5 +116,5 @@ video {
   width: 100%;
   box-sizing: border-box;
   border: 0.2rem solid;
-  border-radius: 1rem;
+  border-radius: .2rem;
 }

@@ -48,6 +48,14 @@ const PreviewCard = ({
               <img src={images[0]} alt={`${title}`} />
             )}
           </div>
+          {title && (
+            <div className="preview-text-description-devices">
+            <div className="preview-text-description-key"></div>
+            <div className="preview-card-title">
+              {title}
+            </div>
+          </div>
+          )}
           {description && (
             <div className="preview-text-description-devices">
               <div className="preview-text-description-key">About</div>

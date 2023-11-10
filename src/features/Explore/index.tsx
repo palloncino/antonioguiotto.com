@@ -2,12 +2,7 @@ import { useState } from "react";
 import BottomLinks from "../../components/BottomLinks";
 import ButtonCard from "../../components/ButtonCard";
 import PreviewCard from "../../components/PreviewCard";
-import applePng from "../../media/images/apple.png";
-import Thumbnail from "../../media/images/thumbnail.jpg";
-import ChatUpPng from "../../media/images/chatup-logo.png";
-import Vid2 from "../../media/videos/vid2.mov";
-import Vid3 from "../../media/videos/vid3.mov";
-import Vid4 from "../../media/videos/vid4.mov";
+import thumbnail from "../../media/images/thumbnail-card.png";
 import Fade from "../Fade";
 import "./explore.css";
 
@@ -30,7 +25,7 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
       route: "/chat-up",
-      media: ChatUpPng,
+      media: thumbnail,
     },
     previewCard: {
       title: "ChatUp",
@@ -38,7 +33,7 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
-      images: [ChatUpPng],
+      images: [thumbnail],
       gifs: [],
       videos: [],
     },
@@ -50,7 +45,7 @@ const features = [
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       route: "/",
-      media: applePng,
+      media: thumbnail,
     },
     previewCard: {
       title: "Square Up",
@@ -60,50 +55,29 @@ const features = [
       status: "DEMO, not released.",
       images: [],
       gifs: [],
-      thumbnail: Thumbnail,
+      thumbnail: thumbnail,
       videos: [{ videoId: "3JtrRG6w0oU" }],
     },
   },
   {
-    id: 2141235,
+    id: 2141237,
     buttonCard: {
-      title: "Dummy ID: 2141235",
+      title: "Test - Example Feature",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
+        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
       route: "/",
-      media: applePng,
+      media: thumbnail,
     },
     previewCard: {
-      title: "Dummy ID: 2141235",
+      title: "Test - Example Feature",
       devices: "Mobile, iOS",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
+        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
       status: "DEMO, not released.",
       images: [],
       gifs: [],
-      thumbnail: Thumbnail,
-      videos: [{ videoId: "3JtrRG6w0oU" }],
-    },
-  },
-  {
-    id: 2141236,
-    buttonCard: {
-      title: "Dummy ID: 2141236",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
-      route: "/",
-      media: applePng,
-    },
-    previewCard: {
-      title: "Dummy ID: 2141236",
-      devices: "Mobile, iOS",
-      description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione tempore sint harum facilis sapiente id, dolorum, odit ipsa aut accusantium repellat eius rem natus maiores quae dicta consequatur temporibus cum?",
-      status: "DEMO, not released.",
-      images: [],
-      gifs: [],
-      thumbnail: Thumbnail,
-      videos: [{ videoId: "3JtrRG6w0oU" }],
+      thumbnail: thumbnail,
+      videos: [{ videoId: "z0AEwKad7GU" }],
     },
   },
 ];
@@ -182,7 +156,6 @@ const Explore = () => {
               <div className="right-side-top">
                 {displaySelectedItem(selectedIndex)}
               </div>
-              <div className="right-side-bottom">{/* free spot */}</div>
             </div>
           </div>
         </div>
