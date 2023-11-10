@@ -28,8 +28,8 @@ const ButtonCard = ({
   return (
     <div
       onClick={() => {
-        handleSetSelectedItem(id);
-        navigate(route)
+        selectedIndex === id ? handleSetSelectedItem(undefined) : handleSetSelectedItem(id);
+        navigate(route);
       }}
       className={`explore-page-card ${getClasses(selectedIndex === id, isHover)}`}
       onMouseEnter={() => {
@@ -48,7 +48,7 @@ const ButtonCard = ({
       <div className="explore-card-text-container">
         <div className="explore-card-title">{title}</div>
         <div className="explore-card-description">
-          {isHover || (selectedIndex === id) ? (
+          {isHover ? (
             <Marquee
               delay={300}
               direction={"left"}

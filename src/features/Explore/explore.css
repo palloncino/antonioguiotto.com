@@ -74,7 +74,7 @@
 .explore-page-card:hover {
   color: var(--black-text);
   border-radius: 1rem;
-  border: 0.2rem solid var(--black-text);
+  border: 0.2rem solid var(--black-transparent-light);
 }
 
 .explore-page-card.selected {
