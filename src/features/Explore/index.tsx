@@ -157,6 +157,7 @@ const features = [
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       status: "DEMO, not released.",
       route: "/",
+      githubRepos: ["SquareUp", "CustomVideoEditingService"],
       images: [],
       gifs: [],
       videos: [{ videoId: "3JtrRG6w0oU" }],

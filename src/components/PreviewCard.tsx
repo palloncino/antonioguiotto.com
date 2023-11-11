@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
 
@@ -11,10 +11,10 @@ const PreviewCard = ({
   status,
   images,
   route,
+  githubRepos,
   videos,
 }: any) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const renderTypewriter = (desc: string) => {
     const id_num = Math.floor(Math.random()) * 100;
@@ -26,8 +26,8 @@ const PreviewCard = ({
         typeSpeed={30}
         cursor={true}
       />
-    )
-  }
+    );
+  };
 
   const renderPreview = () => {
     return (
@@ -80,7 +80,32 @@ const PreviewCard = ({
             {route && route !== "/" && (
               <div className="preview-text-description-link">
                 <div className="preview-text-description-key">Go to app</div>
-                <div className="preview-text-description-value a" onClick={() => navigate(route)}>{route} ↗</div>
+                <div
+                  className="preview-text-description-value a"
+                  onClick={() => navigate(route)}
+                >
+                  {route.slice(1)} ↗
+                </div>
+              </div>
+            )}
+            {githubRepos && githubRepos.length > 0 && (
+              <div className="preview-text-description-link">
+                <div className="preview-text-description-key">
+                  Repositories:
+                </div>
+                {githubRepos.map((name: string) => (
+                  <div
+                    className="preview-text-description-value a"
+                    onClick={() =>
+                      window.open(
+                        `https://github.com/palloncino/${name}`,
+                        "_blank"
+                      )
+                    }
+                  >
+                    {name} ↗
+                  </div>
+                ))}
               </div>
             )}
           </div>

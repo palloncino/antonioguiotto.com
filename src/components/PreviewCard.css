@@ -49,6 +49,10 @@
   color: purple;
 }
 
+.preview-text-description-link .preview-text-description-value.a:not(:last-child) {
+  padding-right: 1rem;
+}
+
 .preview-text-description-link .preview-text-description-value.a:hover {
   text-decoration: underline;
 }
