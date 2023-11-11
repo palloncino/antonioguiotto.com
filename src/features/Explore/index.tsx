@@ -114,7 +114,7 @@ const Explore = () => {
 
   if (isMobile) {
     return (
-      <div>
+      <div style={{ padding: '0rem 1rem' }}>
         <h3>
           Mobile version is under construction
         </h3>
