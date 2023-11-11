@@ -2,7 +2,9 @@ import { useState } from "react";
 import BottomLinks from "../../components/BottomLinks";
 import ButtonCard from "../../components/ButtonCard";
 import PreviewCard from "../../components/PreviewCard";
-import thumbnail from "../../media/images/thumbnail-card.png";
+import squareThumb from "../../media/images/square-thumb.png";
+import chatupThumb from "../../media/images/chatup-thumb.png";
+import thumbnail2 from "../../media/images/bird.png";
 import Fade from "../Fade";
 import "./explore.css";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
@@ -12,7 +14,7 @@ const defaultPreviewCard = {
   title: "Welcome",
   devices: "",
   description: "",
-  status: "Under constant development.",
+  status: "All the content is for DEMO pourposes, constantly under development. Intended as placeholder for a future business.",
   mutedVideo: true,
   images: [],
   gifs: [],
@@ -27,7 +29,7 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
       route: "/chat-up",
-      media: thumbnail,
+      media: chatupThumb,
     },
     previewCard: {
       title: "ChatUp",
@@ -35,7 +37,6 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
-      images: [thumbnail],
       gifs: [],
       videos: [],
     },
@@ -47,7 +48,7 @@ const features = [
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       route: "/",
-      media: thumbnail,
+      media: squareThumb,
     },
     previewCard: {
       title: "Square Up",
@@ -57,7 +58,6 @@ const features = [
       status: "DEMO, not released.",
       images: [],
       gifs: [],
-      thumbnail: thumbnail,
       videos: [{ videoId: "3JtrRG6w0oU" }],
     },
   },
@@ -68,7 +68,7 @@ const features = [
       description:
         "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
       route: "/",
-      media: thumbnail,
+      media: thumbnail2,
     },
     previewCard: {
       title: "Test - Example Feature",
@@ -78,7 +78,6 @@ const features = [
       status: "DEMO, not released.",
       images: [],
       gifs: [],
-      thumbnail: thumbnail,
       videos: [{ videoId: "z0AEwKad7GU" }],
     },
   },
