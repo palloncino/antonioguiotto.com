@@ -127,7 +127,6 @@ const features = [
       title: "ChatUp - Web App (go to App)",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
-      route: "/chat-up",
       media: chatupThumb,
     },
     previewCard: {
@@ -136,6 +135,8 @@ const features = [
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
+      route: "/chat-up",
+      images: [chatupThumb],
       gifs: [],
       videos: [],
     },
@@ -155,6 +156,7 @@ const features = [
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       status: "DEMO, not released.",
+      route: "/",
       images: [],
       gifs: [],
       videos: [{ videoId: "3JtrRG6w0oU" }],

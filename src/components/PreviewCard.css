@@ -37,10 +37,20 @@
 
 .preview-text-description-link,
 .preview-text-description-status,
+.preview-text-description-link,
 .preview-text-description-devices,
 .preview-text-description-description {
   display: flex;
   color: var(--black-text);
+}
+
+.preview-text-description-link .preview-text-description-value.a {
+  cursor: pointer;
+  color: purple;
+}
+
+.preview-text-description-link .preview-text-description-value.a:hover {
+  text-decoration: underline;
 }
 
 .preview-text-description-key {

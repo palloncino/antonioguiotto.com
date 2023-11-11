@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const ButtonCard = ({
   id,
@@ -10,7 +9,6 @@ const ButtonCard = ({
   selectedIndex,
 }: any) => {
   const [isHover, setIsHover] = useState(false);
-  const navigate = useNavigate();
 
   const getClasses = (selected: boolean, hover: boolean) => {
     let classesStr = "";
@@ -29,7 +27,6 @@ const ButtonCard = ({
         selectedIndex === id
           ? handleSetSelectedItem(undefined)
           : handleSetSelectedItem(id);
-        navigate(route);
       }}
       className={`explore-page-card ${getClasses(
         selectedIndex === id,

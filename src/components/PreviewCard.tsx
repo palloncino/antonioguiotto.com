@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter';
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
@@ -10,9 +10,11 @@ const PreviewCard = ({
   description,
   status,
   images,
-  thumbnail,
+  route,
   videos,
 }: any) => {
+
+  const navigate = useNavigate()
 
   const renderTypewriter = (desc: string) => {
     const id_num = Math.floor(Math.random()) * 100;
@@ -75,7 +77,12 @@ const PreviewCard = ({
                 <div className="preview-text-description-value">{status}</div>
               </div>
             )}
-
+            {route && route !== "/" && (
+              <div className="preview-text-description-link">
+                <div className="preview-text-description-key">Go to app</div>
+                <div className="preview-text-description-value a" onClick={() => navigate(route)}>{route} ↗</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
