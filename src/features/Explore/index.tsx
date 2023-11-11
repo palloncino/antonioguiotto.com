@@ -6,15 +6,15 @@ import squareThumb from "../../media/images/square-thumb.png";
 import chatupThumb from "../../media/images/chatup-thumb.png";
 import thumbnail2 from "../../media/images/bird.png";
 import Fade from "../Fade";
-import "./explore.css";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
 import { useDevice } from "../../hooks/useDevice";
+import "./explore.css";
 
 const defaultPreviewCard = {
   title: "Welcome",
   devices: "",
-  description: "",
-  status: "All the content is for DEMO pourposes, constantly under development. Intended as placeholder for a future business.",
+  description: "All the content is for DEMO pourposes, constantly under development. Intended as placeholder for a future business.",
+  status: "",
   mutedVideo: true,
   images: [],
   gifs: [],

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Typewriter } from 'react-simple-typewriter'
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
 
@@ -26,6 +27,20 @@ const PreviewCard = ({
       </div>
     );
   };
+
+  const renderTypewriter = (desc: string) => {
+    const id_num = Math.floor(Math.random())*100;
+    return (
+      <Typewriter
+        key={`${desc.slice(0, 5)+id_num}`}
+        words={[`${desc}`]}
+        loop={1}
+        typeSpeed={30}
+        cursor={true}
+      />
+    )
+  }
+
   const renderPreview = () => {
     return (
       <div className="explore-page-card-preview">
@@ -54,6 +69,14 @@ const PreviewCard = ({
                 <div className="preview-card-title">{title}</div>
               </div>
             )}
+            {description && (
+              <div className="preview-text-description-devices">
+                <div className="preview-text-description-key">About</div>
+                <div className="preview-text-description-value">
+                  {renderTypewriter(description)}
+                </div>
+              </div>
+            )}
             {devices && (
               <div className="preview-text-description-devices">
                 <div className="preview-text-description-key">Devices</div>
@@ -66,14 +89,7 @@ const PreviewCard = ({
                 <div className="preview-text-description-value">{status}</div>
               </div>
             )}
-            {description && (
-              <div className="preview-text-description-devices">
-                <div className="preview-text-description-key">About</div>
-                <div className="preview-text-description-value">
-                  {description}
-                </div>
-              </div>
-            )}
+
           </div>
         </div>
       </div>

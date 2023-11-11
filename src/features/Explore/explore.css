@@ -149,7 +149,6 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  /* background: url("../../media/images/maze.png"); */
   background: red;
   height: 160px;
   border-bottom-left-radius: .2rem;
@@ -165,8 +164,6 @@
 
 .explore-page-title:hover {
   cursor: pointer;
-  text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
-    4px 4px var(--white);
 }
 
 .explore-page-title span {
@@ -174,8 +171,6 @@
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
   color: var(--white);
-  /* text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
-    4px 4px var(--white); */
 }
 
 h1 span:nth-child(2) {
