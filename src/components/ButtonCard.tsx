@@ -1,3 +1,4 @@
+import PinIcon from '../media/images/pin.png';
 import { useState } from "react";
 
 const ButtonCard = ({
@@ -39,6 +40,9 @@ const ButtonCard = ({
         setIsHover(false);
       }}
     >
+      <div className="pin-feaure-image">
+        <img src={PinIcon} alt="pin feature" />
+      </div>
       <div
         className="explore-card-media-container"
         style={{ backgroundImage: `url(${media}`, backgroundSize: "cover" }}

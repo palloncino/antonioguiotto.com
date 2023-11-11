@@ -169,7 +169,7 @@ const features = [
       description:
         "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
       route: "/",
-      media: thumbnail2,
+      media: squareThumb,
     },
     previewCard: {
       title: "Test - Example Feature",
