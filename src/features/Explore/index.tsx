@@ -6,6 +6,7 @@ import thumbnail from "../../media/images/thumbnail-card.png";
 import Fade from "../Fade";
 import "./explore.css";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
+import { useDevice } from "../../hooks/useDevice";
 
 const defaultPreviewCard = {
   title: "Welcome",
@@ -87,6 +88,7 @@ const Explore = () => {
   const [selectedIndex, setSelectedIndex] = useState<undefined | number>(
     undefined
   );
+  const { isMobile } = useDevice();
 
   const handleSetSelectedItem = (index: number) => {
     setSelectedIndex(index);
@@ -109,6 +111,16 @@ const Explore = () => {
       </Fade>
     );
   };
+
+  if (isMobile) {
+    return (
+      <div>
+        <h3>
+          Mobile version is under construction
+        </h3>
+      </div>
+    )
+  }
 
   return (
     <>
@@ -134,7 +146,7 @@ const Explore = () => {
                 <div className="explore-page-cards-container">
                   {features.map(({ id, buttonCard }, index) => {
                     return (
-                      <div key={id+index} className="explore-page-card-container">
+                      <div key={id + index} className="explore-page-card-container">
                         <ButtonCard
                           selectedIndex={selectedIndex}
                           handleSetSelectedItem={handleSetSelectedItem}
