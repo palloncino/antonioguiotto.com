@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import { Typewriter } from 'react-simple-typewriter'
+import { useState } from "react";
+import { Typewriter } from 'react-simple-typewriter';
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
 
@@ -13,26 +13,12 @@ const PreviewCard = ({
   thumbnail,
   videos,
 }: any) => {
-  const [muted, setMuted] = useState(true);
-  const [loading, setLoading] = useState(false);
-
-  const renderLoading = () => {
-    return (
-      <div className="explore-page-card-preview-loading">
-        <h3 className="explore-page-card-preview-title">
-          {"LOADING...".split("").map((char, index) => (
-            <span key={char + index + char}>{char}</span>
-          ))}
-        </h3>
-      </div>
-    );
-  };
 
   const renderTypewriter = (desc: string) => {
-    const id_num = Math.floor(Math.random())*100;
+    const id_num = Math.floor(Math.random()) * 100;
     return (
       <Typewriter
-        key={`${desc.slice(0, 5)+id_num}`}
+        key={`${desc.slice(0, 5) + id_num}`}
         words={[`${desc}`]}
         loop={1}
         typeSpeed={30}
@@ -95,7 +81,7 @@ const PreviewCard = ({
       </div>
     );
   };
-  return loading ? renderLoading() : renderPreview();
+  return renderPreview();
 };
 
 export default PreviewCard;

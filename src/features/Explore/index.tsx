@@ -2,86 +2,13 @@ import { useState } from "react";
 import BottomLinks from "../../components/BottomLinks";
 import ButtonCard from "../../components/ButtonCard";
 import PreviewCard from "../../components/PreviewCard";
-import squareThumb from "../../media/images/square-thumb.png";
-import chatupThumb from "../../media/images/chatup-thumb.png";
+import squareThumb from "../../media/images/graph-paper.svg";
+import chatupThumb from "../../media/images/graph-paper.svg";
 import thumbnail2 from "../../media/images/bird.png";
 import Fade from "../Fade";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
 import { useDevice } from "../../hooks/useDevice";
 import "./explore.css";
-
-const defaultPreviewCard = {
-  title: "Welcome",
-  devices: "",
-  description: "All the content is for DEMO pourposes, constantly under development. Intended as placeholder for a future business.",
-  status: "",
-  mutedVideo: true,
-  images: [],
-  gifs: [],
-  videos: [{ videoId: "JY6SPRNjvZE" }],
-};
-
-const features = [
-  {
-    id: 12345234,
-    buttonCard: {
-      title: "ChatUp - Web App (go to App)",
-      description:
-        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
-      route: "/chat-up",
-      media: chatupThumb,
-    },
-    previewCard: {
-      title: "ChatUp",
-      devices: "Desktop",
-      description:
-        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
-      status: "Currently out of service for exceeded maintenance costs.",
-      gifs: [],
-      videos: [],
-    },
-  },
-  {
-    id: 2141234,
-    buttonCard: {
-      title: "SquareUp - Mobile (Preview)",
-      description:
-        "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
-      route: "/",
-      media: squareThumb,
-    },
-    previewCard: {
-      title: "Square Up",
-      devices: "Mobile, iOS",
-      description:
-        "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
-      status: "DEMO, not released.",
-      images: [],
-      gifs: [],
-      videos: [{ videoId: "3JtrRG6w0oU" }],
-    },
-  },
-  {
-    id: 2141237,
-    buttonCard: {
-      title: "Test - Example Feature",
-      description:
-        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
-      route: "/",
-      media: thumbnail2,
-    },
-    previewCard: {
-      title: "Test - Example Feature",
-      devices: "Mobile, iOS",
-      description:
-        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
-      status: "DEMO, not released.",
-      images: [],
-      gifs: [],
-      videos: [{ videoId: "z0AEwKad7GU" }],
-    },
-  },
-];
 
 const Explore = () => {
   const [selectedIndex, setSelectedIndex] = useState<undefined | number>(
@@ -180,3 +107,77 @@ const Explore = () => {
 };
 
 export default Explore;
+
+
+const defaultPreviewCard = {
+  title: "Welcome",
+  devices: "",
+  description: "All the content is for DEMO pourposes, constantly under development. Intended as placeholder for a future business.",
+  status: "",
+  mutedVideo: true,
+  images: [],
+  gifs: [],
+  videos: [{ videoId: "JY6SPRNjvZE" }],
+};
+
+const features = [
+  {
+    id: 12345234,
+    buttonCard: {
+      title: "ChatUp - Web App (go to App)",
+      description:
+        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
+      route: "/chat-up",
+      media: chatupThumb,
+    },
+    previewCard: {
+      title: "ChatUp",
+      devices: "Desktop",
+      description:
+        "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
+      status: "Currently out of service for exceeded maintenance costs.",
+      gifs: [],
+      videos: [],
+    },
+  },
+  {
+    id: 2141234,
+    buttonCard: {
+      title: "SquareUp - Mobile (Preview)",
+      description:
+        "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
+      route: "/",
+      media: squareThumb,
+    },
+    previewCard: {
+      title: "Square Up",
+      devices: "Mobile, iOS",
+      description:
+        "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
+      status: "DEMO, not released.",
+      images: [],
+      gifs: [],
+      videos: [{ videoId: "3JtrRG6w0oU" }],
+    },
+  },
+  {
+    id: 2141237,
+    buttonCard: {
+      title: "Test - Example Feature",
+      description:
+        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
+      route: "/",
+      media: thumbnail2,
+    },
+    previewCard: {
+      title: "Test - Example Feature",
+      devices: "Mobile, iOS",
+      description:
+        "Lorem ipsum Test - Example Feature, Lorem ipsum Test - Example Feature!",
+      status: "DEMO, not released.",
+      images: [],
+      gifs: [],
+      videos: [{ videoId: "z0AEwKad7GU" }],
+    },
+  },
+];
