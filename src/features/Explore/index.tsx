@@ -5,6 +5,7 @@ import PreviewCard from "../../components/PreviewCard";
 import thumbnail from "../../media/images/thumbnail-card.png";
 import Fade from "../Fade";
 import "./explore.css";
+import AbsoluteFooter from "../../components/AbsoluteFooter";
 
 const defaultPreviewCard = {
   title: "Welcome",
@@ -157,6 +158,9 @@ const Explore = () => {
                 {displaySelectedItem(selectedIndex)}
               </div>
             </div>
+
+
+            <AbsoluteFooter />
           </div>
         </div>
       </div>

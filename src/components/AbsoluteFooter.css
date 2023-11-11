@@ -1,0 +1,16 @@
+.absolute-footer-container {
+  position: absolute;
+  bottom: 1rem; 
+  right: 0rem;
+}
+
+.absolute-footer-content {
+  background: var(--black-text);
+  color: var(--white);
+  border-radius: .2rem;
+  padding: .4rem 1rem;
+}
+
+.absolute-footer-text {
+  font-family: "Custom";
+}
