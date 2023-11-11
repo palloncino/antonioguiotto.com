@@ -5,8 +5,8 @@
 }
 
 .absolute-footer-content {
-  background: var(--black-text);
-  color: var(--white);
+  background: var(--black-transparent-light);
+  color: var(--black-text);
   border-radius: .2rem;
   padding: .4rem 1rem;
 }

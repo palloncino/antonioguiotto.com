@@ -48,23 +48,12 @@ const PreviewCard = ({
               <img src={images[0]} alt={`${title}`} />
             )}
           </div>
-          {title && (
-            <div className="preview-text-description-devices">
-            <div className="preview-text-description-key"></div>
-            <div className="preview-card-title">
-              {title}
-            </div>
-          </div>
-          )}
-          {description && (
-            <div className="preview-text-description-devices">
-              <div className="preview-text-description-key">About</div>
-              <div className="preview-text-description-value">
-                {description}
-              </div>
-            </div>
-          )}
           <div className="preview-text-description-container">
+            {title && (
+              <div className="preview-text-description-devices">
+                <div className="preview-card-title">{title}</div>
+              </div>
+            )}
             {devices && (
               <div className="preview-text-description-devices">
                 <div className="preview-text-description-key">Devices</div>
@@ -75,6 +64,14 @@ const PreviewCard = ({
               <div className="preview-text-description-status">
                 <div className="preview-text-description-key">Status</div>
                 <div className="preview-text-description-value">{status}</div>
+              </div>
+            )}
+            {description && (
+              <div className="preview-text-description-devices">
+                <div className="preview-text-description-key">About</div>
+                <div className="preview-text-description-value">
+                  {description}
+                </div>
               </div>
             )}
           </div>

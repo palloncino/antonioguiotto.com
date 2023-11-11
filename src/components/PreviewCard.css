@@ -48,10 +48,11 @@
   font-family: "Custom";
   margin-right: 1rem;
   border-right: 2px solid var(--black-text);
+  background: var(--black-transparent-light);
   text-align: end;
   padding: 0rem 1rem;
-  width: 8rem;
-  min-width: 8rem;
+  width: 6rem;
+  min-width: 6rem;
 }
 .explore-page-card-preview-title span {
   display: inline-block;
@@ -64,12 +65,14 @@
 
 .preview-card-title {
   font-size: 2.6rem;
-  margin: .8rem 0 2rem 0;
+  margin: .8rem 0 1rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   font-family: "Custom";
+  height: 50px;
+  width: 100%;
 }
 
 h3 span:nth-child(2) {
