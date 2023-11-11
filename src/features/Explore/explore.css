@@ -10,7 +10,6 @@
 
 .explore-page-container {
   box-sizing: border-box;
-  /* background: url("../../media/images/graph-paper.svg"); */
   background-position: center top;
 }
 
@@ -30,7 +29,7 @@
 
 .left-side {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr minmax(160px, auto);
   gap: 1rem;
 }
 
@@ -62,7 +61,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 4rem;
 }
 
 .right-side-bottom {
@@ -151,12 +149,13 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  height: 140px;
+  background: url("../../media/images/maze.png");
+  height: 160px;
 }
 
 .explore-page-title {
   font-size: 6em;
-  margin: 2rem 0 3.5rem 0;
+  margin: 2rem;
   user-select: none;
   transition: 0.2s all;
 }
