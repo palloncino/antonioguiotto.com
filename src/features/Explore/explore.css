@@ -85,7 +85,6 @@
 
 .explore-page-card {
   position: relative; 
-  transition: 0.2s all;
   border: 0.2rem solid transparent;
   border-radius: .2rem;
   cursor: pointer;
@@ -93,6 +92,7 @@
   border: 0.2rem solid var(--black-transparent-medium);
 }
 .explore-page-card.not-hovered {
+  transition: 1s all;
   border: 0.2rem solid var(--black-transparent-light);
   color: #7f7b8d;
 }
@@ -176,8 +176,7 @@
   align-items: center;
   background: #BC0B3C;
   height: 160px;
-  border-bottom-left-radius: .2rem;
-  border-bottom-right-radius: .2rem;
+  border-radius: .2rem;
 }
 
 .explore-page-title {
