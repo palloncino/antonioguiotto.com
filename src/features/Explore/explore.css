@@ -149,8 +149,11 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  background: url("../../media/images/maze.png");
+  /* background: url("../../media/images/maze.png"); */
+  background: red;
   height: 160px;
+  border-bottom-left-radius: .2rem;
+  border-bottom-right-radius: .2rem;
 }
 
 .explore-page-title {
@@ -170,9 +173,9 @@
   display: inline-block;
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
-  color: var(--black-text);
-  text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
-    4px 4px var(--white);
+  color: var(--white);
+  /* text-shadow: 1px 1px var(--white), 2px 2px var(--white), 3px 3px var(--white),
+    4px 4px var(--white); */
 }
 
 h1 span:nth-child(2) {
