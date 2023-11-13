@@ -58,56 +58,61 @@ const Explore = () => {
             <div className="left-side">
               <div className="left-side-top">
                 <div className="explore-page-title-container">
-                  <img className="explore-page-logo" src={Logo} alt="Logo" />
-                  <h1
-                    className="explore-page-title"
-                    onClick={() => setSelectedIndex(undefined)}
-                  >
-                    <span>E</span>
-                    <span>x</span>
-                    <span>p</span>
-                    <span>l</span>
-                    <span>o</span>
-                    <span>r</span>
-                    <span>e</span>
-                  </h1>
-                </div>
-                <div className="explore-page-cards-container">
-                  {features.map(({ id, type, buttonCard }: any, index: number) => {
-                    return (
-                      <div key={id + index} className="explore-page-card-container">
-                        <ButtonCard
-                          selectedIndex={selectedIndex}
-                          handleSetSelectedItem={handleSetSelectedItem}
-                          key={`${id}__${index}`}
-                          id={id}
-                          type={type}
-                          {...buttonCard}
-                        />
+
+                  <div className="explore-page-title-container-01" />
+                    <div className="explore-page-title-container-02" />
+                      <div className="explore-page-title-container-03" />
+
+                        <img className="explore-page-logo" src={Logo} alt="Logo" />
+                        <h1
+                          className="explore-page-title"
+                          onClick={() => setSelectedIndex(undefined)}
+                        >
+                          <span>E</span>
+                          <span>x</span>
+                          <span>p</span>
+                          <span>l</span>
+                          <span>o</span>
+                          <span>r</span>
+                          <span>e</span>
+                        </h1>
                       </div>
-                    );
-                  })}
+                      <div className="explore-page-cards-container">
+                        {features.map(({ id, type, buttonCard }: any, index: number) => {
+                          return (
+                            <div key={id + index} className="explore-page-card-container">
+                              <ButtonCard
+                                selectedIndex={selectedIndex}
+                                handleSetSelectedItem={handleSetSelectedItem}
+                                key={`${id}__${index}`}
+                                id={id}
+                                type={type}
+                                {...buttonCard}
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="left-side-bottom">
+                      <BottomLinks />
+                    </div>
+                  </div>
+
+                  <div className="right-side">
+                    <div className="right-side-top">
+                      {displaySelectedItem(selectedIndex)}
+                    </div>
+                  </div>
+
+
+                  <AbsoluteFooter />
                 </div>
               </div>
-
-              <div className="left-side-bottom">
-                <BottomLinks />
-              </div>
             </div>
-
-            <div className="right-side">
-              <div className="right-side-top">
-                {displaySelectedItem(selectedIndex)}
-              </div>
-            </div>
-
-
-            <AbsoluteFooter />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+          </>
+          );
 };
 
-export default Explore;
+          export default Explore;
