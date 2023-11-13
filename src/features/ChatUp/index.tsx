@@ -64,6 +64,7 @@ const ChatUp = () => {
 
   useEffect(() => {
     getChatHeight();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [refs, isMobile, window.innerHeight]);
 
   useEffect(() => {
@@ -76,6 +77,7 @@ const ChatUp = () => {
         });
       }
     }, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chatupChatRef, currentResponse, history]);
 
   useEffect(() => {
@@ -115,6 +117,7 @@ const ChatUp = () => {
 
   useEffect(() => {
     getDynamicOutputHeight();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chatHeight, history]);
 
   const sendQuery = async () => {

@@ -6,6 +6,8 @@
   --black-transparent-dark: #00000090;
   --black-transparent-medium: #00000040;
   --black-transparent-light: #00000010;
+  --green: #417349;
+  --blue: #424173;
 }
 
 .explore-page-container {
@@ -121,6 +123,37 @@
   transition-delay: 0.2s;
   min-width: 0px;
   height: 120px;
+}
+
+.type-feature-text-container {
+  position: absolute;
+  top: .4rem;
+  left: 0;
+}
+
+.type-feature-text {
+  padding: 0 .4rem;
+  height: 100%;
+  display: inline-block;
+  border-top-right-radius: .2rem;
+  border-bottom-right-radius: .2rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+.type-feature-text.business {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.type-feature-text.demo {
+  background: var(--green);
+  color: var(--white);
+}
+
+.type-feature-text.app {
+  background: var(--black-text);
+  color: var(--white);
 }
 
 .explore-page-card.selected .pin-feaure-image {

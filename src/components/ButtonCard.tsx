@@ -4,7 +4,7 @@ import { useState } from "react";
 const ButtonCard = ({
   id,
   type,
-  route,
+  // route,
   title,
   media,
   handleSetSelectedItem,
@@ -29,6 +29,7 @@ const ButtonCard = ({
         selectedIndex === id
           ? handleSetSelectedItem(undefined)
           : handleSetSelectedItem(id);
+
       }}
       className={`explore-page-card ${getClasses(
         selectedIndex === id,
@@ -41,9 +42,11 @@ const ButtonCard = ({
         setIsHover(false);
       }}
     >
-      {type}
       <div className="pin-feaure-image">
         <img src={PinIcon} alt="pin feature" />
+      </div>
+      <div className="type-feature-text-container">
+        <span className={`type-feature-text ${type}`}>{type}</span>
       </div>
       <div
         className="explore-card-media-container"
