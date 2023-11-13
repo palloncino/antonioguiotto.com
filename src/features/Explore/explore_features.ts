@@ -59,11 +59,11 @@ export const features: previewFeature[] = [
       title: "Business rebranding",
       keys: "Web browser, Social Media, online presence",
       description:
-        "Get a neat user-interface for your business, having a user friendly website will increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
+        "Get a neat user-interface for your business, having a user friendly website will increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time. (This is not my video, credits to the creator!)",
       status: "🚧 Page under construction 🏗️",
       images: [chatupThumb],
       gifs: [],
-      videos: [{ videoId: "z0AEwKad7GU" }],
+      videos: [{ videoId: "TBOmUuG-9BY" }],
     },
   },
   {
@@ -80,11 +80,11 @@ export const features: previewFeature[] = [
       title: "New WordPress website.",
       keys: "Showcase, E-commerce.",
       description:
-        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
+        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping. (This is not my video, credits to the creator!)",
       status: "🚧 Page under construction 🏗️",
       images: [chatupThumb],
       gifs: [],
-      videos: [{ videoId: "z0AEwKad7GU" }],
+      videos: [{ videoId: "mgGAvq9hmyU" }],
     },
   },
   {
