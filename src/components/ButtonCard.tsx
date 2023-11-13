@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const ButtonCard = ({
   id,
+  type,
   route,
   title,
   media,
@@ -40,6 +41,7 @@ const ButtonCard = ({
         setIsHover(false);
       }}
     >
+      {type}
       <div className="pin-feaure-image">
         <img src={PinIcon} alt="pin feature" />
       </div>

@@ -170,18 +170,26 @@
 }
 
 .explore-page-title-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  background: #BC0B3C;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2rem;
+  background: #424173;
   height: 160px;
   border-radius: .2rem;
 }
 
+.explore-page-logo {
+  height: 4rem;
+  margin-right: 1rem;
+}
+
 .explore-page-title {
-  font-size: 8em;
-  margin: 2rem 0 3rem 0;
+  font-size: 5.5em;
+  margin-bottom: -1rem;
+  padding-bottom: 2rem;
   user-select: none;
   transition: 0.2s all;
 }

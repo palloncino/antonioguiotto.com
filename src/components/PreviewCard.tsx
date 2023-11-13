@@ -5,8 +5,9 @@ import "./PreviewCard.css";
 
 const PreviewCard = ({
   id,
+  type,
   title,
-  devices,
+  keys,
   description,
   status,
   images,
@@ -34,7 +35,7 @@ const PreviewCard = ({
       <div className="explore-page-card-preview">
         <div className="explore-page-card-preview-content">
           <div className="preview-media">
-            {videos[0] ? (
+            {videos && videos[0] ? (
               <YouTube
                 className="youtube-frame"
                 videoId={videos[0].videoId}
@@ -48,27 +49,27 @@ const PreviewCard = ({
                 }}
               />
             ) : (
-              <img src={images[0]} alt={`${title}`} />
+              images && images[0] && (<img src={images[0]} alt={`${title}`} />)
             )}
           </div>
           <div className="preview-text-description-container">
             {title && (
-              <div className="preview-text-description-devices">
+              <div className="preview-text-description-title">
                 <div className="preview-card-title">{title}</div>
               </div>
             )}
+            {type && (
+              <div className="preview-text-description-type">
+                <div className="preview-text-description-key">Type</div>
+                <div className="preview-text-description-value">{type.toUpperCase()}</div>
+              </div>
+            )}
             {description && (
-              <div className="preview-text-description-devices">
+              <div className="preview-text-description-description">
                 <div className="preview-text-description-key">About</div>
                 <div className="preview-text-description-value">
                   {renderTypewriter(description)}
                 </div>
-              </div>
-            )}
-            {devices && (
-              <div className="preview-text-description-devices">
-                <div className="preview-text-description-key">Devices</div>
-                <div className="preview-text-description-value">{devices}</div>
               </div>
             )}
             {status && (
@@ -106,6 +107,12 @@ const PreviewCard = ({
                     {name} ↗
                   </div>
                 ))}
+              </div>
+            )}
+            {keys && (
+              <div className="preview-text-description-keys">
+                <div className="preview-text-description-key">Keys</div>
+                <div className="preview-text-description-value">{keys}</div>
               </div>
             )}
           </div>

@@ -38,7 +38,8 @@
 .preview-text-description-link,
 .preview-text-description-status,
 .preview-text-description-link,
-.preview-text-description-devices,
+.preview-text-description-keys,
+.preview-text-description-type,
 .preview-text-description-description {
   display: flex;
   color: var(--black-text);
