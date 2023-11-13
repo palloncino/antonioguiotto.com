@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { Typewriter } from "react-simple-typewriter";
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
 
@@ -16,19 +15,6 @@ const PreviewCard = ({
   videos,
 }: any) => {
   const navigate = useNavigate();
-
-  const renderTypewriter = (desc: string) => {
-    const id_num = Math.floor(Math.random()) * 100;
-    return (
-      <Typewriter
-        key={`${desc.slice(0, 5) + id_num}`}
-        words={[`${desc}`]}
-        loop={1}
-        typeSpeed={30}
-        cursor={true}
-      />
-    );
-  };
 
   const renderPreview = () => {
     return (
@@ -68,7 +54,7 @@ const PreviewCard = ({
               <div className="preview-text-description-description">
                 <div className="preview-text-description-key">About</div>
                 <div className="preview-text-description-value">
-                  {renderTypewriter(description)}
+                  {description}
                 </div>
               </div>
             )}
