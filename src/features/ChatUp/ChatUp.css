@@ -1,5 +1,4 @@
 .central-container {
-  background: #f4f2ee;
   display: flex;
   justify-content: center;
 }
@@ -29,7 +28,7 @@
 }
 
 .ChatUp {
-  background: url("../../media/images/maze-2.png");
+  background: url("../../media/images/graph-paper.svg");
   background-size: cover;
   box-sizing: border-box;
   border-radius: 0.2rem;

@@ -32,37 +32,62 @@
 .preview-text-description-container {
   display: flex;
   flex-direction: column;
-  gap: .4rem;
+  gap: 0.4rem;
 }
 
 .preview-text-description-link,
 .preview-text-description-status,
-.preview-text-description-devices,
+.preview-text-description-link,
+.preview-text-description-keys,
+.preview-text-description-type,
 .preview-text-description-description {
-  align-self: flex-start;
   display: flex;
   color: var(--black-text);
 }
 
+.preview-text-description-link .preview-text-description-value.a {
+  cursor: pointer;
+  color: purple;
+}
+
+.preview-text-description-link .preview-text-description-value.a:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.preview-text-description-link .preview-text-description-value.a:hover {
+  text-decoration: underline;
+}
 
 .preview-text-description-key {
   align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  background: var(--black-text);
-  color: var(--white);
+  border-right: 2px solid var(--black-text);
+  background: var(--black-transparent-light);
   text-align: end;
-  border-radius: 0.2rem;
   padding: 0rem 1rem;
-  width: 8rem;
-  min-width: 8rem;
+  width: 6rem;
+  min-width: 6rem;
 }
 .explore-page-card-preview-title span {
   display: inline-block;
   animation: float 3.6s ease-in-out infinite;
   font-family: "Custom";
   color: var(--white);
-  text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep), 3px 3px var(--black-deep), 4px 4px var(--black-deep);
+  text-shadow: 1px 1px var(--black-deep), 2px 2px var(--black-deep),
+    3px 3px var(--black-deep), 4px 4px var(--black-deep);
+}
+
+.preview-card-title {
+  font-size: 2.6rem;
+  margin: .8rem 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Custom";
+  height: 50px;
+  width: 100%;
 }
 
 h3 span:nth-child(2) {
@@ -100,16 +125,14 @@ video {
 }
 
 @media only screen and (max-width: 600px) {
-  .explore-page-card-preview-title {
-    font-size: 2.5rem;
-    padding: 0 1rem;
-    margin: 0;
-    top: 1rem;
-  }
 }
 
+.youtube-frame {
+  width: 100%;
+}
 .youtube-frame iframe {
+  width: 100%;
   box-sizing: border-box;
-  border: .2rem solid;
-  border-radius: 1rem;
+  border: 0.2rem solid;
+  border-radius: .2rem;
 }

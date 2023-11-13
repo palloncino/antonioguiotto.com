@@ -1,33 +1,27 @@
 .connect-links-container {
+  padding: 1rem;
   box-sizing: border-box;
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  padding: 1rem;
-  gap: 1rem;
   cursor: pointer;
   background: transparent;
   transition: all 0.2s ease;
-  border: 0.2rem solid var(--black-transparent-light);
-  background: var(--white);
+  /* border-top: 0.2rem dashed var(--black-transparent-light); */
+  /* background: var(--black-transparent-light); */
   width: auto;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: absolute;
+  border-radius: .2rem;
   right: 2rem;
   bottom: 3rem;
-}
-
-.connect-links-container:hover {
-  border: 0.2rem solid var(--black-text);
+  width: 100%;
 }
 
 .connect-links {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: .4rem;
   transition: all 0.2s ease;
   transform: scale(1) translateY(20%);
 }
@@ -42,7 +36,7 @@
 
 .connect-links-container-description-title {
   font-size: 2rem;
-  margin-bottom: 0.4rem;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -53,19 +47,21 @@
 .connect-links-container-description-subtitle {
 }
 
-
 .connect-links img {
   cursor: pointer;
   transition: 0.2s;
-  width: 50px;
+  width: 60px;
 }
 
 .connect-links img:hover {
   transform: scale(1.2);
 }
 
-.whatsapp-button, .paypal-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.whatsapp-button,
+.paypal-button,
+.instagram-button,
+.linkedin-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
