@@ -1,4 +1,4 @@
-import PinIcon from '../media/images/pin.png';
+import EyeIcon from '../media/images/eye.svg';
 import { useState } from "react";
 
 const ButtonCard = ({
@@ -42,8 +42,8 @@ const ButtonCard = ({
         setIsHover(false);
       }}
     >
-      <div className="pin-feaure-image">
-        <img src={PinIcon} alt="pin feature" />
+      <div className="pin-feature-image">
+        <img src={EyeIcon} alt="pin feature" />
       </div>
       <div className="type-feature-text-container">
         <span className={`type-feature-text ${type}`}>{type}</span>
