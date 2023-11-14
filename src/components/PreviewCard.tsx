@@ -78,7 +78,7 @@ const PreviewCard = ({
             {githubRepos && githubRepos.length > 0 && (
               <div className="preview-text-description-link">
                 <div className="preview-text-description-key">
-                  Repositories:
+                  Repositories
                 </div>
                 {githubRepos.map((name: string) => (
                   <div
