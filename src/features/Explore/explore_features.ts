@@ -89,7 +89,7 @@ export const features: previewFeature[] = [
   },
   {
     id: 12345201,
-    type: "demo",
+    type: "app",
     buttonCard: {
       title: "ChatUp - Web App (go to App)",
       description:

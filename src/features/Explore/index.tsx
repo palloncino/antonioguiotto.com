@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import BottomLinks from "../../components/BottomLinks";
 import PreviewCard from "../../components/PreviewCard";
 import Logo from "../../media/images/logo.png";
@@ -18,10 +18,6 @@ const Explore = () => {
   const [activePage, setActivePage] = useState(1);
   const [prevActivePage, setPrevActivePage] = useState(1);
   const { isMobile } = useDevice();
-
-  useEffect(() => {
-    console.log({activePage, prevActivePage})
-  }, [activePage, prevActivePage])
 
 
   const selectPage = (n: number) => {
@@ -55,6 +51,8 @@ const Explore = () => {
     );
   };
 
+  const selectedItemComponent = useMemo(() => displaySelectedItem(selectedIndex), [selectedIndex]);
+
   if (isMobile) {
     return (
       <div style={{ padding: '0rem 1rem' }}>
@@ -81,7 +79,10 @@ const Explore = () => {
                   <img className="explore-page-logo" src={Logo} alt="Logo" />
                   <h1
                     className="explore-page-title"
-                    onClick={() => setSelectedIndex(2100001)}
+                    onClick={() => {
+                      setSelectedIndex(2100001);
+                      setActivePage(1);
+                    }}
                   >
                     <span>E</span>
                     <span>x</span>
@@ -92,7 +93,22 @@ const Explore = () => {
                     <span>e</span>
                   </h1>
                 </div>
-                <ButtonCards 
+
+                <div className="paginator-container">
+                  <div className="paginator-label-container">
+                    <span className="paginator-label">Pages</span>
+                  </div>
+                  <div className="pagination-pages-container">
+                    {Array.from({ length: MAX_PAGES }, (v, i) => i + 1).map((n, i) => {
+                      return (
+                        <button className={`page-button ${n===activePage ? "active" : ""}`} key={`${n + 1}_${i + 2}_${n + i + 3}`} onClick={() => selectPage(n)}>{n}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <ButtonCards
                   features={features}
                   activePage={activePage}
                   prevActivePage={prevActivePage}
@@ -100,16 +116,6 @@ const Explore = () => {
                   handleSetSelectedItem={handleSetSelectedItem}
                   ITEMS_PER_PAGE={ITEMS_PER_PAGE}
                 />
-                <div>
-                  <h3>{`Active Page: ${activePage}`}</h3>
-                  {Array.from({ length: MAX_PAGES }, (v, i) => i + 1).map((n, i) => {
-                    return (
-                      <button key={`${n + 1}_${i + 2}_${n + i + 3}`} onClick={() => selectPage(n)}> {n}
-                      </button>
-                    )
-                  })}
-
-                </div>
               </div>
 
               <div className="left-side-bottom">
@@ -119,7 +125,7 @@ const Explore = () => {
 
             <div className="right-side">
               <div className="right-side-top">
-                {displaySelectedItem(selectedIndex)}
+                {selectedItemComponent}
               </div>
             </div>
 

@@ -1,6 +1,5 @@
+import { animated, useSpring } from '@react-spring/web';
 import { useEffect, useState } from 'react';
-import Fade from '../features/Fade';
-import {previewFeature} from '../features/Explore/explore_features';
 import ButtonCard from './ButtonCard';
 
 const ButtonCards = ({ features, activePage, prevActivePage, selectedIndex, handleSetSelectedItem, ITEMS_PER_PAGE }: any) => {
@@ -8,51 +7,62 @@ const ButtonCards = ({ features, activePage, prevActivePage, selectedIndex, hand
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    const pageChanged = prevActivePage !== activePage;
-    setShouldAnimate(pageChanged);
+    setShouldAnimate(prevActivePage !== activePage);
   }, [activePage, prevActivePage]);
 
-  useEffect(() => {
-    if (shouldAnimate) {
-      setShouldAnimate(false);
+  const springProps = useSpring(prevActivePage > activePage ? (
+    {
+      from: { transform: 'translateX(-100%)', opacity: 1 },
+      to: { transform: 'translateX(0)', opacity: 1 },
+      reset: true,
+      onRest: () => {
+        setShouldAnimate(false);
+      },
     }
-  }, [shouldAnimate]);
-
-  const renderButtonCard = (item: previewFeature, index: number) => {
-    const card = (
-      <div key={item.id + index} className="explore-page-card-container">
-        <ButtonCard
-          selectedIndex={selectedIndex}
-          handleSetSelectedItem={handleSetSelectedItem}
-          id={item.id}
-          type={item.type}
-          {...item.buttonCard}
-        />
-      </div>
-    );
-
-    return shouldAnimate ? (
-      <Fade key={item.id + index} customSpringProps={prevActivePage > activePage ? {
-        from: { transform: 'translateX(-100%)', opacity: 1 },
-        to: { transform: 'translateX(0)', opacity: 1 },
-        reset: true,
-      } : {
-        from: { transform: 'translateX(100%)', opacity: 1 },
-        to: { transform: 'translateX(0)', opacity: 1 },
-        reset: true,
-      }}>
-        {card}
-      </Fade>
-    ) : card;
-  };
+  ) : (
+    {
+      from: { transform: 'translateX(100%)', opacity: 1 },
+      to: { transform: 'translateX(0)', opacity: 1 },
+      reset: true,
+      onRest: () => {
+        setShouldAnimate(false);
+      },
+    }
+  ));
 
   return (
     <div className="explore-page-cards-container">
-      {features
-        .slice((activePage - 1) * ITEMS_PER_PAGE, activePage * ITEMS_PER_PAGE)
-        .map(renderButtonCard)}
+      {features.slice((activePage - 1) * ITEMS_PER_PAGE, (activePage - 1) * ITEMS_PER_PAGE + ITEMS_PER_PAGE).map(({ id, type, buttonCard }: any, index: number) => {
+        return (
+          shouldAnimate ? (
+            <animated.div style={springProps}>
+              <div className="explore-page-card-container">
+                <ButtonCard
+                  selectedIndex={selectedIndex}
+                  handleSetSelectedItem={handleSetSelectedItem}
+                  key={`${id}__${index}`}
+                  id={id}
+                  type={type}
+                  {...buttonCard}
+                />
+              </div>
+            </animated.div>
+          ) : (
+            <div key={id + index} className="explore-page-card-container">
+              <ButtonCard
+                selectedIndex={selectedIndex}
+                handleSetSelectedItem={handleSetSelectedItem}
+                key={`${id}__${index}`}
+                id={id}
+                type={type}
+                {...buttonCard}
+              />
+            </div>
+          )
+        );
+      })}
     </div>
-  );
+  )
 };
 
 export default ButtonCards;

@@ -246,6 +246,36 @@
   border-radius: 100%;
 }
 
+.paginator-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.paginator-label-container {}
+.paginator-label {
+  font-family: 'Custom';
+  font-size: 1.2rem;
+}
+.pagination-pages-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .4rem;
+}
+.page-button {
+  transition: .2s all;
+  font-size: 1.2rem;
+  width: 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: .2rem;
+}
+.page-button.active {
+  background: var(--black-text);
+  color: var(--white)
+}
+
 .explore-page-logo {
   z-index: 10;
   height: 4rem;
