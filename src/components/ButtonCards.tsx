@@ -10,24 +10,40 @@ const ButtonCards = ({
   handleSetSelectedItem,
   ITEMS_PER_PAGE,
 }: any) => {
-  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [{ bool, springProps }, setShouldAnimate] = useState({
+    bool: false,
+    springProps: {},
+  });
 
   useEffect(() => {
-    console.log('ButtonCards', {features})
+    console.log("ButtonCards", { features });
   }, [features]);
 
   useEffect(() => {
-    setShouldAnimate(prevActivePage !== activePage);
+    setShouldAnimate({ bool: true, springProps: swipeSpringProps });
   }, [activePage, prevActivePage]);
 
-  const springProps = useSpring(
+  useEffect(() => {
+    setShouldAnimate({ bool: true, springProps: fadeSpringProps });
+  }, [features]);
+
+  const fadeSpringProps = useSpring({
+    from: { transform: 'scale(0.95)', opacity: 0, width: '100%' },
+      to: { transform: 'scale(1)', opacity: 1, width: '100%' },
+    reset: true,
+    onRest: () => {
+      setShouldAnimate({ bool: false, springProps: {} });
+    },
+  });
+
+  const swipeSpringProps = useSpring(
     prevActivePage > activePage
       ? {
           from: { transform: "translateX(-100%)", opacity: 1 },
           to: { transform: "translateX(0)", opacity: 1 },
           reset: true,
           onRest: () => {
-            setShouldAnimate(false);
+            setShouldAnimate({ bool: false, springProps: {} });
           },
         }
       : {
@@ -35,7 +51,7 @@ const ButtonCards = ({
           to: { transform: "translateX(0)", opacity: 1 },
           reset: true,
           onRest: () => {
-            setShouldAnimate(false);
+            setShouldAnimate({ bool: false, springProps: {} });
           },
         }
   );
@@ -48,7 +64,7 @@ const ButtonCards = ({
           (activePage - 1) * ITEMS_PER_PAGE + ITEMS_PER_PAGE
         )
         .map(({ id, type, buttonCard }: any, index: number) => {
-          return shouldAnimate ? (
+          return bool ? (
             <animated.div style={springProps} key={`${id}__${index}`}>
               <div className="explore-page-card-container">
                 <ButtonCard
