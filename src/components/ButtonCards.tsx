@@ -13,6 +13,10 @@ const ButtonCards = ({
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
+    console.log('ButtonCards', {features})
+  }, [features]);
+
+  useEffect(() => {
     setShouldAnimate(prevActivePage !== activePage);
   }, [activePage, prevActivePage]);
 

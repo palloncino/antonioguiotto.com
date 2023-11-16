@@ -1,18 +1,21 @@
 import { featureTypes } from "../features/Explore/explore_features";
 
-const TypeFilter = ({ typesFilter, toggleFilter }: any) => {
+const TypeFilter = ({ filterArray, toggleFilter }: any) => {
   return (
     <div className="filter-container">
       {featureTypes.map((type, index) => {
         return (
           <div
             className={`filter-key ${
-              typesFilter.find((_type: string) => _type === type)
+                filterArray?.find((_type: string) => _type === type)
                 ? "checked"
                 : ""
             }`}
             key={type + index}
-            onClick={() => toggleFilter(type)}
+            onClick={() => {
+              console.log(1, {type});
+              toggleFilter(type)
+            }}
           >
             {type}
           </div>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
 import BottomLinks from "../../components/BottomLinks";
 import ButtonCards from "../../components/ButtonCards";
@@ -9,30 +9,41 @@ import { useDevice } from "../../hooks/useDevice";
 import Logo from "../../media/images/logo.png";
 import Fade from "../Fade";
 import "./explore.css";
-import { featureType, features } from "./explore_features";
+import { featureType, features, previewFeature } from "./explore_features";
 
 const Explore = () => {
+  const [filterArray, setFilterArray] = useState<Array<featureType> | []>([]);
+  const [filteredFeatures, setFilteredFeatures] = useState<previewFeature[] | []>(features);
   const [selectedIndex, setSelectedIndex] = useState<undefined | number>(
     2100001
   );
   const ITEMS_PER_PAGE = 4;
-  const MAX_PAGES = Math.ceil(features.length / ITEMS_PER_PAGE);
+  const MAX_PAGES = Math.ceil(filteredFeatures.length / ITEMS_PER_PAGE);
   const [activePage, setActivePage] = useState(1);
   const [prevActivePage, setPrevActivePage] = useState(1);
   const { isMobile } = useDevice();
-  const [typesFilter, setTypesFilter] = useState<Array<featureType> | []>([]);
 
   const selectPage = (n: number) => {
     setPrevActivePage(activePage);
     setActivePage(n);
   };
 
-  const toggleFilter = (type: featureType) => {
-    const index = typesFilter.indexOf(type as never);
-    if (index !== -1) {
-      setTypesFilter(typesFilter.filter(t => t !== type));
+  useEffect(() => {
+    if (filterArray.length) {
+      const _filtered = features.filter(({type}) => filterArray.indexOf(type as never) !== -1);
+      console.log({features, _filtered})
+      setFilteredFeatures(_filtered);
     } else {
-      setTypesFilter([...typesFilter, `${type}`])
+      setFilteredFeatures(features);
+    }
+  }, [filterArray])
+
+  const toggleFilter = (type: featureType) => {
+    const index = filterArray?.indexOf(type as never);
+    if (index !== -1) {
+      setFilterArray(filterArray?.filter((t) => t !== type));
+    } else {
+      setFilterArray([...filterArray as [], `${type}`]);
     }
   };
 
@@ -113,13 +124,13 @@ const Explore = () => {
                     MAX_PAGES={MAX_PAGES}
                   />
                   <TypeFilter
-                    typesFilter={typesFilter}
+                    filterArray={filterArray}
                     toggleFilter={toggleFilter}
                   />
                 </div>
 
                 <ButtonCards
-                  features={features}
+                  features={filteredFeatures}
                   activePage={activePage}
                   prevActivePage={prevActivePage}
                   selectedIndex={selectedIndex}
