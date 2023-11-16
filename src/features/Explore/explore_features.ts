@@ -3,7 +3,7 @@ import squareGraph from "../../media/images/graph-paper.svg";
 
 export type previewFeature = {
   id: number;
-  type: "business" | "demo" | "app";
+  type: featureType;
   buttonCard: {
     title: string;
     description: string;
@@ -22,6 +22,10 @@ export type previewFeature = {
     githubRepos?: string[];
   };
 };
+
+export type featureType = 'app' | 'demo' | 'business';
+
+export const featureTypes = ['app', 'demo', 'business'];
 
 export const features: previewFeature[] = [
   {

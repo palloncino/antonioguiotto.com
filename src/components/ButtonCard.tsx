@@ -1,10 +1,9 @@
-import EyeIcon from '../media/images/eye.svg';
+import EyeIcon from "../media/images/eye.svg";
 import { useState } from "react";
 
 const ButtonCard = ({
   id,
   type,
-  // route,
   title,
   media,
   handleSetSelectedItem,
@@ -29,7 +28,6 @@ const ButtonCard = ({
         selectedIndex === id
           ? handleSetSelectedItem(2100001)
           : handleSetSelectedItem(id);
-
       }}
       className={`explore-page-card ${getClasses(
         selectedIndex === id,

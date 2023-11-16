@@ -94,7 +94,7 @@
   border: 0.2rem solid var(--black-transparent-medium);
 }
 .explore-page-card.not-hovered {
-  transition: 1s all;
+  transition: .5s all;
   border: 0.2rem solid var(--black-transparent-light);
   color: #7f7b8d;
 }
@@ -244,6 +244,32 @@
   height: 310%;  /* Increased */
   background: #22223d;
   border-radius: 100%;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-key {
+  padding: 0 .4rem;
+  background: var(--black-transparent-light);
+  border-radius: .2rem;
+  cursor: pointer;
+}
+
+.filter-key.checked {
+  background: var(--black-transparent-dark);
+  color: var(--white);
 }
 
 .paginator-container {
