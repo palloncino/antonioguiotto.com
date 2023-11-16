@@ -82,6 +82,7 @@ const PreviewCard = ({
                 </div>
                 {githubRepos.map((name: string) => (
                   <div
+                    key={name.slice(0, 10)}
                     className="preview-text-description-value a"
                     onClick={() =>
                       window.open(

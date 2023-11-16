@@ -1,8 +1,8 @@
 import squareGraph from "../../media/images/graph-paper.svg";
 
 
-type previewFeature = {
-  id?: number;
+export type previewFeature = {
+  id: number;
   type: "business" | "demo" | "app";
   buttonCard: {
     title: string;
@@ -23,28 +23,28 @@ type previewFeature = {
   };
 };
 
-export const defaultPreviewCard: previewFeature = {
-  type: "demo",
-  buttonCard: {
-    title: "Welcome page.",
-    description:
-      "On this page you can find the services provided by Antonio Guiotto.",
-    route: "/",
-    media: squareGraph,
-  },
-  previewCard: {
-    title: "A warm welcome.",
-    keys: "Online Business, Engineering, Design, Marketing, Art and more.",
-    description:
-      "On this page you can find the services provided by Antonio Guiotto.",
-    status: "DEMO, not released.",
-    images: [squareGraph],
-    gifs: [],
-    videos: [{ videoId: "JY6SPRNjvZE" }],
-  },
-}
-
 export const features: previewFeature[] = [
+  {
+    id: 2100001,
+    type: "demo",
+    buttonCard: {
+      title: "A warm welcome",
+      description:
+        "On this page you can find the services provided by Antonio Guiotto.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "A warm welcome",
+      keys: "Online Business, Engineering, Design, Marketing, Art and more.",
+      description:
+        "On this page you can find the services provided by Antonio Guiotto.",
+      status: "🚧 Page under construction 🏗️",
+      images: [squareGraph],
+      gifs: [],
+      videos: [{ videoId: "T9q9qjc9L4E" }],
+    },
+  },
   {
     id: 2141210,
     type: "business",
@@ -109,7 +109,7 @@ export const features: previewFeature[] = [
     },
   },
   {
-    id: 2141202,
+    id: 2141211,
     type: "app",
     buttonCard: {
       title: "SquareUp - Mobile (Preview)",
@@ -129,6 +129,29 @@ export const features: previewFeature[] = [
       images: [squareGraph],
       gifs: [],
       videos: [{ videoId: "3JtrRG6w0oU" }],
+    },
+  },
+  {
+    id: 2141212,
+    type: "business",
+    buttonCard: {
+      title: "Life menthoring",
+      description:
+        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "Life menthoring",
+      keys: "Professional, Psycological and Phisical refinement.",
+      description:
+        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
+      status: "Available under request.",
+      route: "/",
+      githubRepos: undefined,
+      images: [squareGraph],
+      gifs: [],
+      videos: [],
     },
   }
 ];

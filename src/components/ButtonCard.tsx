@@ -27,7 +27,7 @@ const ButtonCard = ({
     <div
       onClick={() => {
         selectedIndex === id
-          ? handleSetSelectedItem(undefined)
+          ? handleSetSelectedItem(2100001)
           : handleSetSelectedItem(id);
 
       }}
