@@ -72,48 +72,6 @@ export const features: previewFeature[] = [
     },
   },
   {
-    id: 2141210,
-    type: "business",
-    buttonCard: {
-      title: "Re-brand your website!",
-      description:
-        "Get a neat user interface for your business, having a user friendly website can increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
-      route: "/",
-      media: squareGraph,
-    },
-    previewCard: {
-      title: "Business rebranding",
-      keys: "Web browser, Social Media, online presence",
-      description:
-        "Get a neat user-interface for your business, having a user friendly website will increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
-      status: "🚧 Page under construction 🏗️",
-      images: [squareGraph],
-      gifs: [],
-      videos: [],
-    },
-  },
-  {
-    id: 2141203,
-    type: "business",
-    buttonCard: {
-      title: "Need a WordPress website?",
-      description:
-        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
-      route: "/",
-      media: squareGraph,
-    },
-    previewCard: {
-      title: "New WordPress website.",
-      keys: "Showcase, E-commerce.",
-      description:
-        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
-      status: "🚧 Page under construction 🏗️",
-      images: [squareGraph],
-      gifs: [],
-      videos: [],
-    },
-  },
-  {
     id: 12345201,
     type: "app",
     buttonCard: {
@@ -155,6 +113,48 @@ export const features: previewFeature[] = [
       images: [squareGraph],
       gifs: [],
       videos: [{ videoId: "3JtrRG6w0oU" }],
+    },
+  },
+  {
+    id: 2141210,
+    type: "business",
+    buttonCard: {
+      title: "Re-brand your website!",
+      description:
+        "Get a neat user interface for your business, having a user friendly website can increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "Business rebranding",
+      keys: "Web browser, Social Media, online presence",
+      description:
+        "Get a neat user-interface for your business, having a user friendly website will increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
+      status: "🚧 Page under construction 🏗️",
+      images: [squareGraph],
+      gifs: [],
+      videos: [],
+    },
+  },
+  {
+    id: 2141203,
+    type: "business",
+    buttonCard: {
+      title: "Need a WordPress website?",
+      description:
+        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "New WordPress website.",
+      keys: "Showcase, E-commerce.",
+      description:
+        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
+      status: "🚧 Page under construction 🏗️",
+      images: [squareGraph],
+      gifs: [],
+      videos: [],
     },
   },
   {

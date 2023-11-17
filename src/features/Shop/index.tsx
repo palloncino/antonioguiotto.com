@@ -1,51 +1,49 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import ProductCard from "../../components/ProductCard";
-import PaypalPng from '../../media/images/Paypal.png';
+import PaypalPng from "../../media/images/Paypal.png";
 import Logo from "../../media/images/logo.png";
 import "./shop.css";
+
+const REACT_APP_S3_MEDIA_BUCKET = "https://ag-medias.s3.amazonaws.com";
 
 const Shop = () => {
   const products = [
     {
       id: 1000,
       title: "Cave",
-      price: 320,
-      description:
-        "Marker on canvas",
+      price: 800,
+      description: "Marker on canvas",
       dated: "2018",
-      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/cave.png',
-      media: ['https://antonio-guiotto-media.s3.amazonaws.com/cave.png'],
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/cave.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/cave.png`],
     },
     {
       id: 1001,
       title: "Frog",
-      price: 80,
-      description:
-        "Marker on paperbox",
+      price: 200,
+      description: "Marker on paperbox",
       dated: "2018",
-      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/frong.png',
-      media: ['https://antonio-guiotto-media.s3.amazonaws.com/frong.png'],
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/frog.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/frog.png`],
     },
     {
       id: 1002,
       title: "Marina",
-      price: 80,
-      description:
-        "Marker on canvas",
+      price: 150,
+      description: "Marker on canvas",
       dated: "2018",
-      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/marina.png',
-      media: ['https://antonio-guiotto-media.s3.amazonaws.com/marina.png'],
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/marina.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/marina.png`],
     },
     {
       id: 1003,
       title: "Shark",
-      price: 320,
-      description:
-        "Marker on canvas",
+      price: 500,
+      description: "Marker on canvas",
       dated: "2018",
-      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/shark.png',
-      media: ['https://antonio-guiotto-media.s3.amazonaws.com/shark.png'],
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/shark.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/shark.png`],
     },
   ];
 
@@ -59,10 +57,12 @@ const Shop = () => {
 
       return (
         <div className="shop-page-product">
-          <div className="shop-page-product-detail">{id}</div>
-          <h3 className="shop-page-product-title">{title}</h3>
+          <div className="shop-page-product-head-detail-container">
+            <div className="shop-page-product-title">{title}</div>
+            <div className="shop-page-product-detail">ID: {id}</div>
+          </div>
           <div className="shop-page-product-media">
-            <img src={thumbnail} alt="product" />
+            
           </div>
           <div className="shop-page-product-detail">Price: {price} $</div>
           <div className="shop-page-product-detail">
@@ -70,28 +70,38 @@ const Shop = () => {
           </div>
           <div className="shop-page-product-detail">{description}</div>
           <hr />
-          <div>
-            <h3>Payment methods</h3>
-            <div>
-              The current possible payment methods are via Paypal or via Bank
-              Transef
-            </div>
-            <div style={{ cursor: "pointer" }}>
-              <h3>PayPal</h3>
-              <div className="">
-                <img height="50" src={PaypalPng} alt="Paypal Icon" />
+          <div className="product-info-sections-container">
+            <div className="product-info-section">
+              <div className="payment-method-section-header">
+                <h3 className="payment-methods-title">Payment methods</h3>
+                <div>These are the current payment methods.</div>
+              </div>
+              <div className="payment-methods-container">
+                <div className="payment-method-paypal">
+                  <h3 className="payment-method-title">PayPal</h3>
+                  <div className="">
+                    <img height="50" src={PaypalPng} alt="Paypal Icon" />
+                  </div>
+                </div>
+                <div className="payment-method-bank-transfer">
+                  <h3 className="payment-method-title">Bank Transfer</h3>
+                  <div className="payment-method-detail">
+                    Name: ANTONIO GUIOTTO
+                  </div>
+                  <div className="payment-method-detail">
+                    IBAN: IT73 A036 4601 6005 2646 6527 748
+                  </div>
+                  <div className="payment-method-detail">BIC: NTSBITM1XXX</div>
+                </div>
               </div>
             </div>
             <div>
-              <h3>Bank Transfer</h3>
-              <div>Name: ANTONIO GUIOTTO</div>
-              <div>IBAN: IT73 A036 4601 6005 2646 6527 748</div>
-              <div>BIC: NTSBITM1XXX</div>
-            </div>
-            <div>
-              <h3>Shipping methods</h3>
-              <div>
-                shipping is international shipping might take from 7 to 30 days.
+              <div className="product-info-section">
+                <h3 className="shipping-methods-title">Shipping methods</h3>
+                <div>
+                  shipping is international shipping might take from 7 to 30
+                  days.
+                </div>
               </div>
             </div>
           </div>
