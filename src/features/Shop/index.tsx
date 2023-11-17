@@ -1,20 +1,56 @@
-import PaperSvg from "../../media/images/graph-paper.svg";
-import Logo from "../../media/images/logo.png";
-import { useNavigate } from 'react-router';
-import './shop.css';
 import { useState } from "react";
-import PaypalButton from "../../components/Paypal";
+import { useNavigate } from "react-router";
 import ProductCard from "../../components/ProductCard";
+import PaypalPng from '../../media/images/Paypal.png';
+import Logo from "../../media/images/logo.png";
+import "./shop.css";
 
 const Shop = () => {
   const products = [
-    { id: 1123, title: 'Item 1', price: '10€', description: "Description for Item 1", dated: "2018", thumbnail: PaperSvg, media: [PaperSvg, PaperSvg] },
-    { id: 2123, title: 'Item 2', price: '20€', description: "Description for Item 2", dated: "2019", thumbnail: PaperSvg, media: [PaperSvg, PaperSvg] },
-    { id: 3123, title: 'Item 3', price: '30€', description: "Description for Item 3", dated: "2020", thumbnail: PaperSvg, media: [PaperSvg, PaperSvg] }
-  ]
+    {
+      id: 1000,
+      title: "Cave",
+      price: 320,
+      description:
+        "Marker on canvas",
+      dated: "2018",
+      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/cave.png',
+      media: ['https://antonio-guiotto-media.s3.amazonaws.com/cave.png'],
+    },
+    {
+      id: 1001,
+      title: "Frog",
+      price: 80,
+      description:
+        "Marker on paperbox",
+      dated: "2018",
+      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/frong.png',
+      media: ['https://antonio-guiotto-media.s3.amazonaws.com/frong.png'],
+    },
+    {
+      id: 1002,
+      title: "Marina",
+      price: 80,
+      description:
+        "Marker on canvas",
+      dated: "2018",
+      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/marina.png',
+      media: ['https://antonio-guiotto-media.s3.amazonaws.com/marina.png'],
+    },
+    {
+      id: 1003,
+      title: "Shark",
+      price: 320,
+      description:
+        "Marker on canvas",
+      dated: "2018",
+      thumbnail: 'https://antonio-guiotto-media.s3.amazonaws.com/shark.png',
+      media: ['https://antonio-guiotto-media.s3.amazonaws.com/shark.png'],
+    },
+  ];
 
   const navigate = useNavigate();
-  const [selectedProduct, setSelectedProduct] = useState(1123);
+  const [selectedProduct, setSelectedProduct] = useState(1000);
 
   const displayItem = (_index: number) => {
     const product = products.find(({ id }) => id === _index);
@@ -26,63 +62,55 @@ const Shop = () => {
           <div className="shop-page-product-detail">{id}</div>
           <h3 className="shop-page-product-title">{title}</h3>
           <div className="shop-page-product-media">
-          <img src={thumbnail} alt="product" />
+            <img src={thumbnail} alt="product" />
           </div>
-          <div className="shop-page-product-detail">{price}</div>
-          <div className="shop-page-product-detail">{dated}</div>
+          <div className="shop-page-product-detail">Price: {price} $</div>
+          <div className="shop-page-product-detail">
+            Date of creation: {dated}
+          </div>
           <div className="shop-page-product-detail">{description}</div>
           <hr />
           <div>
+            <h3>Payment methods</h3>
             <div>
-              Buy for {price} EUR.
+              The current possible payment methods are via Paypal or via Bank
+              Transef
             </div>
-            <div>
-              Payment methods:
-            </div>
-
-            <div>
-              The current possible payment methods are via Paypal or via Bank Transef, the shipping is international shipping might take from 7 to 30 days.
-            </div>
-            <div style={{ cursor: 'pointer' }}>
-              <PaypalButton />
-            </div>
-            <div>
-              <div>
-                <h3>Bank Transfer:</h3>
-                <div>
-                  Name: ANTONIO GUIOTTO
-                </div>
-                <div>
-                  IBAN: IT73 A036 4601 6005 2646 6527 748
-                </div>
-                <div>
-                  BIC: NTSBITM1XXX
-                </div>
+            <div style={{ cursor: "pointer" }}>
+              <h3>PayPal</h3>
+              <div className="">
+                <img height="50" src={PaypalPng} alt="Paypal Icon" />
               </div>
             </div>
             <div>
-              International shipping
+              <h3>Bank Transfer</h3>
+              <div>Name: ANTONIO GUIOTTO</div>
+              <div>IBAN: IT73 A036 4601 6005 2646 6527 748</div>
+              <div>BIC: NTSBITM1XXX</div>
             </div>
             <div>
-              contacts: powerhydratoni@gmail.com
+              <h3>Shipping methods</h3>
+              <div>
+                shipping is international shipping might take from 7 to 30 days.
+              </div>
             </div>
           </div>
         </div>
-      )
+      );
     } else {
       return;
     }
-  }
+  };
 
   return (
     <div className="shop-page-container">
-
       <div className="shop-page-header">
-
-        <div className="shop-page-header-column" onClick={() => navigate('/')}>
+        <div className="shop-page-header-column" onClick={() => navigate("/")}>
           <img className="explore-page-logo" src={Logo} alt="Logo" />
           <div className="explore-page-logo-titles-container">
-            <div className="explore-page-logo-title">Authentic artistic endeavors</div>
+            <div className="explore-page-logo-title">
+              Authentic artistic endeavors
+            </div>
             <div className="explore-page-logo-subtitle">← Back to Homepage</div>
           </div>
         </div>
@@ -92,24 +120,27 @@ const Shop = () => {
             other stuff
           </div> 
         */}
-
       </div>
 
       <div className="shop-page-content-container">
         <div className="shop-page-products-container">
           <div className="shop-page-products-grid">
-            {products.map(({ id, title, price, description, dated, thumbnail, media }) => (
-              <ProductCard 
-              selectedProduct={selectedProduct}
-              setSelectedProduct={setSelectedProduct}
-              id={id}
-              title={title}
-              price={price}
-              description={description}
-              dated={dated}
-              thumbnail={thumbnail}
-              media={media} />
-            ))}
+            {products.map(
+              ({ id, title, price, description, dated, thumbnail, media }) => (
+                <ProductCard
+                  key={id}
+                  selectedProduct={selectedProduct}
+                  setSelectedProduct={setSelectedProduct}
+                  id={id}
+                  title={title}
+                  price={price}
+                  description={description}
+                  dated={dated}
+                  thumbnail={thumbnail}
+                  media={media}
+                />
+              )
+            )}
           </div>
         </div>
 
@@ -119,6 +150,6 @@ const Shop = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Shop;

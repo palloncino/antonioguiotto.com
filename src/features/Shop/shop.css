@@ -92,11 +92,28 @@
   height: 100%;
 }
 
-.shop-page-product-media-container {
+.shop-page-product-card-media-container {
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.shop-page-product-card-title {
+  font-size: 1.4rem;
+  padding: .4rem 1rem;
+}
+
+.shop-page-product-card-price,
+.shop-page-product-card-description,
+.shop-page-product-card-dated {
+
+}
+.container-flex-01 {
+  padding: .4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
