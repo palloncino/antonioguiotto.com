@@ -134,18 +134,6 @@ const Explore = () => {
                     toggleFilter={toggleFilter}
                   />
 
-                  <div
-                    style={{
-                      flex: 1,
-                      display: "flex",
-                      justifyContent: "flex-end",
-                      alignItems: "center",
-                    }}
-                    className="paginator-head-label see-all"
-                    // onClick={() => navigate('/all-features')}
-                  >
-                    See all
-                  </div>
                 </div>
 
                 <ButtonCards

@@ -50,6 +50,28 @@ export const features: previewFeature[] = [
     },
   },
   {
+    id: 2100101,
+    type: "business",
+    buttonCard: {
+      title: "Online Shop",
+      description:
+        "In this shop you will find creative artifacts and more, take a look, the prices are low and the passion behind these artifact is of immense value.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "Online Shop",
+      keys: "Online Shopping, Art, Creative endevours.",
+      description:
+        "In this shop you will find creative artifacts and more, take a look, the prices are low and the passion behind these artifact is of immense value.",
+      status: "🚧 Page under construction 🏗️",
+      images: [squareGraph],
+      route: "/shop",
+      gifs: [],
+      videos: [{ videoId: "" }],
+    },
+  },
+  {
     id: 2141210,
     type: "business",
     buttonCard: {
