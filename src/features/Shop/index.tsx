@@ -14,7 +14,7 @@ const Shop = () => {
   ]
 
   const navigate = useNavigate();
-  const [selectedProduct, setSelectedProduct] = useState(1);
+  const [selectedProduct, setSelectedProduct] = useState(1123);
 
   const displayItem = (_index: number) => {
     const product = products.find(({ id }) => id === _index);
@@ -25,7 +25,9 @@ const Shop = () => {
         <div className="shop-page-product">
           <div className="shop-page-product-detail">{id}</div>
           <h3 className="shop-page-product-title">{title}</h3>
+          <div className="shop-page-product-media">
           <img src={thumbnail} alt="product" />
+          </div>
           <div className="shop-page-product-detail">{price}</div>
           <div className="shop-page-product-detail">{dated}</div>
           <div className="shop-page-product-detail">{description}</div>
@@ -68,11 +70,7 @@ const Shop = () => {
         </div>
       )
     } else {
-      return (
-        <div>
-          <div>product not found</div>
-        </div>
-      )
+      return;
     }
   }
 

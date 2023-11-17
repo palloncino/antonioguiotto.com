@@ -81,6 +81,16 @@
   color: var(--black-text);
   border: 0.2rem solid var(--black-text);
 }
+.shop-page-product-media {
+  width: 100%;
+  height: 200px;
+  background-color: var(--black-transparent-light);
+}
+
+.shop-page-product-media img {  
+  width: 100%;
+  height: 100%;
+}
 
 .shop-page-product-media-container {
   width: 100%;
