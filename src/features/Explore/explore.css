@@ -254,8 +254,9 @@
 }
 
 .filter-container {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
@@ -273,15 +274,25 @@
 }
 
 .paginator-container {
+  flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
 }
+
+
+
 .paginator-label-container {}
-.paginator-label {
+.paginator-head-label {
   font-family: 'Custom';
   font-size: 1.2rem;
+}
+.paginator-head-label.see-all {
+  cursor: pointer;
+}
+.paginator-head-label.see-all:hover {
+  text-decoration: underline;
 }
 .pagination-pages-container {
   display: flex;

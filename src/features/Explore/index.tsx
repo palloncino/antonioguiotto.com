@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AbsoluteFooter from "../../components/AbsoluteFooter";
 import BottomLinks from "../../components/BottomLinks";
 import ButtonCards from "../../components/ButtonCards";
@@ -12,8 +13,11 @@ import "./explore.css";
 import { featureType, features, previewFeature } from "./explore_features";
 
 const Explore = () => {
+  const navigate = useNavigate();
   const [filterArray, setFilterArray] = useState<Array<featureType> | []>([]);
-  const [filteredFeatures, setFilteredFeatures] = useState<previewFeature[] | []>(features);
+  const [filteredFeatures, setFilteredFeatures] = useState<
+    previewFeature[] | []
+  >(features);
   const [selectedIndex, setSelectedIndex] = useState<undefined | number>(
     2100001
   );
@@ -30,20 +34,22 @@ const Explore = () => {
 
   useEffect(() => {
     if (filterArray.length) {
-      const _filtered = features.filter(({type}) => filterArray.indexOf(type as never) !== -1);
-      console.log({features, _filtered})
+      const _filtered = features.filter(
+        ({ type }) => filterArray.indexOf(type as never) !== -1
+      );
+      console.log({ features, _filtered });
       setFilteredFeatures(_filtered);
     } else {
       setFilteredFeatures(features);
     }
-  }, [filterArray])
+  }, [filterArray]);
 
   const toggleFilter = (type: featureType) => {
     const index = filterArray?.indexOf(type as never);
     if (index !== -1) {
       setFilterArray(filterArray?.filter((t) => t !== type));
     } else {
-      setFilterArray([...filterArray as [], `${type}`]);
+      setFilterArray([...(filterArray as []), `${type}`]);
     }
   };
 
@@ -127,6 +133,19 @@ const Explore = () => {
                     filterArray={filterArray}
                     toggleFilter={toggleFilter}
                   />
+
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                    }}
+                    className="paginator-head-label see-all"
+                    // onClick={() => navigate('/all-features')}
+                  >
+                    See all
+                  </div>
                 </div>
 
                 <ButtonCards

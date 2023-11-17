@@ -3,6 +3,7 @@ import { featureTypes } from "../features/Explore/explore_features";
 const TypeFilter = ({ filterArray, toggleFilter }: any) => {
   return (
     <div className="filter-container">
+      <span className="paginator-head-label">Categories</span>
       {featureTypes.map((type, index) => {
         return (
           <div
@@ -12,10 +13,7 @@ const TypeFilter = ({ filterArray, toggleFilter }: any) => {
                 : ""
             }`}
             key={type + index}
-            onClick={() => {
-              console.log(1, {type});
-              toggleFilter(type)
-            }}
+            onClick={() => {toggleFilter(type)}}
           >
             {type}
           </div>
