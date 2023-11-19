@@ -34,19 +34,19 @@ export const features: previewFeature[] = [
     buttonCard: {
       title: "A warm welcome",
       description:
-        "On this page you can find the services provided by Antonio Guiotto.",
+        "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contact below under \"Quick Contacts\" section.",
       route: "/",
       media: squareGraph,
     },
     previewCard: {
       title: "A warm welcome",
-      keys: "Online Business, Engineering, Design, Marketing, Art and more.",
+      keys: "Online Business, Engineering, Design, Marketing, Art.",
       description:
-        "On this page you can find the services provided by Antonio Guiotto.",
-      status: "🚧 Page under construction 🏗️",
+      "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contact below under \"Quick Contacts\" section.",
+      status: "Under constant development.",
       images: [squareGraph],
       gifs: [],
-      videos: [{ videoId: "T9q9qjc9L4E" }],
+      videos: [{ videoId: "Y-NyvKhvb1Y" }],
     },
   },
   {
@@ -66,7 +66,7 @@ export const features: previewFeature[] = [
         "In this shop you will find creative artifacts and more, take a look, the prices are low and the passion behind these artifact is of immense value.",
       status: "🚧 Page under construction 🏗️",
       images: [squareGraph],
-      route: "/shop",
+      // route: "/shop",
       gifs: [],
       videos: [{ videoId: "" }],
     },

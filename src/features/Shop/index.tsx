@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard";
 import PaypalPng from "../../media/images/Paypal.png";
 import Logo from "../../media/images/logo.png";
 import "./shop.css";
+import Swiper from "../../components/Swiper";
 
 const REACT_APP_S3_MEDIA_BUCKET = "https://ag-medias.s3.amazonaws.com";
 
@@ -16,7 +17,13 @@ const Shop = () => {
       description: "Marker on canvas",
       dated: "2018",
       thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/cave.png`,
-      media: [`${REACT_APP_S3_MEDIA_BUCKET}/cave.png`],
+      media: [
+        `${REACT_APP_S3_MEDIA_BUCKET}/cave.png`,
+        `https://picsum.photos/300/200`,
+        `${REACT_APP_S3_MEDIA_BUCKET}/cave.png`,
+        `https://picsum.photos/300/200`,
+        `${REACT_APP_S3_MEDIA_BUCKET}/cave.png`,
+      ],
     },
     {
       id: 1001,
@@ -63,7 +70,11 @@ const Shop = () => {
   const step0 = () => {
     return (
       <div className="product-info-sections-container">
-        <div>Wanna buy the art piece "{products.find(({ id }) => id === selectedProduct)?.title}"? Go ahead with the checkout.</div>
+        <div>
+          Wanna buy the art piece "
+          {products.find(({ id }) => id === selectedProduct)?.title}"? Go ahead
+          with the checkout.
+        </div>
         <div>
           <button onClick={() => setStep(step + 1)}>Proceed to checkout</button>
         </div>
@@ -218,7 +229,8 @@ const Shop = () => {
   const displayItem = (_index: number) => {
     const product = products.find(({ id }) => id === _index);
     if (product) {
-      const { id, title, price, description, dated, thumbnail } = product;
+      const { id, title, price, description, dated, thumbnail, media } =
+        product;
 
       return (
         <div className="shop-page-product">
@@ -226,7 +238,9 @@ const Shop = () => {
             <div className="shop-page-product-title">{title}</div>
             <div className="shop-page-product-detail">ID: {id}</div>
           </div>
-          <div className="shop-page-product-media"></div>
+          <div className="shop-page-product-media">
+            <Swiper media={media} />
+          </div>
           <div className="shop-page-product-detail">Price: {price} $</div>
           <div className="shop-page-product-detail">
             Date of creation: {dated}
