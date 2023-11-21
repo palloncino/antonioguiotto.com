@@ -46,9 +46,10 @@
 }
 
 .shop-page-content-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  
   gap: 1rem;
 }
 
@@ -119,6 +120,11 @@
 
 
 .shop-page-product-preview-container {
+  background: rgb(178, 143, 143);
+  height: 100vh;
+  position: sticky;
+  right: 0;
+  top: 0;
   flex: 2;
 }
 

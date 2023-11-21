@@ -52,6 +52,33 @@ const Shop = () => {
       thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/shark.png`,
       media: [`${REACT_APP_S3_MEDIA_BUCKET}/shark.png`],
     },
+    {
+      id: 1004,
+      title: "Shark",
+      price: 500,
+      description: "Marker on canvas",
+      dated: "2018",
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/shark.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/shark.png`],
+    },
+    {
+      id: 1005,
+      title: "Shark",
+      price: 500,
+      description: "Marker on canvas",
+      dated: "2018",
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/shark.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/shark.png`],
+    },
+    {
+      id: 1006,
+      title: "Shark",
+      price: 500,
+      description: "Marker on canvas",
+      dated: "2018",
+      thumbnail: `${REACT_APP_S3_MEDIA_BUCKET}/shark.png`,
+      media: [`${REACT_APP_S3_MEDIA_BUCKET}/shark.png`],
+    },
   ];
 
   const navigate = useNavigate();
