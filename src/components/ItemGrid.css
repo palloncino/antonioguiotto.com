@@ -1,0 +1,16 @@
+.item-grid-container {
+  padding: 1rem;
+  flex: 1;
+  background: rgb(132, 228, 132);
+}
+
+.item-grid-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.item-grid-grid-item {
+  background: rgb(226, 221, 221);
+  height: 100px;
+}

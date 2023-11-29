@@ -171,13 +171,13 @@ export const features: previewFeature[] = [
       title: "Life menthoring",
       keys: "Professional, Psycological and Phisical refinement.",
       description:
-        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
+        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life.",
       status: "Available under request.",
       route: "/",
       githubRepos: undefined,
       images: [squareGraph],
       gifs: [],
-      videos: [],
+      videos: [{ videoId: 'p1GAoNg76LU' }],
     },
   }
 ];
