@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './Button.css';
 
-const Button: React.FC<any> = ({ label, onClick, style, link }) => {
+const Button: FC<any> = ({ label, onClick, style, link }) => {
   return (
     <button className={link ? "button link" : "button"} onClick={onClick} style={{...style}}>
       {label}

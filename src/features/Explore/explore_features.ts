@@ -23,9 +23,9 @@ export type previewFeature = {
   };
 };
 
-export type featureType = 'app' | 'demo' | 'business';
+export type featureType = 'app' | 'demo' | 'business' | 'animation';
 
-export const featureTypes = ['app', 'demo', 'business'];
+export const featureTypes = ['app', 'demo', 'business', 'animation'];
 
 export const features: previewFeature[] = [
   {
@@ -46,50 +46,28 @@ export const features: previewFeature[] = [
       status: "Under constant development.",
       images: [squareGraph],
       gifs: [],
-      videos: [{ videoId: "" }],
+      videos: [],
     },
   },
   {
-    id: 2200022,
-    type: "business",
+    id: 2330200,
+    type: "animation",
     buttonCard: {
-      title: "Graphic Design",
+      title: "2D and 3D Animations",
       description:
-        "I am on a journey to switch career path from web developer to graphic design.",
+        "Animations created with the following technologies: HTML Canvas, WebGL, Threejs",
       route: "/",
       media: squareGraph,
     },
     previewCard: {
-      title: "Graphic Design",
-      keys: "Graphic Design, Art, SVG, pixels, style",
+      title: "2D and 3D Animations",
+      keys: "Canvas, WebGL, Threejs, Interactive Web Animations",
       description:
-      "I am on a journey to switch career path from web developer to graphic design.",
-      status: "Started the 8th of February 2024",
+      "Animations created with the following technologies: HTML Canvas, WebGL, Threejs. You can play with this previous and move forward the animation steps by clicking inside the thumbnail above.",
+      status: "Updated on 15 Feb 2024",
       images: [squareGraph],
       gifs: [],
-      videos: [{ videoId: "" }],
-    },
-  },
-  {
-    id: 2100101,
-    type: "business",
-    buttonCard: {
-      title: "Online Shop",
-      description:
-        "In this shop you will find creative artifacts and more, take a look, the prices are low and the passion behind these artifact is of immense value.",
-      route: "/",
-      media: squareGraph,
-    },
-    previewCard: {
-      title: "Online Shop",
-      keys: "Online Shopping, Art, Creative endevours.",
-      description:
-        "In this shop you will find creative artifacts and more, take a look, the prices are low and the passion behind these artifact is of immense value.",
-      status: "🚧 Page under construction 🏗️",
-      images: [squareGraph],
-      // route: "/shop",
-      gifs: [],
-      videos: [{ videoId: "" }],
+      videos: [],
     },
   },
   {
@@ -137,6 +115,27 @@ export const features: previewFeature[] = [
     },
   },
   {
+    id: 2200022,
+    type: "business",
+    buttonCard: {
+      title: "Graphic Design",
+      description:
+        "I am on a journey to switch career path from web developer to graphic design.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "Graphic Design",
+      keys: "Graphic Design, Art, SVG, pixels, style",
+      description:
+      "I am on a journey to switch career path from web developer to graphic design.",
+      status: "Started the 8th of February 2024",
+      images: [squareGraph],
+      gifs: [],
+      videos: [{ videoId: "" }],
+    },
+  },
+  {
     id: 2141203,
     type: "business",
     buttonCard: {
@@ -157,27 +156,4 @@ export const features: previewFeature[] = [
       videos: [],
     },
   },
-  // {
-  //   id: 2141212,
-  //   type: "business",
-  //   buttonCard: {
-  //     title: "Life menthoring",
-  //     description:
-  //       "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
-  //     route: "/",
-  //     media: squareGraph,
-  //   },
-  //   previewCard: {
-  //     title: "Life menthoring",
-  //     keys: "Professional, Psycological and Phisical refinement.",
-  //     description:
-  //       "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life.",
-  //     status: "Available under request.",
-  //     route: "/",
-  //     githubRepos: undefined,
-  //     images: [squareGraph],
-  //     gifs: [],
-  //     videos: [{ videoId: 'p1GAoNg76LU' }],
-  //   },
-  // }
 ];

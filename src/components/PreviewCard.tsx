@@ -16,27 +16,60 @@ const PreviewCard = ({
 }: any) => {
   const navigate = useNavigate();
 
+  const computePreviewMedia = () => {
+    let _type: 'video' | 'image' | 'animation' | undefined = undefined;
+
+    if (videos && videos[0]) {
+      _type = 'video';
+    } else if (type === 'animation') {
+      _type = 'animation';
+    } else if (images && images[0]) {
+      _type = 'image';
+    }
+
+    switch (_type) {
+      case 'video':
+        return (
+          <YouTube
+            className="youtube-frame"
+            videoId={videos[0].videoId}
+            opts={{
+              playerVars: {
+                autoplay: 0,
+                controls: 1,
+                loop: 0,
+                muted: 0,
+              },
+            }}
+          />
+        )
+
+      case 'image':
+        return (
+          <img src={images[0]} alt={`${title}`} />
+        )
+
+      case 'animation':
+        return (
+          <div className="animation-container">
+            <span>Placeholder for 3D animation</span>
+          </div>
+        )
+
+      default:
+        return (
+          <img src={images[0]} alt={`${title}`} />
+        )
+    }
+
+  }
+
   const renderPreview = () => {
     return (
       <div className="explore-page-card-preview">
         <div className="explore-page-card-preview-content">
           <div className="preview-media">
-            {videos && videos[0] ? (
-              <YouTube
-                className="youtube-frame"
-                videoId={videos[0].videoId}
-                opts={{
-                  playerVars: {
-                    autoplay: 0,
-                    controls: 1,
-                    loop: 0,
-                    muted: 0,
-                  },
-                }}
-              />
-            ) : (
-              images && images[0] && (<img src={images[0]} alt={`${title}`} />)
-            )}
+            {computePreviewMedia()}
           </div>
           <div className="preview-text-description-container">
             {title && (

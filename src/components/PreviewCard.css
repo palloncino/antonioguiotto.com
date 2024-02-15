@@ -12,6 +12,7 @@
   box-sizing: border-box;
   width: 100%;
 }
+
 .explore-page-card-preview-title {
   position: absolute;
   color: rgb(255, 255, 255);
@@ -69,6 +70,7 @@
   width: 6rem;
   min-width: 6rem;
 }
+
 .explore-page-card-preview-title span {
   display: inline-block;
   animation: float 3.6s ease-in-out infinite;
@@ -94,18 +96,23 @@
 h3 span:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 h3 span:nth-child(3) {
   animation-delay: 0.4s;
 }
+
 h3 span:nth-child(4) {
   animation-delay: 0.6s;
 }
+
 h3 span:nth-child(5) {
   animation-delay: 0.8s;
 }
+
 h3 span:nth-child(6) {
   animation-delay: 1s;
 }
+
 h3 span:nth-child(7) {
   animation-delay: 1.2s;
 }
@@ -128,12 +135,18 @@ video {
   border-radius: 0.4rem;
 }
 
-@media only screen and (max-width: 600px) {
+.animation-container {
+  height: 360px;
+  max-height: 360px;
+  width: 100%;
 }
+
+@media only screen and (max-width: 600px) {}
 
 .youtube-frame {
   width: 100%;
 }
+
 .youtube-frame iframe {
   width: 100%;
   box-sizing: border-box;

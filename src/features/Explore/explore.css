@@ -6,8 +6,10 @@
   --black-transparent-dark: #00000090;
   --black-transparent-medium: #00000040;
   --black-transparent-light: #00000010;
-  --green: #417349;
-  --blue: #424173;
+  --green: linear-gradient(45deg, #417349, #318e41, #417349);
+  --blue: linear-gradient(45deg, #484783, #5370c6, #484783);
+  --linear-gradient-dark: linear-gradient(45deg, #666666, #8a8a8a, #6b6b6b);
+  --violet-gradient: linear-gradient(45deg, #4b7494, #dd55ff, #f7893a);
 }
 
 .explore-page-container {
@@ -152,7 +154,12 @@
 }
 
 .type-feature-text.app {
-  background: var(--black-text);
+  background: var(--linear-gradient-dark);
+  color: var(--white);
+}
+
+.type-feature-text.animation {
+  background: var(--violet-gradient);
   color: var(--white);
 }
 

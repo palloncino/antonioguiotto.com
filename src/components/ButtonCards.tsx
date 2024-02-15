@@ -16,10 +16,6 @@ const ButtonCards = ({
   });
 
   useEffect(() => {
-    console.log("ButtonCards", { features });
-  }, [features]);
-
-  useEffect(() => {
     setShouldAnimate({ bool: true, springProps: swipeSpringProps });
   }, [activePage, prevActivePage]);
 
