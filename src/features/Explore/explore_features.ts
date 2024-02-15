@@ -1,5 +1,8 @@
 import squareGraph from "../../media/images/graph-paper.svg";
-
+import bannerChatupPng from "../../media/images/banner-chatup.png";
+import banner_ita_completo from "../../media/images/banner-ita-completo.png";
+import banner_ita_button from "../../media/images/banner-ita-button.png";
+import WP from "../../media/images/WP.png";
 
 export type previewFeature = {
   id: number;
@@ -34,17 +37,17 @@ export const features: previewFeature[] = [
     buttonCard: {
       title: "A warm welcome",
       description:
-        "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contact below under \"Quick Contacts\" section.",
+        "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contacts in the Footer (Quick Links)",
       route: "/",
-      media: squareGraph,
+      media: banner_ita_button,
     },
     previewCard: {
       title: "A warm welcome",
       keys: "Online Business, Engineering, Design, Marketing, Art.",
       description:
-      "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contact below under \"Quick Contacts\" section.",
+      "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contacts in the Footer (Quick Links)",
       status: "Under constant development.",
-      images: [squareGraph],
+      images: [banner_ita_completo],
       gifs: [],
       videos: [],
     },
@@ -63,7 +66,7 @@ export const features: previewFeature[] = [
       title: "2D and 3D Animations",
       keys: "Canvas, WebGL, Threejs, Interactive Web Animations",
       description:
-      "Animations created with the following technologies: HTML Canvas, WebGL, Threejs. You can play with this previous and move forward the animation steps by clicking inside the thumbnail above.",
+      "Animations created with the following technologies: HTML Canvas, WebGL, Threejs. You can play with this previous and move forward the animation steps by clicking inside the thumbnail above. Find the example here http://eclipse-animation.s3-website-us-east-1.amazonaws.com",
       status: "Updated on 15 Feb 2024",
       images: [squareGraph],
       gifs: [],
@@ -77,7 +80,7 @@ export const features: previewFeature[] = [
       title: "ChatUp - Web App (go to App)",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
-      media: squareGraph,
+      media: bannerChatupPng,
     },
     previewCard: {
       title: "ChatUp",
@@ -86,7 +89,7 @@ export const features: previewFeature[] = [
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
       route: "/chat-up",
-      images: [squareGraph],
+      images: [bannerChatupPng],
       gifs: [],
       videos: [],
     },
@@ -142,16 +145,16 @@ export const features: previewFeature[] = [
       title: "Need a WordPress website?",
       description:
         "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
-      route: "/",
-      media: squareGraph,
+      media: WP,
     },
     previewCard: {
       title: "New WordPress website.",
       keys: "Showcase, E-commerce.",
       description:
-        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
-      status: "🚧 Page under construction 🏗️",
-      images: [squareGraph],
+        "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping. Here an example of a website I built for a client lately:",
+      status: "Online",
+      route: 'https://apsproncegno.chebellagiornata.it',
+      images: [WP],
       gifs: [],
       videos: [],
     },

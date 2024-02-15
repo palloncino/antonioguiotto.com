@@ -103,9 +103,9 @@ const PreviewCard = ({
                 <div className="preview-text-description-key">Go to app</div>
                 <div
                   className="preview-text-description-value a"
-                  onClick={() => navigate(route)}
+                  onClick={() => route.slice(0, 4) === 'http' ? window.open(route) : navigate(route)}
                 >
-                  {route.slice(1)} ↗
+                  {route.slice(0, 4) === 'http' ? route :  route.slice(1)} ↗
                 </div>
               </div>
             )}

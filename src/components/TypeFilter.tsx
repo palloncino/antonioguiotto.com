@@ -15,7 +15,7 @@ const TypeFilter = ({ filterArray, toggleFilter }: any) => {
             key={type + index}
             onClick={() => {toggleFilter(type)}}
           >
-            {type}
+            {type.charAt(0).toUpperCase() + type.slice(1)}
           </div>
         );
       })}

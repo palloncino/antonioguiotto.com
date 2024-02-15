@@ -145,6 +145,7 @@ video {
   border: 0.2rem solid;
   border-radius: 0.2rem;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 600px) {}
