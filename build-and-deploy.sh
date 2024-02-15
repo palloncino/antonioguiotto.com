@@ -4,6 +4,7 @@ BUCKET=antonioguiotto.com
 SOURCE_DIR=build/
 
 
+
 echo "Building production"
 if npm run build ; then
    echo "Build Successful"

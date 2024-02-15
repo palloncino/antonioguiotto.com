@@ -46,7 +46,28 @@ export const features: previewFeature[] = [
       status: "Under constant development.",
       images: [squareGraph],
       gifs: [],
-      videos: [{ videoId: "Y-NyvKhvb1Y" }],
+      videos: [{ videoId: "" }],
+    },
+  },
+  {
+    id: 2200022,
+    type: "business",
+    buttonCard: {
+      title: "Graphic Design",
+      description:
+        "I am on a journey to switch career path from web developer to graphic design.",
+      route: "/",
+      media: squareGraph,
+    },
+    previewCard: {
+      title: "Graphic Design",
+      keys: "Graphic Design, Art, SVG, pixels, style",
+      description:
+      "I am on a journey to switch career path from web developer to graphic design.",
+      status: "Started the 8th of February 2024",
+      images: [squareGraph],
+      gifs: [],
+      videos: [{ videoId: "" }],
     },
   },
   {
@@ -93,7 +114,7 @@ export const features: previewFeature[] = [
     },
   },
   {
-    id: 2141211,
+    id: 2141200,
     type: "app",
     buttonCard: {
       title: "SquareUp - Mobile (Preview)",
@@ -113,27 +134,6 @@ export const features: previewFeature[] = [
       images: [squareGraph],
       gifs: [],
       videos: [{ videoId: "3JtrRG6w0oU" }],
-    },
-  },
-  {
-    id: 2141210,
-    type: "business",
-    buttonCard: {
-      title: "Re-brand your website!",
-      description:
-        "Get a neat user interface for your business, having a user friendly website can increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
-      route: "/",
-      media: squareGraph,
-    },
-    previewCard: {
-      title: "Business rebranding",
-      keys: "Web browser, Social Media, online presence",
-      description:
-        "Get a neat user-interface for your business, having a user friendly website will increase your sales! Get a personalized experience for your clients. We can fix the online presence of your business, effectively, in a short period of time.",
-      status: "🚧 Page under construction 🏗️",
-      images: [squareGraph],
-      gifs: [],
-      videos: [],
     },
   },
   {
@@ -157,27 +157,27 @@ export const features: previewFeature[] = [
       videos: [],
     },
   },
-  {
-    id: 2141212,
-    type: "business",
-    buttonCard: {
-      title: "Life menthoring",
-      description:
-        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
-      route: "/",
-      media: squareGraph,
-    },
-    previewCard: {
-      title: "Life menthoring",
-      keys: "Professional, Psycological and Phisical refinement.",
-      description:
-        "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life.",
-      status: "Available under request.",
-      route: "/",
-      githubRepos: undefined,
-      images: [squareGraph],
-      gifs: [],
-      videos: [{ videoId: 'p1GAoNg76LU' }],
-    },
-  }
+  // {
+  //   id: 2141212,
+  //   type: "business",
+  //   buttonCard: {
+  //     title: "Life menthoring",
+  //     description:
+  //       "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life. Let's grow together.",
+  //     route: "/",
+  //     media: squareGraph,
+  //   },
+  //   previewCard: {
+  //     title: "Life menthoring",
+  //     keys: "Professional, Psycological and Phisical refinement.",
+  //     description:
+  //       "I can teach you everithing I know about the way I conduct my life in a healthy way, integrating the professional, psycological and phisical aspect of your lifes, questioning old habits to try new approach to life.",
+  //     status: "Available under request.",
+  //     route: "/",
+  //     githubRepos: undefined,
+  //     images: [squareGraph],
+  //     gifs: [],
+  //     videos: [{ videoId: 'p1GAoNg76LU' }],
+  //   },
+  // }
 ];
