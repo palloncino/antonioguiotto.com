@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./PreviewCard.css";
+import Animation01 from "./Animation-01";
 
 const PreviewCard = ({
   id,
@@ -52,7 +53,7 @@ const PreviewCard = ({
       case 'animation':
         return (
           <div className="animation-container">
-            <span>Placeholder for 3D animation</span>
+            <Animation01 />
           </div>
         )
 

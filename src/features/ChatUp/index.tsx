@@ -158,7 +158,7 @@ const ChatUp = () => {
         ...prevHistory,
         {
           role: "ai",
-          content: `The service has been deactivated the 30th of October.`,
+          content: `The service has been deactivated the 30th of October 2023.`,
         },
       ]);
       console.error("There was an error making the request:", error);
