@@ -8,7 +8,7 @@
   --black-transparent-light: #00000010;
   --green: linear-gradient(45deg, #417349, #318e41, #417349);
   --blue: linear-gradient(45deg, #484783, #5370c6, #484783);
-  --linear-gradient-dark: linear-gradient(45deg, #666666, #8a8a8a, #6b6b6b);
+  --linear-gradient-dark: linear-gradient(45deg, #545454, #414141, #545454);
   --violet-gradient: linear-gradient(45deg, #4b7494, #dd55ff, #f7893a);
 }
 
