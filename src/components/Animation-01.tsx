@@ -313,7 +313,7 @@ const EclipseAnimation: FC<any> = () => {
       // window.removeEventListener('resize', updateSize);
     };
   }, []);
-
+  
   return <div id="EclipseAnimation" className="EclipseAnimation" ref={mountRef} />;
 };
 

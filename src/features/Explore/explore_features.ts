@@ -3,6 +3,8 @@ import bannerChatupPng from "../../media/images/banner-chatup.png";
 import banner_ita_completo from "../../media/images/banner-ita-completo.png";
 import banner_ita_button from "../../media/images/banner-ita-button.png";
 import WP from "../../media/images/WP.png";
+import ig_follow from "../../media/images/ig-follow.png";
+import wes from "../../media/images/wes.png";
 
 export type previewFeature = {
   id: number;
@@ -66,7 +68,7 @@ export const features: previewFeature[] = [
       title: "2D and 3D Animations",
       keys: "Canvas, WebGL, Threejs, Interactive Web Animations",
       description:
-      "Animations created with the following technologies: HTML Canvas, WebGL, Threejs. You can play with this previous and move forward the animation steps by clicking inside the thumbnail above. Find the example here http://eclipse-animation.s3-website-us-east-1.amazonaws.com",
+      "Animations created with the following technologies: HTML Canvas, WebGL, Threejs. Find one example here http://eclipse-animation.s3-website-us-east-1.amazonaws.com",
       status: "Updated on 15 Feb 2024",
       images: [squareGraph],
       gifs: [],
@@ -119,13 +121,13 @@ export const features: previewFeature[] = [
   },
   {
     id: 2200022,
-    type: "business",
+    type: "demo",
     buttonCard: {
       title: "Graphic Design",
       description:
         "I am on a journey to switch career path from web developer to graphic design.",
       route: "/",
-      media: squareGraph,
+      media: ig_follow,
     },
     previewCard: {
       title: "Graphic Design",
@@ -133,9 +135,9 @@ export const features: previewFeature[] = [
       description:
       "I am on a journey to switch career path from web developer to graphic design.",
       status: "Started the 8th of February 2024",
-      images: [squareGraph],
+      images: [wes],
       gifs: [],
-      videos: [{ videoId: "" }],
+      videos: [],
     },
   },
   {

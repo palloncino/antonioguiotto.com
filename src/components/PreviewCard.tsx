@@ -53,7 +53,7 @@ const PreviewCard = ({
       case 'animation':
         return (
           <div className="animation-container">
-            <Animation01 />
+            {/* <Animation01 /> */}
           </div>
         )
 
