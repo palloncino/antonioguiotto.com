@@ -11,6 +11,7 @@ import Logo from "../../media/images/logo.png";
 import Fade from "../Fade";
 import "./explore.css";
 import { featureType, features, previewFeature } from "./explore_features";
+import Balto from "../../components/Balto/Balto";
 
 const Explore = () => {
   const navigate = useNavigate();
@@ -153,6 +154,9 @@ const Explore = () => {
 
             <div className="right-side">
               <div className="right-side-top">{selectedItemComponent}</div>
+              <div className="right-side-bottom" id="3D-Model-container">
+                <Balto />
+              </div>
             </div>
 
             <AbsoluteFooter />

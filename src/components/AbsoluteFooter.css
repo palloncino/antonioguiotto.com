@@ -1,11 +1,11 @@
 .absolute-footer-container {
   position: absolute;
-  bottom: 1rem; 
-  right: 0rem;
+  bottom: 1.2rem;
+  right: 0.2rem;
 }
 
 .absolute-footer-content {
-  background: var(--black-transparent-light);
+  background: var(--black-transparent-light-gradient);
   color: var(--black-text);
   border-radius: .2rem;
   padding: .4rem 1rem;

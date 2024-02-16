@@ -6,6 +6,7 @@
   --black-transparent-dark: #00000090;
   --black-transparent-medium: #00000040;
   --black-transparent-light: #00000010;
+  --black-transparent-light-gradient: linear-gradient(45deg, #f5f5f5, #f5f5f5, #ffffff, #f5f5f5);
   --green: linear-gradient(45deg, #417349, #318e41, #417349);
   --blue: linear-gradient(45deg, #484783, #5370c6, #484783);
   --linear-gradient-dark: linear-gradient(45deg, #545454, #414141, #545454);
@@ -72,6 +73,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  position: absolute;
+  bottom: 1rem;
+  right: 0rem;
+  z-index: -1;
 }
 
 .right-side-content-container {

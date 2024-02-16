@@ -63,12 +63,15 @@
   align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  border-right: 2px solid var(--black-text);
-  background: var(--black-transparent-light);
+  border: 1px solid var(--black-text);
+  box-sizing: border-box;
+  border-radius: .2rem;
+  background: var(--black-transparent-light-gradient);
   text-align: end;
   padding: 0rem 1rem;
-  width: 6rem;
-  min-width: 6rem;
+  width: 8rem;
+  min-width: 8rem;
+  /* min-width: 6rem; */
 }
 
 .explore-page-card-preview-title span {

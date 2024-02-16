@@ -13,7 +13,7 @@ const PreviewCard = ({
   images,
   route,
   githubRepos,
-  videos,
+  videos = [],
 }: any) => {
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const PreviewCard = ({
 
     switch (_type) {
       case 'video':
-        return (
+        return videos && videos[0] ? (
           <YouTube
             className="youtube-frame"
             videoId={videos[0].videoId}
@@ -43,7 +43,7 @@ const PreviewCard = ({
               },
             }}
           />
-        )
+        ) : null;
 
       case 'image':
         return (
@@ -105,7 +105,7 @@ const PreviewCard = ({
                   className="preview-text-description-value a"
                   onClick={() => route.slice(0, 4) === 'http' ? window.open(route) : navigate(route)}
                 >
-                  {route.slice(0, 4) === 'http' ? route :  route.slice(1)} ↗
+                  {route.slice(0, 4) === 'http' ? route : route.slice(1)} ↗
                 </div>
               </div>
             )}
