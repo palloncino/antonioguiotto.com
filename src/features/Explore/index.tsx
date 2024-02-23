@@ -8,6 +8,8 @@ import PreviewCard from "../../components/PreviewCard";
 import TypeFilter from "../../components/TypeFilter";
 import { useDevice } from "../../hooks/useDevice";
 import Logo from "../../media/images/logo.png";
+import CraneAndTruck from "../../media/images/crane-and-truck.png";
+import Crane from "../../media/images/crane-svg.svg";
 import Fade from "../Fade";
 import "./explore.css";
 import { featureType, features, previewFeature } from "./explore_features";
@@ -22,7 +24,7 @@ const Explore = () => {
   const [selectedIndex, setSelectedIndex] = useState<undefined | number>(
     2100001
   );
-  const ITEMS_PER_PAGE = 4;
+  const ITEMS_PER_PAGE = 6;
   const MAX_PAGES = Math.ceil(filteredFeatures.length / ITEMS_PER_PAGE);
   const [activePage, setActivePage] = useState(1);
   const [prevActivePage, setPrevActivePage] = useState(1);
@@ -122,6 +124,14 @@ const Explore = () => {
                     <span>r</span>
                     <span>e</span>
                   </h1>
+                  <img src={Crane} alt="" style={{
+                        position: 'absolute',
+                        top: '1.8rem',
+                        right: '0',
+                        zIndex: 50,
+                        width: '25%',
+                        transform: 'translateX(-10%)'
+              }}/>
                 </div>
 
                 <div className="filters-container">
@@ -154,9 +164,16 @@ const Explore = () => {
 
             <div className="right-side">
               <div className="right-side-top">{selectedItemComponent}</div>
-              <div className="right-side-bottom" id="3D-Model-container">
+              {/* <div className="right-side-bottom" id="3D-Model-container">
                 <Balto />
-              </div>
+              </div> */}
+              <img src={CraneAndTruck} alt="" style={{
+                    position: 'absolute',
+                    bottom: '-10%',
+                    right: '0rem',
+                    zIndex: 0,
+                    width: '100%'
+              }}/>
             </div>
 
             <AbsoluteFooter />

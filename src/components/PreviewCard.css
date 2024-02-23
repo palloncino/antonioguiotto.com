@@ -31,6 +31,8 @@
 }
 
 .preview-text-description-container {
+  background: #ffffff90;
+  padding: .4rem;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -45,7 +47,12 @@
   display: flex;
   color: var(--black-text);
 }
-
+.preview-text-description-value {
+  padding: .2rem .8rem;
+  background: #fff;
+  border: .1rem solid var(--black-text);
+  border-radius: .2rem;
+}
 .preview-text-description-link .preview-text-description-value.a {
   cursor: pointer;
   color: purple;
@@ -63,10 +70,11 @@
   align-self: flex-start;
   font-family: "Custom";
   margin-right: 1rem;
-  border: 1px solid var(--black-text);
+  /* border: 1px solid var(--black-text); */
   box-sizing: border-box;
-  border-radius: .2rem;
-  background: var(--black-transparent-light-gradient);
+  /* border-radius: .2rem; */
+  background: #4169E1;
+  color: #fff;
   text-align: end;
   padding: 0rem 1rem;
   width: 8rem;

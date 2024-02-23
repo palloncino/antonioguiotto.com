@@ -1,9 +1,8 @@
 import squareGraph from "../../media/images/graph-paper.svg";
-import bannerChatupPng from "../../media/images/banner-chatup.png";
 import banner_ita_completo from "../../media/images/banner-ita-completo.png";
 import banner_ita_button from "../../media/images/banner-ita-button.png";
 import WP from "../../media/images/WP.png";
-import ig_follow from "../../media/images/ig-follow.png";
+import dalla_mora_preview from "../../media/images/dalla-mora-preview.png";
 import wes from "../../media/images/wes.png";
 
 export type previewFeature = {
@@ -37,18 +36,18 @@ export const features: previewFeature[] = [
     id: 2100001,
     type: "demo",
     buttonCard: {
-      title: "A warm welcome",
+      title: "Creative garage",
       description:
-        "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contacts in the Footer (Quick Links)",
+        "Studing animations and 3d models next",
       route: "/",
       media: banner_ita_button,
     },
     previewCard: {
-      title: "A warm welcome",
+      title: "Creative garage",
       keys: "Online Business, Engineering, Design, Marketing, Art.",
       description:
-      "On this page you can find the services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contacts in the Footer (Quick Links)",
-      status: "Under constant development.",
+      "On this page you can find services provided by Antonio Guiotto. Currently working on public advertising, web design and engineering. Find my contacts in the Footer (Quick Links)",
+      status: "Under constant development. It's caotic",
       images: [banner_ita_completo],
       gifs: [],
       videos: [],
@@ -82,7 +81,7 @@ export const features: previewFeature[] = [
       title: "ChatUp - Web App (go to App)",
       description:
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework. Currently out of service ⚠️.",
-      media: bannerChatupPng,
+      media: squareGraph,
     },
     previewCard: {
       title: "ChatUp",
@@ -91,7 +90,7 @@ export const features: previewFeature[] = [
         "This is a DEMO representing a personal assistant chatbot, using openai APIs and langchain js framework.",
       status: "Currently out of service for exceeded maintenance costs.",
       route: "/chat-up",
-      images: [bannerChatupPng],
+      images: [squareGraph],
       gifs: [],
       videos: [],
     },
@@ -100,7 +99,7 @@ export const features: previewFeature[] = [
     id: 2141200,
     type: "app",
     buttonCard: {
-      title: "SquareUp - Mobile (Preview)",
+      title: "SquareUp - Mobile",
       description:
         "This application allow easy edit of videos and images to match a 1:1 ratio while maintain the original aspect of the video. IOS App created with react-native.",
       route: "/",
@@ -127,7 +126,7 @@ export const features: previewFeature[] = [
       description:
         "I am on a journey to switch career path from web developer to graphic design.",
       route: "/",
-      media: ig_follow,
+      media: squareGraph,
     },
     previewCard: {
       title: "Graphic Design",
@@ -144,7 +143,7 @@ export const features: previewFeature[] = [
     id: 2141203,
     type: "business",
     buttonCard: {
-      title: "Need a WordPress website?",
+      title: "WordPress Website",
       description:
         "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
       media: WP,
@@ -156,9 +155,52 @@ export const features: previewFeature[] = [
         "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping. Here an example of a website I built for a client lately:",
       status: "Online",
       route: 'https://apsproncegno.chebellagiornata.it',
-      images: [WP],
+      images: [dalla_mora_preview],
       gifs: [],
       videos: [],
     },
   },
+
+{
+  id: 233023441200,
+  type: "demo",
+  buttonCard: {
+    title: "Placeholder",
+    description:
+      "Lorem placeholder Ipsum",
+    route: "/",
+    media: squareGraph,
+  },
+  previewCard: {
+    title: "Next soon",
+    keys: "Lorem placeholder Ipsum",
+    description:
+    "Lorem placeholder Ipsum Lorem placeholder Ipsum Lorem placeholder Ipsum",
+    status: "draft",
+    images: [squareGraph],
+    gifs: [],
+    videos: [],
+  },
+},
+{
+  id: 23302111200,
+  type: "demo",
+  buttonCard: {
+    title: "Placeholder",
+    description:
+      "Lorem placeholder Ipsum",
+    route: "/",
+    media: squareGraph,
+  },
+  previewCard: {
+    title: "Next soon",
+    keys: "Lorem placeholder Ipsum",
+    description:
+    "Lorem placeholder Ipsum Lorem placeholder Ipsum Lorem placeholder Ipsum",
+    status: "draft",
+    images: [squareGraph],
+    gifs: [],
+    videos: [],
+  },
+},
 ];
