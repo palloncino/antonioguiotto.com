@@ -120,7 +120,7 @@ export const features: previewFeature[] = [
   },
   {
     id: 2200022,
-    type: "demo",
+    type: "business",
     buttonCard: {
       title: "Graphic Design",
       description:
@@ -146,7 +146,7 @@ export const features: previewFeature[] = [
       title: "WordPress Website",
       description:
         "Whether you are looking to build a new e-commerce, or you just need a nice looking fast and effective showcase site, I am ready to get my team to work on in in no time you will be up and running, taking care of all sides of your business, from client engagement actual shopping.",
-      media: WP,
+      media: squareGraph,
     },
     previewCard: {
       title: "New WordPress website.",
