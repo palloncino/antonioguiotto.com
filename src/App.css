@@ -1,20 +1,4 @@
-.Header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 4rem;
-  background-color: rgb(209, 238, 245);
-}
-.links-container {
-  display: flex;
-}
-.link-container {
-  margin-right: 1rem;
-}
-.link-container:last-child {
-  margin-right: none;
-}
-
-.Feature {
-  
+.AppContainer {
+  margin: 0 auto;
+  max-width: 1440px;
 }

@@ -5,11 +5,8 @@ import {
   Routes
 } from "react-router-dom";
 import './App.css';
-import ChatUp from './features/ChatUp';
 import Explore from './features/Explore';
-import Fade from './features/Fade';
-import SquareUp from './features/SquareUp';
-import Shop from './features/Shop';
+import Header from './components/Header';
 
 export const MainContext = createContext<{
   HeaderRef: React.RefObject<HTMLDivElement>,
@@ -24,16 +21,14 @@ const App: React.FC = () => {
   return (
     <Router>
       <MainContext.Provider value={{ HeaderRef, FeatureRef }}>
+        <Header />
         <div className="AppContainer">
           <div
             className="Feature"
             id="Feature"
             ref={FeatureRef}>
             <Routes>
-              <Route path="/chat-up" element={<Fade><ChatUp /></Fade>} />
-              <Route path="/square-up" element={<Fade><SquareUp /></Fade>} />
-              <Route path="/shop" element={<Fade><Shop /></Fade>} />
-              <Route path="/" element={<Fade><Explore /></Fade>} />
+              <Route path="/" element={<Explore />} />
             </Routes>
           </div>
 
